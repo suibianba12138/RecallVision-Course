@@ -1,3 +1,3 @@
-# Full optional runtime and lightweight test dependencies for this local project.
-# For the dependency-light C1 replay, install only the test extra instead.
+# Optional perception runtime plus lightweight test dependencies.
+# For source-only tests without detector dependencies, install only `.[test]`.
 -e .[perception,test]
