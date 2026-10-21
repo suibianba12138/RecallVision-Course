@@ -2,7 +2,7 @@
 
 RecallVision builds structured visual memory from video observations and uses that memory for retrospective question answering. It is a computer-vision course project focused on tracking objects over time, recording state and event evidence, and retrieving answers with supporting timestamps and frames.
 
-> **Release gate:** this local candidate is not cleared for public release. See [`LICENSE_TODO.md`](LICENSE_TODO.md) before copying or publishing it.
+> **License and release scope:** the project owner's original RecallVision source is licensed under AGPL-3.0-only; see [`LICENSE`](LICENSE) and [`COPYRIGHT`](COPYRIGHT). This source-only candidate excludes model weights, third-party package binaries, raw videos, and evidence images.
 
 ## Project overview
 
@@ -73,7 +73,7 @@ For video perception only, install the optional extra in an environment with an 
 python -m pip install -e ".[perception]"
 ```
 
-This installs the declared Ultralytics/OpenCV dependencies, not a RecallVision checkpoint or dataset. Ultralytics licensing and model-weight terms remain subject to the release gate in [`LICENSE_TODO.md`](LICENSE_TODO.md).
+This installs the declared Ultralytics/OpenCV dependencies, not a RecallVision checkpoint or dataset. The optional Ultralytics dependency is AGPL-3.0; upstream states its AGPL route is for projects whose full source is open under AGPL-3.0. Ultralytics model weights are not included; see [`docs/THIRD_PARTY_NOTICES.md`](docs/THIRD_PARTY_NOTICES.md) for the source-only distribution boundary.
 
 ## Public demo summary
 
@@ -122,4 +122,4 @@ The optional perception adapter depends on Ultralytics and its ByteTrack trackin
 
 ## License
 
-No license has been selected or assigned to this candidate. Public release is blocked pending the decisions listed in [`LICENSE_TODO.md`](LICENSE_TODO.md).
+Copyright (C) 2026 suibianba12138. The original RecallVision-Course source, configuration, tests, and documentation are licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only); see [`LICENSE`](LICENSE). Third-party components and media are governed by their own notices and are not relicensed by this statement. The repository does not distribute platform wheels/binaries, model weights, raw videos, or evidence images.

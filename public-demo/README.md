@@ -19,3 +19,5 @@ Suggested order:
 5. State that long-form performance is `NOT_VALIDATED` and fresh-video end-to-end QA is not established.
 
 This page is a convenience summary, not a substitute for the full internal demo or its evidence artifacts. Do not claim that the asset-restricted public checkout passed a full replay.
+
+The original project source and this page are licensed under AGPL-3.0-only; see [`../LICENSE`](../LICENSE). No rights to third-party media are granted.
