@@ -1,0 +1,36 @@
+# Python / test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Generated outputs and local inputs
+outputs/
+course_demo/fixture/evidence/*.jpg
+course_demo/README.md
+recallvision/course_demo.py
+recallvision/cli/course_demo.py
+data/raw/
+data/local/
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Local secrets and editor state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store

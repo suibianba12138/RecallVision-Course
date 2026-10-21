@@ -1,0 +1,41 @@
+{
+  "answer": "Before that supported movement event, the bottle was last observed in the left region.",
+  "class_name": "bottle",
+  "evidence": [
+    {
+      "end_time": null,
+      "frame_indices": [
+        92
+      ],
+      "segment_ref": "p1b_pixabay_bottle#frame=92",
+      "start_time": null,
+      "timestamp": 3.069733333333333,
+      "video_id": "p1b_pixabay_bottle"
+    }
+  ],
+  "frame_index": 92,
+  "from_segment_id": "p1b_pixabay_bottle#obj:bottle:0001#segment=1",
+  "from_source_segment_id": "p1b_pixabay_bottle#obj:bottle:0001#segment=1",
+  "from_zone": "left_region",
+  "input_artifacts": {
+    "events": {
+      "path": "outputs/p2d_r1/pixabay_bottle/move_object_events.json",
+      "sha256": "a97c3ad828054c13fb221b728776fe8923f84f08a60faea51f468450d4abc9cf"
+    },
+    "timelines": {
+      "path": "outputs/p2b/pixabay_bottle/object_state_timelines.json",
+      "sha256": "874181b7fc621f69b8cf44a8ee09d4cffd6eeffb01db1dabe63ce3c5f0cb7846"
+    }
+  },
+  "last_observed_frame": 92,
+  "last_observed_timestamp": 3.069733333333333,
+  "persistent_id": "obj:bottle:0001",
+  "query_type": "WHERE_OBJECT_BEFORE",
+  "question_id": "p3b-query",
+  "reference_event_id": "move-object:p1b_pixabay_bottle:obj:bottle:0001:1->2",
+  "status": "OK",
+  "target_class": "bottle",
+  "target_entity_id": "obj:bottle:0001",
+  "timestamp": 3.069733333333333,
+  "zone": "left_region"
+}

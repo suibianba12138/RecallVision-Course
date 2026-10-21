@@ -1,0 +1,103 @@
+{
+  "answer": "The bottle was observed to move sometime between approximately 3.07 s and 3.30 s.",
+  "class_name": "bottle",
+  "event_ids": [
+    "move-object:p1b_pixabay_bottle:obj:bottle:0001:1->2"
+  ],
+  "events": [
+    {
+      "end_time": 3.3033,
+      "event_id": "move-object:p1b_pixabay_bottle:obj:bottle:0001:1->2",
+      "event_type": "MOVE_OBJECT",
+      "evidence": [
+        {
+          "end_time": null,
+          "frame_indices": [
+            92
+          ],
+          "segment_ref": "p1b_pixabay_bottle#frame=92",
+          "start_time": null,
+          "timestamp": 3.069733333333333,
+          "video_id": "p1b_pixabay_bottle"
+        },
+        {
+          "end_time": null,
+          "frame_indices": [
+            99
+          ],
+          "segment_ref": "p1b_pixabay_bottle#frame=99",
+          "start_time": null,
+          "timestamp": 3.3033,
+          "video_id": "p1b_pixabay_bottle"
+        }
+      ],
+      "object_ids": [
+        "obj:bottle:0001"
+      ],
+      "person_ids": [],
+      "source_segment_ids": [
+        "p1b_pixabay_bottle#obj:bottle:0001#segment=1",
+        "p1b_pixabay_bottle#obj:bottle:0001#segment=2"
+      ],
+      "start_time": 3.069733333333333,
+      "zone_after": "center_region",
+      "zone_before": "left_region"
+    }
+  ],
+  "evidence": [
+    {
+      "event_id": "move-object:p1b_pixabay_bottle:obj:bottle:0001:1->2",
+      "references": [
+        {
+          "end_time": null,
+          "frame_indices": [
+            92
+          ],
+          "segment_ref": "p1b_pixabay_bottle#frame=92",
+          "start_time": null,
+          "timestamp": 3.069733333333333,
+          "video_id": "p1b_pixabay_bottle"
+        },
+        {
+          "end_time": null,
+          "frame_indices": [
+            99
+          ],
+          "segment_ref": "p1b_pixabay_bottle#frame=99",
+          "start_time": null,
+          "timestamp": 3.3033,
+          "video_id": "p1b_pixabay_bottle"
+        }
+      ]
+    }
+  ],
+  "frame_intervals": [
+    {
+      "end_frame": 99,
+      "event_id": "move-object:p1b_pixabay_bottle:obj:bottle:0001:1->2",
+      "start_frame": 92
+    }
+  ],
+  "input_artifacts": {
+    "events": {
+      "path": "outputs/p2d_r1/pixabay_bottle/move_object_events.json",
+      "sha256": "a97c3ad828054c13fb221b728776fe8923f84f08a60faea51f468450d4abc9cf"
+    },
+    "timelines": {
+      "path": "outputs/p2b/pixabay_bottle/object_state_timelines.json",
+      "sha256": "874181b7fc621f69b8cf44a8ee09d4cffd6eeffb01db1dabe63ce3c5f0cb7846"
+    }
+  },
+  "matched_event_count": 1,
+  "persistent_id": "obj:bottle:0001",
+  "query_type": "WHEN_OBJECT_MOVED",
+  "question_id": "p3a-query",
+  "status": "MOVEMENT_FOUND",
+  "time_intervals": [
+    {
+      "end_time": 3.3033,
+      "event_id": "move-object:p1b_pixabay_bottle:obj:bottle:0001:1->2",
+      "start_time": 3.069733333333333
+    }
+  ]
+}

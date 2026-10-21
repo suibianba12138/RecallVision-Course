@@ -1,0 +1,3 @@
+# Full optional runtime and lightweight test dependencies for this local project.
+# For the dependency-light C1 replay, install only the test extra instead.
+-e .[perception,test]

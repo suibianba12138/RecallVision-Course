@@ -1,0 +1,40 @@
+[
+  {
+    "end_time": 3.3033,
+    "event_id": "move-object:p1b_pixabay_bottle:obj:bottle:0001:1->2",
+    "event_type": "MOVE_OBJECT",
+    "evidence": [
+      {
+        "end_time": null,
+        "frame_indices": [
+          92
+        ],
+        "segment_ref": "p1b_pixabay_bottle#frame=92",
+        "start_time": null,
+        "timestamp": 3.069733333333333,
+        "video_id": "p1b_pixabay_bottle"
+      },
+      {
+        "end_time": null,
+        "frame_indices": [
+          99
+        ],
+        "segment_ref": "p1b_pixabay_bottle#frame=99",
+        "start_time": null,
+        "timestamp": 3.3033,
+        "video_id": "p1b_pixabay_bottle"
+      }
+    ],
+    "object_ids": [
+      "obj:bottle:0001"
+    ],
+    "person_ids": [],
+    "source_segment_ids": [
+      "p1b_pixabay_bottle#obj:bottle:0001#segment=1",
+      "p1b_pixabay_bottle#obj:bottle:0001#segment=2"
+    ],
+    "start_time": 3.069733333333333,
+    "zone_after": "center_region",
+    "zone_before": "left_region"
+  }
+]

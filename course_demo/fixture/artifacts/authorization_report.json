@@ -1,0 +1,23 @@
+{
+  "attribution_ready": true,
+  "authorization_reason": "F2 validated supported agent passed all F3 authorization preconditions",
+  "authorization_report_schema_version": "VLM-F3-AUTHORIZATION-REPORT-2026-10-04-v1",
+  "authorization_status": "AUTHORIZED",
+  "authorization_version": "VLM-F3-AUTHORIZATION-2026-10-04-v1",
+  "candidate_label": "P1",
+  "derived_event_hash": "1939ac35828a2de5163beda84039fe6fdb8b74000a25f250e1cf748c3613113f",
+  "f1_package_sha256": "74e7fdd4a937c0c3f6aae2a3583c4f760eb1b384034dde15bc307f1bf22f4503",
+  "f2_sidecar_sha256": "e6c3a33a688d71a1252a308922136965480f5b9f9ae8f54c533a4d5e132180e2",
+  "identity_gate_status": "PASS_EVENT_LOCAL",
+  "identity_level": "ID_LEVEL_2_EVENT_LOCAL_VALIDATED",
+  "identity_scope": "EVENT_LOCAL",
+  "mapped_persistent_person_id": "obj:person:0001",
+  "provider_dependency_added": false,
+  "source_event_file_sha256": "a97c3ad828054c13fb221b728776fe8923f84f08a60faea51f468450d4abc9cf",
+  "source_event_hash": "0ae15340c4c995c8c210025e49edcdad6da3027f7bc75d387c963d521e197342",
+  "source_event_id": "move-object:p1b_pixabay_bottle:obj:bottle:0001:1->2",
+  "source_event_mutated": false,
+  "source_status": "SUPPORTED_AGENT",
+  "vlm_inference": false,
+  "who_moved_object_implemented": false
+}

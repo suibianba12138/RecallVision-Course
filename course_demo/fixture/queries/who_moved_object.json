@@ -1,0 +1,133 @@
+{
+  "answer": "The bottle was moved by the tracked person obj:person:0001.",
+  "attributed_event": {
+    "end_time": 3.3033,
+    "event_id": "move-object:p1b_pixabay_bottle:obj:bottle:0001:1->2",
+    "event_type": "MOVE_OBJECT",
+    "evidence": [
+      {
+        "end_time": null,
+        "frame_indices": [
+          92
+        ],
+        "segment_ref": "p1b_pixabay_bottle#frame=92",
+        "start_time": null,
+        "timestamp": 3.069733333333333,
+        "video_id": "p1b_pixabay_bottle"
+      },
+      {
+        "end_time": null,
+        "frame_indices": [
+          99
+        ],
+        "segment_ref": "p1b_pixabay_bottle#frame=99",
+        "start_time": null,
+        "timestamp": 3.3033,
+        "video_id": "p1b_pixabay_bottle"
+      }
+    ],
+    "object_ids": [
+      "obj:bottle:0001"
+    ],
+    "person_ids": [
+      "obj:person:0001"
+    ],
+    "source_segment_ids": [
+      "p1b_pixabay_bottle#obj:bottle:0001#segment=1",
+      "p1b_pixabay_bottle#obj:bottle:0001#segment=2"
+    ],
+    "start_time": 3.069733333333333,
+    "zone_after": "center_region",
+    "zone_before": "left_region"
+  },
+  "authorization_status": "AUTHORIZED",
+  "evidence": [
+    {
+      "end_time": null,
+      "frame_indices": [
+        92
+      ],
+      "segment_ref": "p1b_pixabay_bottle#frame=92",
+      "start_time": null,
+      "timestamp": 3.069733333333333,
+      "video_id": "p1b_pixabay_bottle"
+    },
+    {
+      "end_time": null,
+      "frame_indices": [
+        99
+      ],
+      "segment_ref": "p1b_pixabay_bottle#frame=99",
+      "start_time": null,
+      "timestamp": 3.3033,
+      "video_id": "p1b_pixabay_bottle"
+    }
+  ],
+  "f3_authorization_provenance": {
+    "authorization_report_path": "outputs/vlm_f3/p1b_pixabay_bottle/move-object_p1b_pixabay_bottle_obj_bottle_0001_1-_2/authorization_report.json",
+    "authorization_status": "AUTHORIZED",
+    "derived_event_sha256": "1939ac35828a2de5163beda84039fe6fdb8b74000a25f250e1cf748c3613113f",
+    "source_artifact_sha256": "a97c3ad828054c13fb221b728776fe8923f84f08a60faea51f468450d4abc9cf",
+    "source_event_fingerprint": "0ae15340c4c995c8c210025e49edcdad6da3027f7bc75d387c963d521e197342",
+    "source_event_id": "move-object:p1b_pixabay_bottle:obj:bottle:0001:1->2",
+    "source_manifest_path": "outputs/vlm_f3/p1b_pixabay_bottle/move-object_p1b_pixabay_bottle_obj_bottle_0001_1-_2/source_manifest.json"
+  },
+  "frame_interval": {
+    "end_frame": 99,
+    "start_frame": 92
+  },
+  "input_artifacts": {
+    "f3_authorized_attributed_events_root": "outputs/vlm_f3",
+    "persistent_entities": {
+      "path": "outputs/p2a_r1/pixabay_bottle/persistent_entities.json",
+      "sha256": "9353e4853f98a54e0a34c9a55ade50d083ec2a09ecbc3d6ef7a11589f51df856"
+    }
+  },
+  "output_artifact": "outputs/p3c/pixabay_bottle/who_moved_object.json",
+  "person_ids": [
+    "obj:person:0001"
+  ],
+  "query": {
+    "query_type": "WHO_MOVED_OBJECT",
+    "question": "Who moved the bottle?",
+    "question_id": "p3c-query",
+    "reference_event_id": null,
+    "target_class": "bottle",
+    "target_entity_ids": [
+      "obj:bottle:0001"
+    ],
+    "video_id": "p1b_pixabay_bottle"
+  },
+  "query_contract": {
+    "agent_neutral_p2d_used_for_person_answer": false,
+    "attributed_event_is_authoritative": true,
+    "authorized_person_ids_read_directly": true,
+    "brief_reason_parsed": false,
+    "f1_used_at_query_time": false,
+    "f2_used_at_query_time": false,
+    "f3_authorization_run_at_query_time": false,
+    "identity_reasoning_run_at_query_time": false,
+    "pose_used_at_query_time": false,
+    "raw_video_used_at_query_time": false,
+    "source_event_mutated": false,
+    "vlm_used_at_query_time": false
+  },
+  "query_type": "WHO_MOVED_OBJECT",
+  "question_id": "p3c-query",
+  "reference_event_id": "move-object:p1b_pixabay_bottle:obj:bottle:0001:1->2",
+  "resolved_event_id": "move-object:p1b_pixabay_bottle:obj:bottle:0001:1->2",
+  "source_artifact_sha256": "a97c3ad828054c13fb221b728776fe8923f84f08a60faea51f468450d4abc9cf",
+  "source_attributed_event": {
+    "event_id": "move-object:p1b_pixabay_bottle:obj:bottle:0001:1->2",
+    "path": "outputs/vlm_f3/p1b_pixabay_bottle/move-object_p1b_pixabay_bottle_obj_bottle_0001_1-_2/attributed_move_object_event.json"
+  },
+  "source_event_fingerprint": "0ae15340c4c995c8c210025e49edcdad6da3027f7bc75d387c963d521e197342",
+  "status": "SUCCESS",
+  "target_class": "bottle",
+  "target_entity_id": "obj:bottle:0001",
+  "time_interval": {
+    "end_time": 3.3033,
+    "start_time": 3.069733333333333
+  },
+  "unresolved_person_ids": []
+}
