@@ -129,13 +129,6 @@ function renderCase(id){
  renderQuery('where');
  tryAnalyticalVideo('c1');
 }
-document.querySelectorAll('[data-case]').forEach(tab=>{
-  tab.classList.toggle('active',tab.dataset.case===id);
-  tab.setAttribute('aria-selected',String(tab.dataset.case===id));
- });
- tryAnalyticalVideo(id);
-}
-
 $('qaButtons').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>renderQuery(b.dataset.q)));
 video.addEventListener('timeupdate',()=>{$('timeLabel').textContent=fmt(video.currentTime)});
 $('localVideo').addEventListener('change',async ev=>{
