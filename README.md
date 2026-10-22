@@ -8,7 +8,7 @@
 
 A computer vision course project that turns frame-level observations into persistent object histories, supported events, and evidence-linked answers.
 
-[**🌐 Project Website**](https://shengkaini.com/RecallVision-Course/) · [**▶️ Interactive Video Demo**](https://shengkaini.com/RecallVision-Course/case-studies/) · [**📖 Architecture**](docs/ARCHITECTURE.md) · [**💻 Code**](recallvision/)
+[**▶️ C1 Analysis Video**](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/c1-analysis.mp4) · [**📖 Architecture**](docs/ARCHITECTURE.md) · [**💻 Code**](recallvision/)
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-AGPL--3.0--only-2B8C8A)
@@ -21,20 +21,20 @@ A computer vision course project that turns frame-level observations into persis
 
 <div align="center">
 
-[![RecallVision: Video → Memory → QA](docs/assets/recallvision-overview.svg)](https://shengkaini.com/RecallVision-Course/case-studies/)
+[![RecallVision: Video → Memory → QA](docs/assets/recallvision-overview.svg)](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/c1-analysis.mp4)
 
-**Click the illustration to explore the real C1 video demonstration.**  
-*The diagram is illustrative; the linked webpage plays an annotated video built from recorded observations.*
+**Click the illustration to play the published C1 analysis video.**  
+*The diagram is illustrative; the linked MP4 contains annotations derived from recorded observations.*
 
 </div>
 
 ## 🎬 Demo — From Video to Visual Memory
 
-The [**interactive demonstration**](https://shengkaini.com/RecallVision-Course/case-studies/) plays an annotated **7.91-second bottle video** and visualizes the frozen C1 records: recorded detections, short-term track IDs, persistent identity, movement evidence, and answers.
+The [**C1 analysis video**](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/c1-analysis.mp4) shows recorded detections, track IDs and structured event annotations from a **7.91-second bottle clip**. The frozen query answers remain available as JSON artifacts in this repository.
 
 <div align="center">
 
-[**▶ Watch the real annotated video and try four questions →**](https://shengkaini.com/RecallVision-Course/case-studies/)
+[**▶ Watch the recorded C1 analysis video →**](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/c1-analysis.mp4)
 
 </div>
 
@@ -53,7 +53,7 @@ The recorded demonstration follows a single bottle across time:
 
 > **Left region**, supported by **frame 92 (3.0697 s)**. The observed movement event links left and center state segments over **3.0697–3.3033 s**.
 
-The public MP4 is an **annotated analysis export**, not the original raw source clip. Boxes and IDs are rendered only at frames with recorded observations; the website replays **precomputed C1 answers**, not fresh YOLO inference or a live Python QA service. See [media provenance and export details](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/README.md).
+The public MP4 is an **annotated analysis export**, not the original raw source clip. Boxes and IDs are rendered only at frames with recorded observations; the published JSON includes **precomputed C1 answers**, not fresh YOLO inference or a live Python QA service. See [media provenance and export details](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/README.md).
 
 ## ✨ Highlights
 
@@ -139,7 +139,7 @@ course_demo/fixture/
     └── who_moved_object.json
 ```
 
-To locally obtain and hash-check the **exact original input videos**, see [**Course Reproduction Guide**](docs/COURSE_REPRODUCTION.md). Original third-party MP4 inputs, the internal evidence JPGs, model weights and full internal replay adapter are not included in the public `main` branch. The [website's annotated demo videos](https://github.com/suibianba12138/RecallVision-Course/tree/gh-pages/case-studies/media) are published separately on `gh-pages`.
+To locally obtain and hash-check the **exact original input videos**, see [**Course Reproduction Guide**](docs/COURSE_REPRODUCTION.md). Original third-party MP4 inputs, the internal evidence JPGs, model weights and full internal replay adapter are not included in the public `main` branch. The [C1 annotated analysis video](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/c1-analysis.mp4) is published separately on `gh-pages`.
 
 ## 📂 Repository Layout
 
@@ -148,7 +148,7 @@ recallvision/       Perception, entity-memory, event, and query code
 configs/            Frozen stage configurations
 course_demo/fixture Recorded C1 memory and query JSON
 tests/              Source-level and contract checks
-docs/               Architecture, validation, provenance, reproduction
+docs/               Architecture, validation, third-party notices, reproduction
 public-demo/        Lightweight source-only summary
 ```
 
@@ -162,8 +162,7 @@ The project is an **educational system prototype**, not a new object detector or
 
 ## 🔗 More Information
 
-[**Project Website**](https://shengkaini.com/RecallVision-Course/) ·
-[**Interactive C1 Demo**](https://shengkaini.com/RecallVision-Course/case-studies/) ·
+[**C1 Analysis Video**](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/c1-analysis.mp4) ·
 [**Architecture**](docs/ARCHITECTURE.md) ·
 [**Reproduction**](docs/COURSE_REPRODUCTION.md) ·
 [**Validation**](docs/VALIDATION_RESULTS.md) ·

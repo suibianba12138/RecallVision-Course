@@ -49,7 +49,7 @@ The published C1 records are found in:
 - `course_demo/fixture/queries/` — four stored query results;
 - `course_demo/fixture/manifest.json` — source and evidence integrity reference.
 
-Open the [public project site](https://suibianba12138.github.io/RecallVision-Course/) for a visual explanation. Website query selection **displays precomputed outputs**, not new Python model inference. The annotated supporting JPGs from the full internal C1 replay are absent from the public source-only checkout.
+Watch the [C1 analysis video](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/c1-analysis.mp4) for an annotated visualization, and inspect the committed `course_demo/fixture/queries/` JSON to see the four precomputed answers. The published video does not run new Python model inference. The annotated supporting JPGs from the full internal C1 replay are absent from the public source-only checkout.
 
 ## 4. Honest reproducibility status
 

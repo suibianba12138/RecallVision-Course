@@ -12,7 +12,7 @@ This file records components used or declared by the source project. This source
 - **PyTorch/TorchVision:** transitive requirements of optional Ultralytics, not direct pinned RecallVision dependencies. They are installed by a user's runtime environment and are not bundled in this source repository.
 - **Downloaded model weights:** no weights are bundled. The default identifier `yolo11n.pt` may be downloaded by Ultralytics at runtime; upstream says its trained models are AGPL-3.0 by default. Any separate redistribution of weights requires preserving the applicable upstream terms.
 - **Transitive dependencies:** versions/platform wheels resolve at installation time. They are not packaged here, and an exhaustive inventory of unbundled wheels is not required for this source-only release.
-- **Original project source:** copyright (C) 2026 suibianba12138; licensed under AGPL-3.0-only. The project-owner source statement and frozen-V1 boundary are recorded in [`SOURCE_PROVENANCE.md`](SOURCE_PROVENANCE.md). This license does not grant rights to excluded third-party media or dependency binaries.
+- **Original project source:** copyright (C) 2026 suibianba12138; licensed under AGPL-3.0-only. Source-level license information is provided in the repository's `LICENSE` and `COPYRIGHT` files. This license does not grant rights to excluded third-party media or dependency binaries.
 
 ## C1 media
 
