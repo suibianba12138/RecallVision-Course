@@ -21,11 +21,11 @@
 <div class="panel-head"><span>01 <i>/</i> VIDEO EVIDENCE</span><b id="caseTag">RECORDED C1</b></div>
 <div class="stage" id="stage">
 <video id="clip" muted playsinline preload="metadata" controls></video>
-<div class="stage-empty" id="stageEmpty"><div class="stage-symbol">▶</div><b>Recorded source video</b><p id="stageText">Load the 7.91 s original C1 video locally to synchronize with the recorded event timeline.</p><span>Video is not bundled with this source-only public site.</span></div>
+<div class="stage-empty" id="stageEmpty"><div class="stage-symbol">▶</div><b>Published analysis composite</b><p id="stageText">The published analysis composite loads automatically; original source videos remain external.</p><span>Annotations are tied to recorded observations; no boxes are inferred for missing frames.</span></div>
 <div class="stage-overlay" id="stageOverlay"><span id="videoLabel">OFFLINE VIDEO EVIDENCE</span><span id="timeLabel">00.000s</span></div>
 </div>
-<div class="video-actions"><label for="localVideo" class="load">＋ Load original video</label><input type="file" accept="video/*" hidden id="localVideo"><a id="videoSource" href="https://pixabay.com/videos/bottle-hands-water-liquid-table-82261/" target="_blank" rel="noopener">View source video ↗</a></div>
-<p class="media-note" id="videoNote">For C1, the original MP4 is SHA-256 verified before being linked to its research timestamps. Video remains on your device.</p>
+<div class="video-actions"><label for="localVideo" class="load">＋ Load exact original video (optional)</label><input type="file" accept="video/*" hidden id="localVideo"><a id="videoSource" href="https://pixabay.com/videos/bottle-hands-water-liquid-table-82261/" target="_blank" rel="noopener">View source video ↗</a></div>
+<p class="media-note" id="videoNote">Published analysis composites load automatically. Original source videos remain external and are not bundled.</p>
 <div class="phase-label">REAL PIPELINE RECORDS <span id="caseMeta">7.9079 s • 29.97 FPS • Pixabay</span></div>
 <div class="pipeline-strip" id="pipelineStrip"><span>Video</span><b>→</b><span>YOLO + ByteTrack</span><b>→</b><span>P2A Entities</span><b>→</b><span>State / Events</span><b>→</b><span>QA</span></div>
 </div>

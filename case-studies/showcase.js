@@ -16,7 +16,7 @@ const CASES = {
   desc:'P2A-R1 grouped seven observed bottle track IDs into one persistent identity. Two state segments and one evidence-bounded movement were stored.',
   records:[['Source track IDs','7'],['Canonical observations','48'],['Target hypotheses','1 persistent bottle']],
   note:'P2D emitted a MOVE_OBJECT between observed states at 3.0697–3.3033 s. Neither this window nor the event denotes exact physical movement onset.',
-  videoText:'The recorded C1 source is a 7.91 s real bottle clip. Load the exact original MP4 or use an annotated analysis video if published.',
+  videoText:'The published C1 analysis composite loads automatically. The original 7.91 s Pixabay MP4 remains available from its source link and is not separately bundled.',
   summary:'C1 development video · 7.9079 seconds · published frozen memory fixture',
   videos:'c1-analysis.mp4'
  },
@@ -29,7 +29,7 @@ const CASES = {
   desc:'The new cake video produced 579 cake observations but 12 persistent cake candidates. P2B could not select an unambiguous target entity.',
   records:[['Cake observations','579'],['Persistent candidates','12'],['Target resolution','AMBIGUOUS_TARGET']],
   note:'No unique cake identity was established; do not interpret candidate numbers as 12 separate physical cakes, and do not claim successful downstream QA.',
-  videoText:'Independent Mixkit cake clip · recorded as C2. The diagnostic result is ambiguous identity resolution, not successful QA.',
+  videoText:'The published C2 analysis composite loads automatically. Its diagnostic result is ambiguous identity resolution, not successful QA; the original Mixkit MP4 is not bundled.',
   summary:'C2 independent cake video · 10.041667 seconds · candidate ambiguity',
   videos:'c2-analysis.mp4'
  },
@@ -42,7 +42,7 @@ const CASES = {
   desc:'The independent Pexels bottle case has 625 bottle observations assigned to two competing persistent candidates (621 and 4). The unresolved second identity blocks unique target selection.',
   records:[['Bottle observations','625'],['Candidate 1','621 observations'],['Candidate 2','4 observations']],
   note:'P2C/P2D and downstream positive QA were not completed for this case. A 621/4 split demonstrates fragmented identity hypotheses, not a validated movement event.',
-  videoText:'Independent 29.27 s Pexels bottle clip · recorded as C2-R. This case demonstrates an identity fragmentation failure.',
+  videoText:'The published C2-R analysis composite loads automatically. It shows the recorded identity ambiguity; the original 29.27 s Pexels MP4 is not bundled.',
   summary:'C2-R independent bottle video · 29.268333 seconds · 621 + 4 split',
   videos:'c2r-analysis.mp4'
  }
@@ -76,12 +76,12 @@ function bindVideo(src,kind){
     setMessage('Loaded media duration differs from frozen input. Treat this as explanatory video only; not frame-synchronized evidence.');
   }else{
     setMessage(kind==='ANALYTICAL EXPORT'
-      ?'Published analysis export. Annotations are illustrative of saved detector/memory data; the query values are from frozen records.'
+      ?'Published analysis composite. Boxes and IDs appear only on exact source frames with recorded observations; no annotation is inferred for missing frames. Query outcomes are frozen records.'
       :'Exact original MP4 SHA-256 verified locally. It is not uploaded to the website.');
   }
   $('stage').classList.add('has-video');
   $('videoLabel').textContent=kind+' · '+caseId.toUpperCase();
-  video.currentTime=caseId==='c1'?Math.min(3.0697333,duration):0;
+  video.currentTime=caseId==='c1'?Math.min(QUERY[question].time,duration):0;
  };
  video.onerror=()=>{$('stage').classList.remove('has-video');setMessage('Video playback was unavailable. Original provider link and the recorded data remain accessible.')};
 }
@@ -161,7 +161,7 @@ function renderCase(id){
  $('timeLabel').textContent='00.000 s';
  $('stageEmpty').style.display='';
  $('localVideo').value='';
- setMessage('No media is bundled yet; choose the exact original MP4 locally, or use the provider link. Analysis exports will appear automatically if published.');
+ setMessage('Loading the published analysis composite if available. The original provider video remains external.');
  renderChart(id);
  const isC1=id==='c1';
  $('qaTitle').textContent=isC1?'Ask the recorded memory':'Why can’t this case answer?';
