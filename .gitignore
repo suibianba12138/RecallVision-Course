@@ -34,3 +34,10 @@ data/local/
 .vscode/
 Thumbs.db
 .DS_Store
+
+# Explicitly version the three frozen course demo input clips when imported.
+# Other raw video and research artifacts remain ignored.
+!course_demo/videos/
+!course_demo/videos/c1_bottle.mp4
+!course_demo/videos/c2_cake.mp4
+!course_demo/videos/c2r_bottle.mp4
