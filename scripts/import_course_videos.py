@@ -1,116 +1,101 @@
 #!/usr/bin/env python3
-"""Import exact course videos from the maintainer's local machine.
+"""Verify and import the frozen course video inputs LOCALLY.
 
-Run: python scripts/import_course_videos.py --push
-Or: python scripts/import_course_videos.py --c1 /path/a.mp4 --c2 /path/b.mp4 --c2r /path/c.mp4 --push
+Examples:
+  python scripts/import_course_videos.py --c1 /path/to/pixabay.mp4
+  python scripts/import_course_videos.py --c2 /path/to/mixkit.mp4 --c2r /path/to/pexels.mp4
+
+This tool NEVER commits or pushes raw third-party videos.
 """
 import argparse
 import hashlib
 import json
 import shutil
-import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-HOME = Path.home()
-C1_HASH = "24067f8ebc34d482728aa53df541afef3c28287a3841f7d5db255da202256730"
-FILES = {"c1": "c1_bottle.mp4", "c2": "c2_cake.mp4", "c2r": "c2r_bottle.mp4"}
-URLS = {
-    "c1": "https://pixabay.com/videos/bottle-hands-water-liquid-table-82261/",
-    "c2": "https://mixkit.co/free-stock-video/placing-a-cake-in-the-center-of-a-party-table-5117/",
-    "c2r": "https://www.pexels.com/video/person-placing-a-water-bottle-on-a-table-with-gemstones-6768198/",
+DEST = ROOT / "data" / "local" / "course_videos"
+CASES = {
+    "c1": {
+        "name": "c1_bottle.mp4",
+        "sha256": "24067f8ebc34d482728aa53df541afef3c28287a3841f7d5db255da202256730",
+        "source": "https://pixabay.com/videos/bottle-hands-water-liquid-table-82261/",
+        "duration_seconds": 7.9079,
+    },
+    "c2": {
+        "name": "c2_cake.mp4",
+        "sha256": "c9524bc8dd28b775572b74e9f6d44865c9158d0ce8cdee315462b9b2e2397255",
+        "source": "https://mixkit.co/free-stock-video/placing-a-cake-in-the-center-of-a-party-table-5117/",
+        "duration_seconds": 10.041667,
+    },
+    "c2r": {
+        "name": "c2r_bottle.mp4",
+        "sha256": "1b3a3efd32bc2c57bc775f8b9d68b66c25d3c8de264650601aeec22a5cbbf2c8",
+        "source": "https://www.pexels.com/video/person-placing-a-water-bottle-on-a-table-with-gemstones-6768198/",
+        "duration_seconds": 29.268333,
+    },
 }
-RANGES = {"c1": (7.7, 8.2), "c2": (8., 12.), "c2r": (28.5, 30.1)}
 
-def sha256(p):
+def sha256(path: Path) -> str:
     h = hashlib.sha256()
-    with p.open("rb") as f:
-        for block in iter(lambda: f.read(1048576), b""):
+    with path.open("rb") as f:
+        for block in iter(lambda: f.read(1024 * 1024), b""):
             h.update(block)
     return h.hexdigest()
 
-def probe_duration(p):
-    if not shutil.which("ffprobe"):
-        return None
-    r = subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","default=noprint_wrappers=1:nokey=1",str(p)],capture_output=True,text=True)
-    try:
-        return float(r.stdout.strip())
-    except ValueError:
-        return None
-
-def locate(key, override):
-    if override:
-        p = Path(override).expanduser().resolve()
-        if not p.is_file():
-            raise RuntimeError(f"{key}: missing file: {p}")
-        return p
-    if key == "c1":
-        p = HOME / "RecallVision/data/local/p1b_pixabay_bottle.mp4"
-        if p.is_file() and sha256(p) == C1_HASH:
-            return p
-    roots = [HOME/"RecallVision/data",HOME/"RecallVision/outputs",HOME/"recallvision-course-final",HOME/"Downloads",HOME/"下载"]
-    matches = []
-    for root in roots:
-        if root.is_dir():
-            matches += [p for p in root.rglob("*.mp4") if
-                        (("pixabay","bottle") if key=="c1" else ("mixkit","cake") if key=="c2" else ("pexels","bottle"))[0] in p.name.lower() or
-                        (("pixabay","bottle") if key=="c1" else ("mixkit","cake") if key=="c2" else ("pexels","bottle"))[1] in p.name.lower()]
-    matches = sorted(set(matches))
-    if key == "c1":
-        matches = [p for p in matches if sha256(p) == C1_HASH]
-    else:
-        valid = [p for p in matches if (d:=probe_duration(p)) is not None and RANGES[key][0] <= d <= RANGES[key][1]]
-        if valid: matches = valid
-    if len(matches) != 1:
-        raise RuntimeError(f"{key}: unable to select unique source MP4. Use --{key} /absolute/path/file.mp4; candidates: {matches[:12]}")
-    return matches[0]
-
-def main():
-    pa = argparse.ArgumentParser(description=__doc__)
-    for key in FILES: pa.add_argument("--"+key)
-    pa.add_argument("--push",action="store_true")
-    args = pa.parse_args()
-    if ROOT.name != "RecallVision-Course":
-        pa.error("run from a checked-out RecallVision-Course repository")
-    if args.push:
-        branch = subprocess.check_output(["git","branch","--show-current"],cwd=ROOT,text=True).strip()
-        if branch != "main": pa.error("refusing to push outside main")
-        if subprocess.check_output(["git","status","--porcelain"],cwd=ROOT,text=True).strip():
-            pa.error("working tree must be clean before --push")
-    dest = ROOT / "course_demo/videos"
-    dest.mkdir(parents=True,exist_ok=True)
-    manifest = {"schema":"recallvision_course_media_v1","clips":{}}
-    for key, name in FILES.items():
-        p = locate(key,getattr(args,key))
-        digest = sha256(p)
-        if key == "c1" and digest != C1_HASH:
-            raise RuntimeError("C1 SHA256 mismatch: not frozen experimental input")
-        duration = probe_duration(p)
-        if duration is not None and not (RANGES[key][0] <= duration <= RANGES[key][1]):
-            raise RuntimeError(f"{key}: unexpected video duration {duration:.2f} s")
-        if p.stat().st_size >= 100_000_000:
-            raise RuntimeError(f"{key}: file >= 100MB; GitHub won't accept direct upload")
-        target = dest/name
-        if p.resolve() != target.resolve():
-            shutil.copy2(p,target)
-        manifest["clips"][key] = {
-            "file":"course_demo/videos/"+name,
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    for case in CASES:
+        parser.add_argument("--" + case, metavar="PATH",
+                            help="Local original MP4 obtained from the listed source")
+    args = parser.parse_args()
+    selected = [(name, Path(getattr(args,name)).expanduser()) for name in CASES
+                if getattr(args,name)]
+    if not selected:
+        parser.print_help()
+        print("\nExpected original video sources and hashes:")
+        for name, item in CASES.items():
+            print(f"  {name}: {item['source']} sha256={item['sha256']}")
+        return 0
+    resolved = []
+    for name, path in selected:
+        if not path.is_file():
+            print(f"ERROR: {name}: input not found: {path}", file=sys.stderr)
+            return 1
+        actual = sha256(path)
+        expected = CASES[name]["sha256"]
+        if actual != expected:
+            print(f"ERROR: {name}: hash mismatch: {actual}; expected {expected}",file=sys.stderr)
+            print("Do not use a different resolution, crop or encoding to reproduce the frozen run.",
+                  file=sys.stderr)
+            return 1
+        resolved.append((name, path.resolve(), actual))
+    DEST.mkdir(parents=True,exist_ok=True)
+    manifest_file = DEST / "manifest.json"
+    manifest = {"schema":"recallvision_course_original_inputs_v1","clips":{}}
+    if manifest_file.exists():
+        try:
+            prior = json.loads(manifest_file.read_text(encoding="utf-8"))
+            if prior.get("schema") == manifest["schema"]:
+                manifest["clips"].update(prior.get("clips",{}))
+        except (OSError,ValueError):
+            pass
+    for name, source, digest in resolved:
+        target = DEST / CASES[name]["name"]
+        if source != target.resolve():
+            shutil.copy2(source,target)
+        manifest["clips"][name] = {
+            "path":str(target.relative_to(ROOT)),
             "sha256":digest,
-            "size_bytes":target.stat().st_size,
-            "duration_seconds":duration,
-            "source_page":URLS[key]
+            "source_page":CASES[name]["source"],
+            "recorded_duration_seconds":CASES[name]["duration_seconds"],
         }
-        print(f"{key}: {target} ({target.stat().st_size} bytes); sha256={digest}")
-    (dest/"manifest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
-    if args.push:
-        for command in [
-            ["git","add","course_demo/videos"],
-            ["git","diff","--cached","--check"],
-            ["git","commit","-m","media: add three course video inputs"],
-            ["git","push","origin","main"]
-        ]: subprocess.run(command,cwd=ROOT,check=True)
-        print("SUCCESS: video inputs published to main")
-    else: print("LOCAL_ONLY: to publish, re-run with --push")
+        print(f"VERIFIED: {name} -> {target.relative_to(ROOT)} [{digest}]")
+    manifest_file.write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+    print("LOCAL_IMPORT=PASS; no Git commit, push, video transformation or inference performed.")
+    print("Original videos are in data/local/ (gitignored); share official source links for reproduction.")
+    return 0
 
-if __name__=="__main__":
-    main()
+if __name__ == "__main__":
+    raise SystemExit(main())
