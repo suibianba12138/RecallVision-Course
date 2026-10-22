@@ -1,3 +1,0 @@
-# Optional perception runtime plus lightweight test dependencies.
-# For source-only tests without detector dependencies, install only `.[test]`.
--e .[perception,test]

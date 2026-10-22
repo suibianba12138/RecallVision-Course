@@ -1,5 +1,0 @@
-{
-  "event_type": "ZONE_CHANGE",
-  "source": "p2b_object_state_timelines",
-  "exact_transition_time_claimed": false
-}

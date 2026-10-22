@@ -1,7 +1,0 @@
-{
-  "max_transition_gap_seconds": 0.50,
-  "minimum_local_variation_samples": 3,
-  "minimum_segment_observations": 3,
-  "minimum_cluster_observations": 3,
-  "local_variation_requires_same_track": true
-}
