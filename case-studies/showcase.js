@@ -1,6 +1,6 @@
 /**
- * RecallVision 3-case demo viewer.
- * Facts: published C1 frozen memory/query artifacts and recorded C2/C2-R results.
+ * RecallVision C1 successful artifact replay viewer.
+ * Facts: published C1 frozen memory/query artifacts and the published C1 annotated video.
  * This is NOT live YOLO inference or a Python query service.
  */
 (() => {
@@ -19,32 +19,6 @@ const CASES = {
   videoText:'The published C1 analysis composite loads automatically. The original 7.91 s Pixabay MP4 remains available from its source link and is not separately bundled.',
   summary:'C1 development video · 7.9079 seconds · published frozen memory fixture',
   videos:'c1-analysis.mp4'
- },
- c2: {
-  name:'C2 · independent cake', target:'cake / unresolved persistent identity',
-  source:'https://mixkit.co/free-stock-video/placing-a-cake-in-the-center-of-a-party-table-5117/',
-  hash:'c9524bc8dd28b775572b74e9f6d44865c9158d0ce8cdee315462b9b2e2397255',
-  duration:10.041667, metadata:'10.0417 s • Mixkit 5117 • independent',
-  badge:'P2B / AMBIGUOUS_TARGET', flag:'BLOCKED', flagClass:'warn-label',
-  desc:'The new cake video produced 579 cake observations but 12 persistent cake candidates. P2B could not select an unambiguous target entity.',
-  records:[['Cake observations','579'],['Persistent candidates','12'],['Target resolution','AMBIGUOUS_TARGET']],
-  note:'No unique cake identity was established; do not interpret candidate numbers as 12 separate physical cakes, and do not claim successful downstream QA.',
-  videoText:'The published C2 analysis composite loads automatically. Its diagnostic result is ambiguous identity resolution, not successful QA; the original Mixkit MP4 is not bundled.',
-  summary:'C2 independent cake video · 10.041667 seconds · candidate ambiguity',
-  videos:'c2-analysis.mp4'
- },
- c2r: {
-  name:'C2-R · independent bottle', target:'bottle / 2 unresolved candidates',
-  source:'https://www.pexels.com/video/person-placing-a-water-bottle-on-a-table-with-gemstones-6768198/',
-  hash:'1b3a3efd32bc2c57bc775f8b9d68b66c25d3c8de264650601aeec22a5cbbf2c8',
-  duration:29.268333, metadata:'29.2683 s • Pexels 6768198 • independent',
-  badge:'P2B / AMBIGUOUS_TARGET', flag:'BLOCKED', flagClass:'warn-label',
-  desc:'The independent Pexels bottle case has 625 bottle observations assigned to two competing persistent candidates (621 and 4). The unresolved second identity blocks unique target selection.',
-  records:[['Bottle observations','625'],['Candidate 1','621 observations'],['Candidate 2','4 observations']],
-  note:'P2C/P2D and downstream positive QA were not completed for this case. A 621/4 split demonstrates fragmented identity hypotheses, not a validated movement event.',
-  videoText:'The published C2-R analysis composite loads automatically. It shows the recorded identity ambiguity; the original 29.27 s Pexels MP4 is not bundled.',
-  summary:'C2-R independent bottle video · 29.268333 seconds · 621 + 4 split',
-  videos:'c2r-analysis.mp4'
  }
 };
 const QUERY = {
@@ -106,20 +80,8 @@ function timelineC1(){
  return bars+'<div class="timeline-caption"><span>0.00 s</span><span>7.91 s</span></div><div class="timeline-legend"><span><i></i>Before</span><span><i class="event"></i>Evidence interval</span><span><i class="center"></i>After</span></div>';
 }
 function renderChart(id){
- if(id==='c1'){
-  $('timeline').innerHTML=timelineC1();
-  $('identityChart').innerHTML='<div class="identity-title">7 observed track IDs → 1 persistent bottle ID</div><div class="id-badges">'+
-  ['16','17','23','1','58','71','76'].map(id=>'<span>Track '+id+'</span>').join('')+'</div>';
- }else if(id==='c2'){
-  $('timeline').innerHTML='<p style="font-size:12px;color:#abc4d5;margin:0">No unique target timeline established at P2B. Unsupported timeline segments are intentionally not drawn.</p>';
-  $('identityChart').innerHTML='<div class="identity-title">12 recorded cake candidate identities</div><div class="id-badges">'+
-  Array.from({length:12},(_,i)=>'<span>Candidate '+String(i+1).padStart(2,'0')+'</span>').join('')+'</div>';
- }else{
-  $('timeline').innerHTML='<p style="font-size:12px;color:#abc4d5;margin:0">Unique target unresolved: movement-event timeline not established.</p>';
-  $('identityChart').innerHTML='<div class="identity-title">Recorded candidate observation split · 625 total</div>'+
-  [['Candidate A',621],['Candidate B',4]].map(([label,n])=>
-  '<div class="candidate-row"><span>'+label+'</span><div class="bar"><i style="width:'+100*n/625+'%"></i></div><span>'+n+'</span></div>').join('');
- }
+ $('timeline').innerHTML=timelineC1();
+ $('identityChart').innerHTML='<div class="identity-title">7 observed track IDs → 1 persistent bottle ID</div><div class="id-badges">'+['16','17','23','1','58','71','76'].map(id=>'<span>Track '+id+'</span>').join('')+'</div>';
 }
 function renderQuery(q){
  if(caseId!=='c1')return;
@@ -143,8 +105,8 @@ function jumpToAnswer(){
  }
 }
 function renderCase(id){
- caseId=id;question='where';clearVideo();
- const c=CASES[id];
+ caseId='c1';question='where';clearVideo();
+ const c=CASES.c1;
  $('caseTag').textContent=c.badge;
  $('caseMeta').textContent=c.metadata;
  $('stageText').textContent=c.videoText;
@@ -152,39 +114,28 @@ function renderCase(id){
  $('memoryDescription').textContent=c.desc;
  $('memoryFlag').textContent=c.flag;
  $('memoryFlag').className=c.flagClass;
- $('records').innerHTML=c.records.map(([a,b])=>
-  '<div class="record"><span>'+htmlEsc(a)+'</span><b>'+htmlEsc(b)+'</b></div>').join('');
+ $('records').innerHTML=c.records.map(([a,b])=>'<div class="record"><span>'+htmlEsc(a)+'</span><b>'+htmlEsc(b)+'</b></div>').join('');
  $('memoryNote').textContent=c.note;
  $('videoSource').href=c.source;
  $('dataSourceText').textContent=c.summary;
- $('videoLabel').textContent=id.toUpperCase()+' / NO VIDEO ATTACHED';
+ $('videoLabel').textContent='C1 / PUBLISHED ANALYSIS';
  $('timeLabel').textContent='00.000 s';
- $('stageEmpty').style.display='';
  $('localVideo').value='';
- setMessage('Loading the published analysis composite if available. The original provider video remains external.');
- renderChart(id);
- const isC1=id==='c1';
- $('qaTitle').textContent=isC1?'Ask the recorded memory':'Why can’t this case answer?';
- $('qaState').textContent=isC1?'C1 ARTIFACT REPLAY':'P2B BLOCKED';
- $('qaButtons').querySelectorAll('button').forEach(b=>{b.disabled=!isC1;b.classList.remove('active')});
- $('interpretNote').textContent=isC1?
- 'Query results are replayed from frozen C1 memory, not a fresh-video run.': 'These independent-video diagnostics are real blocked outcomes. No supported WHO/WHEN/BEFORE/WHERE response is claimed.';
- if(isC1)renderQuery('where');
- else {
-  $('answerLabel').textContent='STATUS / NO SUPPORTED ANSWER';
-  $('answerTitle').textContent='AMBIGUOUS_TARGET';
-  $('answerText').textContent=id==='c2'
-   ?'Twelve competing cake entity candidates were produced. The target was not uniquely resolved, so downstream QA success cannot be claimed.'
-   :'Two bottle entities (621 and 4 observations) remain. The system fails closed rather than selecting an unsupported target or inventing movement evidence.';
-  $('evidence').textContent='Evidence: recorded P2B diagnosis · no positive downstream query';
- }
- document.querySelectorAll('[data-case]').forEach(tab=>{
+ setMessage('Loading recorded C1 annotated video...');
+ renderChart('c1');
+ $('qaTitle').textContent='Ask the recorded memory';
+ $('qaState').textContent='C1 ARTIFACT REPLAY';
+ $('qaButtons').querySelectorAll('button').forEach(b=>{b.disabled=false;b.classList.remove('active')});
+ renderQuery('where');
+ tryAnalyticalVideo('c1');
+}
+document.querySelectorAll('[data-case]').forEach(tab=>{
   tab.classList.toggle('active',tab.dataset.case===id);
   tab.setAttribute('aria-selected',String(tab.dataset.case===id));
  });
  tryAnalyticalVideo(id);
 }
-document.querySelectorAll('[data-case]').forEach(tab=>tab.addEventListener('click',()=>renderCase(tab.dataset.case)));
+
 $('qaButtons').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>renderQuery(b.dataset.q)));
 video.addEventListener('timeupdate',()=>{$('timeLabel').textContent=fmt(video.currentTime)});
 $('localVideo').addEventListener('change',async ev=>{
