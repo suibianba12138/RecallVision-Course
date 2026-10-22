@@ -1,125 +1,180 @@
-# RecallVision-Course
+<div align="center">
 
-RecallVision builds structured visual memory from video observations and uses that memory for retrospective question answering. It is a computer-vision course project focused on tracking objects over time, recording state and event evidence, and retrieving answers with supporting timestamps and frames.
+# RecallVision
 
-> **License and release scope:** the project owner's original RecallVision source is licensed under AGPL-3.0-only; see [`LICENSE`](LICENSE) and [`COPYRIGHT`](COPYRIGHT). This source-only candidate excludes model weights, third-party package binaries, raw videos, and evidence images.
+### See. Remember. Answer.
 
-## Project overview
+**Object-Centric Visual Memory for Retrospective Video Question Answering**
 
-The system separates video processing from question answering. An offline pipeline converts video into observations, persistent entities, state timelines, and supported events. At query time, deterministic handlers retrieve a matching memory record and its evidence. The project does not claim that arbitrary new videos complete this pipeline successfully.
+A computer vision course project that turns frame-level observations into persistent object histories, supported events, and evidence-linked answers.
 
-“Long-Form” remains in the project title, but long-form performance is **NOT VALIDATED**.
+[**🌐 Project Website**](https://shengkaini.com/RecallVision-Course/) · [**▶️ Interactive Video Demo**](https://shengkaini.com/RecallVision-Course/case-studies/) · [**📖 Architecture**](docs/ARCHITECTURE.md) · [**💻 Code**](recallvision/)
 
-## System architecture
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-AGPL--3.0--only-2B8C8A)
+![Project](https://img.shields.io/badge/Project-Computer_Vision_Course-64748B)
+![Demo](https://img.shields.io/badge/Demo-C1_Recorded_Replay-188A69)
+
+</div>
+
+---
+
+<div align="center">
+
+[![RecallVision: Video → Memory → QA](docs/assets/recallvision-overview.svg)](https://shengkaini.com/RecallVision-Course/case-studies/)
+
+**Click the illustration to explore the real C1 video demonstration.**  
+*The diagram is illustrative; the linked webpage plays an annotated video built from recorded observations.*
+
+</div>
+
+## 🎬 Demo — From Video to Visual Memory
+
+The [**interactive demonstration**](https://shengkaini.com/RecallVision-Course/case-studies/) plays an annotated **7.91-second bottle video** and visualizes the frozen C1 records: recorded detections, short-term track IDs, persistent identity, movement evidence, and answers.
+
+<div align="center">
+
+[**▶ Watch the real annotated video and try four questions →**](https://shengkaini.com/RecallVision-Course/case-studies/)
+
+</div>
+
+The recorded demonstration follows a single bottle across time:
+
+<div align="center">
+
+| 01 · Perception | 02 · Memory | 03 · Retrieval |
+| :---: | :---: | :---: |
+| **48** bottle observations | **7 → 1** track IDs to persistent entity | **4** recorded query routes |
+| YOLO11n + ByteTrack | State timeline + `MOVE_OBJECT` | Answer + timestamp + frame |
+
+</div>
+
+**Example — “Where was the bottle before it moved?”**
+
+> **Left region**, supported by **frame 92 (3.0697 s)**. The observed movement event links left and center state segments over **3.0697–3.3033 s**.
+
+The public MP4 is an **annotated analysis export**, not the original raw source clip. Boxes and IDs are rendered only at frames with recorded observations; the website replays **precomputed C1 answers**, not fresh YOLO inference or a live Python QA service. See [media provenance and export details](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/README.md).
+
+## ✨ Highlights
+
+- **Visual perception:** YOLO11n detection and ByteTrack short-term tracking, including bounding boxes, timestamps, confidence and tracker IDs.
+- **Persistent entity memory:** consolidate compatible tracklets into an object-centric identity rather than assuming a tracker ID is permanent.
+- **State and event timelines:** remember supported object locations and evidence-bounded changes, including `MOVE_OBJECT`.
+- **Evidence-grounded retrieval:** return a recorded answer alongside a timestamp, frame, object ID or event reference.
+- **Explicit uncertainty:** preserve ambiguous or unsupported results rather than inventing an answer.
+
+## 🧩 How It Works
 
 ```text
-OFFLINE MEMORY CONSTRUCTION
+               OFFLINE: BUILD MEMORY
 Video
-  -> P1B perception: YOLO11n via Ultralytics + ByteTrack tracking config
-  -> P2A-R1 persistent-entity consolidation
-  -> P2B object-state timelines
-  -> P2C/P2D event memory
-  -> timestamped, evidence-linked artifacts
+  └─ YOLO11n + ByteTrack            Frame-level object observations
+      └─ Persistent entity (P2A-R1) Consolidate compatible tracklets
+          └─ State timeline (P2B)   Where objects were observed
+              └─ Event memory       Supported zone and movement events
+                  (P2C/P2D)
 
-QUERY-TIME RETRIEVAL
+               QUERY TIME: RETRIEVE
 Question
-  -> query type and target resolution
-  -> structured state/event/authorized-attribution lookup
-  -> answer status + event/time reference + supporting frame(s)
+  └─ Typed query handler
+      └─ Stored memory + authorized attribution (where applicable)
+          └─ Answer + evidence timestamp / frame
 ```
 
-The detector and tracker produce short-term observations; a tracker ID is not treated as persistent identity. The four query handlers operate over recorded memory, not raw pixels at query time. `WHO_MOVED_OBJECT` only reads pre-authorized attributed memory and fails closed when authorization is absent.
+The query handlers read **saved memory artifacts**, avoiding repeated video perception at query time. Their available answers depend on whether the relevant identity, state and event are sufficiently supported.
 
-See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for stage boundaries and interfaces.
+For stage contracts, modules and CLI boundaries, see [**System Architecture**](docs/ARCHITECTURE.md).
 
-## Main features
+## 💬 What Can It Answer?
 
-- Video observations with frame index, timestamp, class, bounding box, confidence, tracker ID, and spatial region.
-- Persistent object entities consolidated across short-term tracklets.
-- Per-entity state timelines and evidence-bounded movement events.
-- Four typed query handlers with explicit unsupported, missing, and ambiguous-target statuses.
-- A public, text-only summary of the recorded C1 demo; it does not ship evidence images or claim a public-checkout replay.
+| Query type | Question | Recorded C1 answer |
+|---|---|---|
+| `WHERE_OBJECT` | Where was the bottle last observed? | Center region · **5.0717 s**, frame 152 |
+| `WHEN_OBJECT_MOVED` | When did the bottle move? | Supported interval **3.0697–3.3033 s**, frames 92–99 |
+| `WHERE_OBJECT_BEFORE` | Where was it before that movement? | Left region · frame 92 |
+| `WHO_MOVED_OBJECT` | Who moved the bottle? | `obj:person:0001` from **pre-authorized attribution memory** |
 
-## Technical pipeline
+These are **frozen development-artifact results**. The WHO answer is read from an already-authorized event record; it is **not** automatic person attribution at query time. The movement interval bounds observed evidence, not the exact physical onset of motion.
 
-The frozen V1 path is `P1B -> P2A-R1 -> P2B -> P2C/P2D -> query`. P1B uses the optional Ultralytics adapter with `yolo11n.pt` and the Ultralytics `bytetrack.yaml` tracker configuration. P2A-R1 consolidates observations into persistent entities; P2B builds state timelines; P2C/P2D derive supported events. Query handlers retrieve from these artifacts and preserve ambiguity rather than selecting an unsupported target.
+## 🚀 Quick Start
 
-No model weights, raw videos, training data, or cached model files are included. Perception dependencies are optional; weights and their applicable terms must be handled separately. See [`requirements.txt`](requirements.txt) and [`configs/`](configs/).
-
-## Supported queries
-
-| Query | Retrieval contract |
-|---|---|
-| `WHERE_OBJECT` | Return the target’s last-observed state/location, with evidence. |
-| `WHEN_OBJECT_MOVED` | Return only supported movement event intervals. |
-| `WHERE_OBJECT_BEFORE` | Return an observed state before a uniquely identified supported movement event. |
-| `WHO_MOVED_OBJECT` | Return only a person identity from pre-authorized attributed memory; otherwise fail closed. |
-
-These are implemented query contracts, not a guarantee that each query will be answerable for every video.
-
-## Installation
-
-Python 3.10 or newer is required. Core schemas and the public text summary do not run a detector or require model weights. The full internal C1 replay is not included in this public candidate.
+**Requirements:** Python 3.10+.
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
+git clone https://github.com/suibianba12138/RecallVision-Course.git
+cd RecallVision-Course
+
+python3 -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
 python -m pip install -e ".[test]"
+python -m pytest -q
 ```
 
-For video perception only, install the optional extra in an environment with an appropriate PyTorch build:
+The source tree includes schemas, memory/event/query modules, configurations, CLIs and lightweight tests. The last recorded public-source check was **158 passed, 4 skipped**; optional OpenCV and local-artifact-dependent cases account for skips. These tests are **not** an end-to-end video evaluation.
+
+For optional detector/tracker dependencies:
 
 ```bash
 python -m pip install -e ".[perception]"
 ```
 
-This installs the declared Ultralytics/OpenCV dependencies, not a RecallVision checkpoint or dataset. The optional Ultralytics dependency is AGPL-3.0; upstream states its AGPL route is for projects whose full source is open under AGPL-3.0. Ultralytics model weights are not included; see [`docs/THIRD_PARTY_NOTICES.md`](docs/THIRD_PARTY_NOTICES.md) for the source-only distribution boundary.
+You will also need an appropriate PyTorch environment and separately obtained `yolo11n.pt` weights for perception. Installing dependencies alone does not generate the C1 demo artifacts.
 
-## Public demo summary
+### Explore Recorded Outputs
 
-The public page is a static summary of recorded course results. It is **not** the C1 replay program and does not validate artifact hashes or render evidence frames. The original C1 replay passed in the internal course package; its three Pixabay-derived evidence images are deliberately omitted from this public candidate, so a full replay is not reproducible from this checkout.
+Real C1 JSON artifacts are committed under [`course_demo/fixture/`](course_demo/fixture/):
 
-Serve the summary from the repository root:
-
-```bash
-python -m http.server 8000
+```text
+course_demo/fixture/
+├── manifest.json
+├── artifacts/
+│   ├── persistent_entities.json
+│   ├── object_state_timelines.json
+│   ├── move_object_events.json
+│   └── authorization_report.json
+└── queries/
+    ├── where_object.json
+    ├── when_object_moved.json
+    ├── where_object_before.json
+    └── who_moved_object.json
 ```
 
-Open `http://localhost:8000/public-demo/`. No model, source video, or image evidence is loaded. See [`public-demo/README.md`](public-demo/README.md) for the demonstration order and limitations.
+To locally obtain and hash-check the **exact original input videos**, see [**Course Reproduction Guide**](docs/COURSE_REPRODUCTION.md). Original third-party MP4 inputs, the internal evidence JPGs, model weights and full internal replay adapter are not included in the public `main` branch. The [website's annotated demo videos](https://github.com/suibianba12138/RecallVision-Course/tree/gh-pages/case-studies/media) are published separately on `gh-pages`.
 
-Do not describe this public summary as fresh inference or a successful full artifact replay.
+## 📂 Repository Layout
 
-## Validation results
-
-- **C1 — RECORDED PASS (internal artifact replay):** four-query development-artifact replay; not reproducible in this asset-restricted public checkout.
-- **C2 — AMBIGUOUS_TARGET:** independent cake video; target resolution blocked at P2B.
-- **C2-R — AMBIGUOUS_TARGET:** independent bottle video; target resolution blocked at P2B. P2C/P2D and downstream positive queries were not reached.
-
-Fresh-video end-to-end QA success is **not established**. Long-form generalization is **NOT VALIDATED**; cross-video robustness and automatic VLM attribution are **NOT ESTABLISHED**. Details are in [`docs/VALIDATION_RESULTS.md`](docs/VALIDATION_RESULTS.md).
-
-## Tests
-
-Run the included lightweight source tests:
-
-```bash
-python -m pytest -q
+```text
+recallvision/       Perception, entity-memory, event, and query code
+configs/            Frozen stage configurations
+course_demo/fixture Recorded C1 memory and query JSON
+tests/              Source-level and contract checks
+docs/               Architecture, validation, provenance, reproduction
+public-demo/        Lightweight source-only summary
 ```
 
-The public summary does not validate fixture hashes, run query handlers, or display supporting frames. In the lightweight test environment, OpenCV-dependent tests skip unless the optional perception extra is installed. These software tests are not video inference or a reproduction of the C1 replay.
+## 📊 Evaluation Scope
 
-## Current limitations
+**What we can show:** a real C1 development video with recorded detections, persistent object memory, an evidence-supported movement event and four recorded query outcomes.
 
-- Independent-video tests did not resolve a unique target, so their event/query stages are blocked or unrun.
-- Long-form performance, cross-video robustness, and open-vocabulary generalization are not validated or established.
-- Person attribution is not automatic; `WHO_MOVED_OBJECT` requires pre-authorized attributed memory.
-- The recorded internal C1 demo was an artifact replay, not fresh inference; the public summary is not an executable demo.
-- No dataset-level end-to-end accuracy has been established.
-- Model weights and raw videos are intentionally excluded.
+**What is not established:** reliable fresh-video end-to-end question answering, long-video generalization, cross-video robustness or automatic VLM person attribution. Independent-video diagnostic outcomes are documented transparently in [**Validation Results**](docs/VALIDATION_RESULTS.md); they are not presented as successful demonstrations.
 
-## Acknowledgments
+The project is an **educational system prototype**, not a new object detector or a validated general-purpose video QA model.
 
-The optional perception adapter depends on Ultralytics and its ByteTrack tracking implementation/configuration; see [`docs/THIRD_PARTY_NOTICES.md`](docs/THIRD_PARTY_NOTICES.md). The C1 clip was sourced from [Pixabay video 82261](https://pixabay.com/videos/bottle-hands-water-liquid-table-82261/), source SHA256 `24067f8ebc34d482728aa53df541afef3c28287a3841f7d5db255da202256730`. No video or evidence image is included in the public Git tree. The images remain only in the separate local internal fixture pending rights review.
+## 🔗 More Information
 
-## License
+[**Project Website**](https://shengkaini.com/RecallVision-Course/) ·
+[**Interactive C1 Demo**](https://shengkaini.com/RecallVision-Course/case-studies/) ·
+[**Architecture**](docs/ARCHITECTURE.md) ·
+[**Reproduction**](docs/COURSE_REPRODUCTION.md) ·
+[**Validation**](docs/VALIDATION_RESULTS.md) ·
+[**Media Credits**](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/README.md)
 
-Copyright (C) 2026 suibianba12138. The original RecallVision-Course source, configuration, tests, and documentation are licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only); see [`LICENSE`](LICENSE). Third-party components and media are governed by their own notices and are not relicensed by this statement. The repository does not distribute platform wheels/binaries, model weights, raw videos, or evidence images.
+## 📜 License & Credits
+
+Original RecallVision-Course source and documentation: **[AGPL-3.0-only](LICENSE)**, © 2026 suibianba12138. Third-party software and media retain their own terms; see [COPYRIGHT](COPYRIGHT) and [Third-Party Notices](docs/THIRD_PARTY_NOTICES.md).
+
+Perception uses [Ultralytics YOLO](https://github.com/ultralytics/ultralytics) and its ByteTrack integration. The C1 video is sourced from [Pixabay video 82261](https://pixabay.com/videos/bottle-hands-water-liquid-table-82261/); the published annotated composite and media provenance are documented [here](https://github.com/suibianba12138/RecallVision-Course/tree/gh-pages/case-studies/media).
+
+---
+
+<div align="center"><sub>RecallVision · Computer Vision Course Project · Structured memory, inspectable evidence.</sub></div>
