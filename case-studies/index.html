@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08182b">
+<meta name="description" content="RecallVision classroom demonstration: real C1 memory queries and independent C2/C2-R diagnostic cases.">
+<title>RecallVision | Three Real Video Cases</title>
+<link rel="stylesheet" href="./showcase.css">
+</head><body>
+<header class="nav"><a class="brand" href="../"><span class="brand-icon">RV</span> Recall<span>Vision</span></a><div class="nav-links"><a href="../">Project home ↗</a><a href="https://github.com/suibianba12138/RecallVision-Course" target="_blank" rel="noopener">Source code ↗</a></div></header>
+<main>
+<section class="intro shell"><div class="eyebrow"><span class="green-dot"></span> CLASSROOM VISUAL MEMORY EXPLORER <span class="monospace">/ FROZEN V1</span></div><h1>From seeing objects<br>to <em>remembering events.</em></h1><p>Follow the actual course pipeline across three independent video cases: perception, entity memory, event evidence, and retrospective questions. One recorded development example works; two independent examples reveal a concrete identity-resolution bottleneck.</p><div class="intro-actions"><a class="btn primary" href="#lab">Explore the cases ↓</a><a class="btn secondary" href="#pipeline">How it works ↗</a></div><div class="intro-metrics"><div><b>03</b><span>Recorded video cases</span></div><div><b>04</b><span>Typed query routes</span></div><div><b>01</b><span>Development replay success</span></div></div></section>
+<section class="lab-section" id="lab"><div class="shell">
+<div class="section-top"><div><div class="section-label">01 / RECORDED CASES</div><h2>Explore real outcomes, not invented predictions.</h2></div><p>Choose a case. The state and query panels are driven by published C1 records or frozen C2/C2-R diagnostics. Video playback is separate from processing.</p></div>
+<div class="cases" role="tablist" aria-label="Recorded videos">
+<button class="case-tab active" role="tab" aria-selected="true" data-case="c1"><span class="case-index">C1 / DEVELOPMENT</span><b>Bottle relocation</b><small><span class="dot good"></span> Four-query artifact replay</small></button>
+<button class="case-tab" role="tab" aria-selected="false" data-case="c2"><span class="case-index">C2 / INDEPENDENT</span><b>Cake placement</b><small><span class="dot warn"></span> Ambiguous target</small></button>
+<button class="case-tab" role="tab" aria-selected="false" data-case="c2r"><span class="case-index">C2-R / INDEPENDENT</span><b>New bottle scene</b><small><span class="dot warn"></span> Fragmented identity</small></button>
+</div>
+<div class="dashboard">
+<div class="visual-panel">
+<div class="panel-head"><span>01 <i>/</i> VIDEO EVIDENCE</span><b id="caseTag">RECORDED C1</b></div>
+<div class="stage" id="stage">
+<video id="clip" muted playsinline preload="metadata" controls></video>
+<div class="stage-empty" id="stageEmpty"><div class="stage-symbol">▶</div><b>Recorded source video</b><p id="stageText">Load the 7.91 s original C1 video locally to synchronize with the recorded event timeline.</p><span>Video is not bundled with this source-only public site.</span></div>
+<div class="stage-overlay" id="stageOverlay"><span id="videoLabel">OFFLINE VIDEO EVIDENCE</span><span id="timeLabel">00.000s</span></div>
+</div>
+<div class="video-actions"><label for="localVideo" class="load">＋ Load original video</label><input type="file" accept="video/*" hidden id="localVideo"><a id="videoSource" href="https://pixabay.com/videos/bottle-hands-water-liquid-table-82261/" target="_blank" rel="noopener">View source video ↗</a></div>
+<p class="media-note" id="videoNote">For C1, the original MP4 is SHA-256 verified before being linked to its research timestamps. Video remains on your device.</p>
+<div class="phase-label">REAL PIPELINE RECORDS <span id="caseMeta">7.9079 s • 29.97 FPS • Pixabay</span></div>
+<div class="pipeline-strip" id="pipelineStrip"><span>Video</span><b>→</b><span>YOLO + ByteTrack</span><b>→</b><span>P2A Entities</span><b>→</b><span>State / Events</span><b>→</b><span>QA</span></div>
+</div>
+<div class="memory-panel">
+<div class="panel-head"><span>02 <i>/</i> STRUCTURED MEMORY</span><b id="memoryFlag" class="good-label">SUPPORTED</b></div>
+<div class="record-type">TARGET OBJECT</div><h3 id="targetName">obj:bottle:0001</h3>
+<p id="memoryDescription">Seven fragmented bottle track IDs consolidated into a persistent entity.</p>
+<div class="records" id="records">
+<div class="record"><span>Detector / tracker output</span><b>7 track IDs</b></div>
+<div class="record"><span>Canonical observations</span><b>48</b></div>
+<div class="record"><span>Persistent target</span><b>1 resolved bottle</b></div>
+</div>
+<div class="section-divider"></div>
+<div class="record-type">STATE / EVENT TIMELINE</div>
+<div class="timeline" id="timeline"></div>
+<div class="identity-chart" id="identityChart"></div>
+<div class="memory-note" id="memoryNote">The MOVE_OBJECT interval bounds observations; it is not an exact physical onset.</div>
+</div>
+</div>
+<div class="qa-panel">
+<div class="qa-head"><div><span class="section-label">03 / RETROSPECTIVE QUERY</span><h3 id="qaTitle">Ask the recorded memory</h3></div><span id="qaState" class="qa-badge">C1 ARTIFACT REPLAY</span></div>
+<div class="qa-buttons" id="qaButtons">
+<button data-q="where" class="active">Where was the object last seen? <small>WHERE</small></button>
+<button data-q="when">When did it move? <small>WHEN</small></button>
+<button data-q="before">Where was it before moving? <small>BEFORE</small></button>
+<button data-q="who">Who moved it? <small>WHO</small></button>
+</div>
+<div class="answer"><span id="answerLabel">SUPPORTED ANSWER / RECORDED FIXTURE</span><h4 id="answerTitle">Center region</h4><p id="answerText">The bottle was last observed at 5.0717 s in the center region.</p><div class="evidence" id="evidence">Frame 152 · 5.0717 s <button id="jumpBtn" type="button">Jump to evidence ↗</button></div></div>
+<div class="warning-note" id="interpretNote">Selecting a question replays recorded C1 query JSON. It does not run Python, YOLO, or a VLM.</div>
+</div>
+<div class="sourcebar"><span id="dataSourceText">Dataset: Pixabay bottle, 7.9079 s · p1b_pixabay_bottle</span><a href="https://github.com/suibianba12138/RecallVision-Course/tree/main/course_demo/fixture" target="_blank" rel="noopener">Inspect recorded JSON ↗</a></div>
+</div></section>
+<section class="story shell" id="pipeline"><div class="section-label">02 / WHAT OUR COURSE PROJECT BUILT</div><h2>A complete architecture,<br><em>not a new detector.</em></h2><p class="story-lede">We combine established perception with an inspectable object-centric memory. The V1 query handlers read stored records instead of processing video pixels at question time.</p>
+<div class="story-steps">
+<div><span>01 — PERCEPTION</span><b>See</b><p>YOLO11n detects bounding boxes; ByteTrack assigns short-term track IDs. Real observations may fragment under occlusion.</p></div>
+<div><span>02 — MEMORY</span><b>Remember</b><p>P2A associates tracklets into persistent hypotheses. P2B stores observed state segments; P2C/P2D derive evidence-bounded events.</p></div>
+<div><span>03 — RETRIEVAL</span><b>Answer</b><p>Four typed query handlers retrieve supported states, movement intervals, prior states, or pre-authorized attribution with evidence.</p></div>
+</div></section>
+<section class="result-section"><div class="shell"><div class="section-label">03 / VALIDATION BOUNDARY</div><h2>What succeeded — and what didn't.</h2><div class="result-grid">
+<article class="result-card"><span class="result-number">C1</span><h3>Development artifact replay</h3><strong class="state-pass">PASS · 4/4 query routes</strong><p>Stored memory supported location, movement interval, before-state, and F3-authorized WHO results. The HTML replay uses already computed artifacts.</p></article>
+<article class="result-card"><span class="result-number">C2</span><h3>Independent cake scene</h3><strong class="state-fail">AMBIGUOUS_TARGET</strong><p>579 cake observations; 12 persistent cake candidates. The target cannot be uniquely bound, so positive QA is blocked.</p></article>
+<article class="result-card"><span class="result-number">C2-R</span><h3>Independent bottle scene</h3><strong class="state-fail">AMBIGUOUS_TARGET</strong><p>625 observations were split into two bottle entities (621 + 4). P2C/P2D and successful downstream queries were not established.</p></article>
+</div><p class="limit">Scope: long-form generalization NOT VALIDATED · fresh-video end-to-end QA NOT ESTABLISHED · automatic VLM attribution NOT ESTABLISHED.</p></div></section>
+</main><footer class="footer"><div class="shell"><b>RecallVision</b><span>Computer Vision Course Project · frozen V1 · educational demonstration</span><a href="../">Back to project home ↑</a></div></footer>
+<script src="./showcase.js"></script></body></html>
