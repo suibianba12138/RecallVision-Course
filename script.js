@@ -120,7 +120,7 @@ video.addEventListener('timeupdate',()=>{if(hasVideo && !video.seeking)renderTim
 video.addEventListener('ended',()=>pause());
 video.addEventListener('pause',()=>{if(hasVideo&&playing)pause()});
 
-function enableVideo(src, label){
+function enableVideo(src, label, kind='original'){
   pause();
   if(videoObjectUrl && videoObjectUrl!==src){URL.revokeObjectURL(videoObjectUrl);videoObjectUrl=null;}
   video.src=src;
@@ -130,8 +130,8 @@ function enableVideo(src, label){
     // The 7.9079s/237frame C1 fixture is bound to THIS original source.
     if(!Number.isFinite(length)||Math.abs(length-C1.duration)>0.7){
       $('clipNotice').textContent='Loaded a clip with a different duration. C1 answers may not match this video.';
-    } else {$('clipNotice').textContent=`${label} · ${length.toFixed(2)}s · C1 source-aligned only if the original hash matches.`;}
-    hasVideo=true;viewport.classList.add('has-video');$('mediaMode').textContent='LOCAL VIDEO LOADED';
+    } else if(kind==='analysis'){$('clipNotice').textContent='Published C1 analysis video: recorded observations and labels only; no new inference.';} else {$('clipNotice').textContent=`${label} · ${length.toFixed(2)}s · original MP4 hash verified.`;}
+    hasVideo=true;viewport.classList.add('has-video');$('mediaMode').textContent=kind==='analysis'?'RECORDED C1 VIDEO':'VERIFIED ORIGINAL VIDEO';
     renderTime(currentTime,true);
   };
   video.onerror=()=>{
@@ -164,29 +164,7 @@ $('videoFile').addEventListener('change',async (e)=>{
   enableVideo(videoObjectUrl,file.name);
 });
 
-// Automatically use the clip if the project owner placed it here.
-// Never fetch or package third-party source media by default.
-(function optionalBundledMedia(){
-  const probe = document.createElement('video');
-  probe.preload='metadata';
-  probe.onloadedmetadata=async()=>{
-    // The bundled-asset route is for local development. Verify original bytes before identifying it as source footage.
-    try{
-      const res=await fetch('assets/p1b_pixabay_bottle.mp4');
-      if(!res.ok || !globalThis.crypto?.subtle) return;
-      const buffer=await res.arrayBuffer();
-      const digest=await crypto.subtle.digest('SHA-256',buffer);
-      const hash=Array.from(new Uint8Array(digest),x=>x.toString(16).padStart(2,'0')).join('');
-      if(hash==='24067f8ebc34d482728aa53df541afef3c28287a3841f7d5db255da202256730')
-        enableVideo('assets/p1b_pixabay_bottle.mp4','Verified original C1 clip');
-      else $('clipNotice').textContent='Bundled clip has a different SHA-256; showing schematic instead.';
-    }catch{}
-  };
-  probe.onerror=()=>{};
-  probe.src='assets/p1b_pixabay_bottle.mp4';
-})();
-
-// Small-screen navigation
+// Automatically play the published C1 annotated analysis video.\nenableVideo('case-studies/media/c1-analysis.mp4','Published C1 analysis','analysis');\n\n// Small-screen navigation
 $('menuToggle').addEventListener('click',()=>{
  const nav=document.querySelector('.primary-nav');const isOpen=nav.classList.toggle('open');$('menuToggle').setAttribute('aria-expanded',String(isOpen));
 });
