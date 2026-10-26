@@ -16,7 +16,7 @@ This directory contains the archived **RecallVision V2 application source**. Ver
 
 ## 2. Quick start
 
-Requirements: **Python 3.12**, a working FFmpeg/OpenCV video decoder, and sufficient RAM and storage for local CPU inference.
+Requirements: **Python 3.12 on Linux** (the application uses the POSIX `fcntl` file-lock API), a working FFmpeg/OpenCV video decoder, and sufficient RAM and storage for local CPU inference. macOS has not been acceptance-tested; native Windows is not supported by the current Streamlit application.
 
 From the repository root:
 
@@ -37,7 +37,7 @@ export RECALLVISION_BACKEND_PYTHON="$(command -v python)"
 python -m streamlit run recallvision/apps/identity_review.py
 ```
 
-On Windows PowerShell, use `$env:RECALLVISION_MODEL_PATH = (Resolve-Path .\\models\\yolo11n.pt).Path` and `python -m streamlit run recallvision/apps/identity_review.py`. The app uses the current Python interpreter for its backend when `RECALLVISION_BACKEND_PYTHON` is unset.
+The app uses the current Python interpreter for its backend when `RECALLVISION_BACKEND_PYTHON` is unset. On Windows, use a suitable Linux environment (such as WSL2); native Windows execution is not supported by the current code.
 
 The app supports videos up to **250 MiB and 120 seconds**, subject to available resources. Original source videos, trained weights, and generated analysis outputs are not included in this repository. No API keys or hosted services are required.
 
