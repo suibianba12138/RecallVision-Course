@@ -1,7 +1,7 @@
 name: V2 Course Source Checks
 on:
   push:
-    branches: ["release/v2-course-*", "audit/v2-release-quality-*", "main"]
+    branches: ["release/v2-course-*", "main"]
     paths: ["v2/**", ".github/workflows/v2-course-checks.yml"]
   pull_request:
     paths: ["v2/**", ".github/workflows/v2-course-checks.yml"]
