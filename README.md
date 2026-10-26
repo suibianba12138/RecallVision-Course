@@ -8,7 +8,7 @@
 
 A local engineering prototype that connects object detection and tracking with persistent identity candidates, reversible human evidence review and source-linked historical queries.
 
-[**Explore the V2 showcase**](https://suibianba12138.github.io/RecallVision-Course/v2/) · [**V2-first homepage**](https://suibianba12138.github.io/RecallVision-Course/) · [**Watch the V1 C1 recording**](https://suibianba12138.github.io/RecallVision-Course/case-studies/)
+[**Project overview**](https://suibianba12138.github.io/RecallVision-Course/) · [**Explore V2 workflow & recorded results**](https://suibianba12138.github.io/RecallVision-Course/v2/) · [**Explore V1 & real C1 demo**](https://suibianba12138.github.io/RecallVision-Course/v1/)
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-AGPL--3.0--only-2B8C8A)
