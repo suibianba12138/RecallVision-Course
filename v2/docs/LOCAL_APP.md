@@ -23,6 +23,10 @@ Start with `python -m streamlit run recallvision/apps/identity_review.py`.
 
 For consistent behavior, operate from `v2/` so the correct package and configs are selected.
 
+## Local network exposure
+
+The committed Streamlit configuration binds the service to `127.0.0.1`. Open it from the same machine (the default Streamlit port is 8501). Do **not** override the bind address to a public interface or expose this service to untrusted networks: the application has no account-based authentication or multi-user isolation, and video parsing uses native decoding libraries. This configuration does not replace OS permissions or sandboxing.
+
 ## Storage and security
 
 - `outputs/`, `models/`, local uploads, secrets and raw media are excluded from Git.

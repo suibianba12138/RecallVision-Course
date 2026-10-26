@@ -1,6 +1,8 @@
 # RecallVision V2 — Code Guide
 
-This document provides a navigation map for the independently packaged V2 course source. It describes the archived implementation rather than an idealized or redesigned architecture.
+This document provides a navigation map for the independently packaged V2 course source. It documents the actual implementation and its module boundaries, not an idealized replacement architecture.
+
+**Suggested reading order:** `README.md` → `recallvision/apps/run_manager.py` → `recallvision/cli/pipeline.py` → `recallvision/pipeline/runner.py` → `recallvision/memory/trust_review.py` → `recallvision/apps/identity_review.py`. The application entry point is intentionally read last because it coordinates several subsystems.
 
 ## Entry points
 
@@ -31,6 +33,20 @@ This document provides a navigation map for the independently packaged V2 course
 - Backend interpreter: `RECALLVISION_BACKEND_PYTHON` (defaults to the interpreter running Streamlit).
 - Run outputs: `outputs/` (ignored by Git).
 - Original videos, generated evidence, model weights, and review databases are **not version controlled**.
+
+## Application entry-point structure
+
+The Streamlit integration file groups functions into the following responsibilities:
+
+| Source region | Responsibility |
+| --- | --- |
+| Configuration and context | Local paths, input hashes, run metadata, backend interpreter selection |
+| Local video intake | Upload and metadata checks, saved-run reuse and processing orchestration |
+| Evidence access | Cached candidate history, frame rendering, object and event timelines |
+| Trust review | Exact-frame review, event review, revocation and memory rebuild |
+| Interface navigation | Analyze, Explore, Ask, identity review and advanced diagnostics |
+
+The file remains large because the release retains tested stateful UI behavior and compatibility with existing helper-function tests. Decomposing it is a later refactor and requires fresh browser and end-to-end tests.
 
 ## Testing
 

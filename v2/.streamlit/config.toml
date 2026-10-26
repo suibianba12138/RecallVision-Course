@@ -6,4 +6,6 @@ secondaryBackgroundColor = "#262730"
 textColor = "#fafafa"
 
 [server]
+# The UI is a local single-user tool, not an authenticated public service.
+address = "127.0.0.1"
 maxUploadSize = 256

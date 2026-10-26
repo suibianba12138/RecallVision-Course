@@ -1,3 +1,15 @@
+"""Local Streamlit application for reviewable object-centric video memory.
+
+Workflow:
+    Analyze — ingest video or reopen a saved analysis and select an entity.
+    Explore — inspect/review exact observations and event candidates.
+    Ask — retrieve WHERE / WHEN / BEFORE from reviewed memory.
+
+The application targets a trusted single-user Linux workstation. The module
+also exposes helper functions imported by the archived regression tests; those
+interfaces are retained unchanged in this course-maintenance release.
+"""
+
 from __future__ import annotations
 
 import fcntl
@@ -1568,6 +1580,7 @@ def load_selected_run() -> None:
 
 
 def main() -> None:
+    """Initialize the local application and render its stateful workflow."""
     st.set_page_config(page_title="RecallVision", page_icon="🔎", layout="wide")
     st.markdown(
         "<style>"
