@@ -23,7 +23,7 @@ From the repository root:
 ```bash
 cd v2
 python3.12 -m venv .venv
-source .venv/bin/activate       # Windows: .venv\\Scripts\\activate
+source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e ".[app,perception]"
 ```
@@ -49,7 +49,7 @@ The app supports videos up to **250 MiB and 120 seconds**, subject to available 
 4. Open **Ask** to issue typed WHERE, WHEN, or WHERE-BEFORE requests. With insufficient review evidence, the app returns an explicit status rather than an unsupported answer.
 5. Reopen a saved run to reuse its original analysis. Run reuse validates video/model/configuration and output hashes.
 
-See [Application Guide](docs/LOCAL_APP.md) and [Architecture](docs/ARCHITECTURE.md) for further details.
+See [Application Guide](docs/LOCAL_APP.md), [Architecture](docs/ARCHITECTURE.md), and [Code Guide](docs/CODE_GUIDE.md) for further details.
 
 ## 4. Repository structure
 
@@ -70,7 +70,7 @@ v2/
 └── .streamlit/config.toml
 ```
 
-The entire V2 code tree is retained under `v2/recallvision` so internal imports resolve independently of the root V1 package. **Always change directory to `v2/` before launching or testing.** No V3 modules, private raw media, checkpoints or generated experiment runs are copied here.
+The entire V2 code tree is retained under `v2/recallvision` so internal imports resolve independently of the root V1 package. **Always change directory to `v2/` before launching or testing.** No V3 modules, private raw media, checkpoints or generated experiment runs are copied here. Some V2 development-stage evaluation and experimental modules remain in the archived source for completeness; see the Code Guide for the core application boundary.
 
 ## 5. Tests
 
