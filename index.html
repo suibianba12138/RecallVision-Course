@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f5f7fb">
-<meta name="description" content="RecallVision: object-centric visual memory from recorded C1 results (V1) to an evidence-aware Analyze → Explore → Ask workflow (V2). Explore both versions and their real outcomes.">
-<meta property="og:title" content="RecallVision — From video to visual memory">
-<meta property="og:description" content="Explore RecallVision 2.0 and 1.0 side by side: product workflow, recorded evaluations and the real C1 video demo.">
-<title>RecallVision — Video to Visual Memory</title>
+<meta name="description" content="RecallVision is a computer vision course project exploring object-centric video memory, event representation, and evidence-based historical retrieval. Documentation and recorded results are organized by version.">
+<meta property="og:title" content="RecallVision — Object-Centric Visual Memory">
+<meta property="og:description" content="RecallVision 2.0 and 1.0: system architecture, implemented functions, recorded experimental results, and demonstrations.">
+<title>RecallVision — Object-Centric Visual Memory</title>
 <link rel="stylesheet" href="pages.css">
 </head>
 <body>
@@ -19,49 +19,49 @@
 <section class="home-hero" id="overview"><div class="wrap hero-grid">
 <div>
 <div class="eyebrow">Computer vision · course project</div>
-<h1>From seeing<br>to <span class="hero-accent">remembering.</span></h1>
-<p class="lead">RecallVision explores how video observations can become searchable object histories, event records, and answers linked to visual evidence. Follow the project from its recorded V1 demonstration to the evidence-aware V2 application.</p>
-<div class="btnrow"><a class="btn btn-primary" href="v2/">Explore V2 <span aria-hidden="true">↗</span></a><a class="btn btn-secondary" href="v1/">Explore V1 <span aria-hidden="true">→</span></a></div>
-<p class="hero-note">Two distinct versions · separate evidence and limitations · no simulated live inference</p>
+<h1>Object-centric<br><span class="hero-accent">visual memory.</span></h1>
+<p class="lead">RecallVision investigates the representation and retrieval of visual information from recorded video. The project develops object-level observations, temporal event records, and evidence-linked queries. This site documents the original V1 pipeline and the extended V2 review-oriented application.</p>
+<div class="btnrow"><a class="btn btn-primary" href="v2/">View Version 2.0 <span aria-hidden="true">↗</span></a><a class="btn btn-secondary" href="v1/">View Version 1.0 <span aria-hidden="true">→</span></a></div>
+<p class="hero-note">Version-specific implementations, demonstrations, and documented evaluation results</p>
 </div>
 <div class="showcase-window" aria-label="Illustrative diagram of the visual-memory workflow, not an application screenshot">
 <div class="window-top"><span class="dots"><i></i><i></i><i></i></span><span>RECALLVISION / SYSTEM OVERVIEW</span><span>↗</span></div>
-<div class="window-body"><div class="mini-kicker">HOW VISUAL MEMORY WORKS</div><h3>Observe. Remember. Retrieve.</h3>
+<div class="window-body"><div class="mini-kicker">CONCEPTUAL ARCHITECTURE</div><h3>Perception · Memory · Retrieval</h3>
 <div class="flow-row">
-<div class="flow-item"><em>◩</em><strong>Video</strong><small>Visual evidence</small></div>
-<div class="flow-item"><em>◎</em><strong>Memory</strong><small>States + events</small></div>
-<div class="flow-item"><em>↗</em><strong>Answers</strong><small>Time-linked</small></div>
+<div class="flow-item"><em>◩</em><strong>Video</strong><small>Source frames</small></div>
+<div class="flow-item"><em>◎</em><strong>Memory</strong><small>Object and event records</small></div>
+<div class="flow-item"><em>↗</em><strong>Answers</strong><small>Evidence-linked</small></div>
 </div>
-<div class="window-foot">Conceptual illustration · see each version for recorded results</div>
+<div class="window-foot">Conceptual workflow diagram; not a screenshot or live inference result</div>
 </div></div>
 </div></section>
 <section class="section versions" id="versions"><div class="wrap">
-<div class="section-heading"><div class="eyebrow">Explore the evolution</div><h2>Two versions, two different milestones.</h2><p>Each version has its own page, results, and boundaries. V2 is the primary showcase; V1 is preserved as the original recorded course demonstration.</p></div>
+<div class="section-heading"><div class="eyebrow">PROJECT VERSIONS</div><h2>Version overview</h2><p>Each release is documented separately, including its architecture, supported functions, recorded outputs, and limitations. Version 2.0 is presented first; Version 1.0 remains available as the original course demonstration.</p></div>
 <div class="version-grid">
 <article class="version-card v2">
-<div class="version-icon" aria-hidden="true">◎</div><div class="version-label">02 / PRIMARY SHOWCASE</div>
+<div class="version-icon" aria-hidden="true">◎</div><div class="version-label">VERSION 2.0 / APPLICATION</div>
 <h3>RecallVision 2.0</h3>
-<p>An evidence-aware local application: upload a video, inspect object candidates, review uncertain observations and movement events, then ask trusted historical questions.</p>
-<div class="version-features"><span>Analyze → Explore → Ask</span><span>Identity review</span><span>Trusted queries</span><span>Real D2 run records</span></div>
-<a class="btn btn-mint" href="v2/">Explore V2 workflow and actual results ↗</a>
-<div class="capability">Recorded engineering milestone · real-video reliability remains limited · V2 source not yet public</div>
+<p>A local application that integrates video import, object-memory generation, identity and event review, and evidence-gated historical queries using the Analyze–Explore–Ask workflow.</p>
+<div class="version-features"><span>Analyze → Explore → Ask</span><span>Identity review</span><span>Trusted queries</span><span>D2 evaluation records</span></div>
+<a class="btn btn-mint" href="v2/">View V2 implementation and results ↗</a>
+<div class="capability">Recorded D2 application runs; independent evaluations identify unresolved perception and event-detection limitations. V2 application source remains private.</div>
 </article>
 <article class="version-card v1">
-<div class="version-icon" aria-hidden="true">▶</div><div class="version-label">01 / RECORDED FOUNDATION</div>
+<div class="version-icon" aria-hidden="true">▶</div><div class="version-label">VERSION 1.0 / BASELINE</div>
 <h3>RecallVision 1.0</h3>
-<p>The original object-memory pipeline, demonstrated with the real 7.91-second C1 bottle video and four recorded, evidence-linked query routes.</p>
-<div class="version-features"><span>Real C1 video</span><span>Recorded timeline</span><span>Four query types</span><span>Interactive replay</span></div>
-<a class="btn btn-secondary" href="v1/">Explore V1 demo and results ↗</a>
-<div class="capability">Frozen development-artifact replay · original V1 source available in the public repository</div>
+<p>The original object-centric perception and memory pipeline, documented using a 7.91-second C1 bottle sequence and four replayable historical query records.</p>
+<div class="version-features"><span>C1 source sequence</span><span>Recorded timeline</span><span>Four recorded queries</span><span>Evidence replay</span></div>
+<a class="btn btn-secondary" href="v1/">View V1 demonstration and results ↗</a>
+<div class="capability">The interactive presentation replays archived C1 outputs; the V1 implementation is available in the public repository.</div>
 </article>
 </div></div></section>
-<section class="section difference"><div class="wrap"><div class="section-heading"><div class="eyebrow">What changed</div><h2>From a recorded evidence chain<br>to a reviewable application.</h2></div>
+<section class="section difference"><div class="wrap"><div class="section-heading"><div class="eyebrow">VERSION COMPARISON</div><h2>Evolution of the system architecture</h2></div>
 <div class="compare">
-<div><strong>01 · Original proof of concept</strong><p>V1 shows saved object observations, movement evidence and query results on a single real C1 example. Its interactive website replays frozen records.</p></div>
-<div><strong>02 · Application and human review</strong><p>V2 adds controlled video import, saved-run reopening, identity and frame review, and explicit query refusal when evidence has not been approved.</p></div>
-<div><strong>03 · Honest evidence</strong><p>The V1 page includes the real C1 analysis video. The V2 page walks through recorded D2 application outputs, including uncertainty and known failure cases—not invented accuracy claims.</p></div>
+<div><strong>01 · Recorded V1 pipeline</strong><p>V1 records object observations, identity hypotheses, motion evidence, and historical query outputs. Its public demonstration presents the archived C1 sequence and associated records.</p></div>
+<div><strong>02 · Integrated V2 application</strong><p>V2 extends the pipeline with local video import, persistent analysis sessions, reversible identity and observation review, and query responses conditioned on reviewed evidence.</p></div>
+<div><strong>03 · Evaluation scope</strong><p>V1 results are drawn from frozen C1 records. V2 reports implementation-level validation and independent-video limitations. The public V2 interface reconstructs recorded results; it does not execute model inference.</p></div>
 </div></div></section>
-<section class="cta"><div class="wrap cta-grid"><div><div class="eyebrow" style="color:#6de8d6">Start with version 2.0</div><h2>Explore the system, not just the idea.</h2><p>See what each release actually built, what it returned, and where it still falls short.</p></div><div class="btnrow"><a class="btn btn-mint" href="v2/">Go to RecallVision 2.0 ↗</a><a class="btn btn-ghost" href="v1/">Version 1.0 →</a></div></div></section>
+<section class="cta"><div class="wrap cta-grid"><div><div class="eyebrow" style="color:#6de8d6">PROJECT DOCUMENTATION</div><h2>Architecture, demonstrations, and results</h2><p>Review the implemented capabilities, evidence sources, and evaluation boundaries of each project version.</p></div><div class="btnrow"><a class="btn btn-mint" href="v2/">Version 2.0 documentation ↗</a><a class="btn btn-ghost" href="v1/">Version 1.0 documentation →</a></div></div></section>
 </main>
 <footer class="footer"><div class="wrap footinner"><span>© 2026 RecallVision · Object-centric visual memory</span><span><a href="v2/">V2 overview</a> &nbsp;·&nbsp; <a href="v1/">V1 overview</a> &nbsp;·&nbsp; <a href="https://github.com/suibianba12138/RecallVision-Course">Source repository</a></span></div></footer>
 </body></html>
