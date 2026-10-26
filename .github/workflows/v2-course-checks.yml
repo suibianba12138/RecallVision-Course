@@ -24,7 +24,8 @@ jobs:
       - name: Syntax check
         run: python -m compileall -q recallvision tests
       - name: Import smoke tests
-        run: python -c "import recallvision; import recallvision.apps.run_manager; import recallvision.memory.store; print('Imports: OK')"
+        run: |
+          python -c "import recallvision; import recallvision.apps.run_manager; import recallvision.memory.store; print('Imports: OK')"
       - name: Regression tests
         run: python -m pytest -q tests/test_imports.py tests/test_memory_store.py tests/test_d2_application_services.py
       - name: Source distribution scan
