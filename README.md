@@ -13,9 +13,15 @@ A local engineering prototype that connects object detection and tracking with p
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-AGPL--3.0--only-2B8C8A)
 ![V2](https://img.shields.io/badge/V2-Showcase_Online-188A69)
-![Source](https://img.shields.io/badge/V2_Source-Release_Audit_Pending-64748B)
+![Source](https://img.shields.io/badge/V2_Source-Public_Code-188A69)
 
 </div>
+
+## V2 source code and course submission
+
+[**V2 source and installation**](v2/README.md) · [Architecture](v2/docs/ARCHITECTURE.md) · [Evaluation](v2/docs/EVALUATION.md) · [Third-party notices](v2/docs/THIRD_PARTY_NOTICES.md)
+
+**Repository layout:** the original V1 package remains at the root; V2 is independently packaged under `v2/`. Inference weights, third-party raw video, generated outputs, and private research artifacts are not distributed. Clean-clone tests and application behavior should be verified against the submitted requirements rather than equated with archived development results.
 
 ## What's new in RecallVision 2.0?
 

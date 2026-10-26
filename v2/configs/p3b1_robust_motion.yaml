@@ -1,0 +1,11 @@
+max_observation_gap_seconds: 0.50
+window_observation_count: 3
+maximum_window_radius_normalized: 0.025
+minimum_displacement_normalized: 0.030
+maximum_same_frame_duplicate_spread_normalized: 0.025
+maximum_bbox_width_normalized: 0.80
+maximum_bbox_scale_ratio: 1.50
+suspected_scene_min_entities: 3
+maximum_scene_anchor_residual_normalized: 0.025
+excluded_entity_classes:
+  - person

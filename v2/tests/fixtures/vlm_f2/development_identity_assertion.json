@@ -1,0 +1,9 @@
+{
+  "attribution_scope": "EVENT_LOCAL",
+  "identity_level": "ID_LEVEL_2_EVENT_LOCAL_VALIDATED",
+  "move_object_event_id": "move-object:p1b_pixabay_bottle:obj:bottle:0001:1->2",
+  "persistent_person_id": "obj:person:0001",
+  "ready_for_attribution": true,
+  "validation_source": "DOCUMENTED_EXTERNAL_HUMAN_REVIEW",
+  "video_id": "p1b_pixabay_bottle"
+}

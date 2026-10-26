@@ -1,0 +1,6 @@
+{
+  "minimum_keypoint_confidence": 0.50,
+  "minimum_keypoint_visibility": null,
+  "negative_control_horizon_seconds": 0.50,
+  "roi_margin": 0.0
+}

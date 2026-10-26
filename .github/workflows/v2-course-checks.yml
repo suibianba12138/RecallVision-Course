@@ -1,0 +1,46 @@
+name: V2 Course Source Checks
+on:
+  push:
+    branches: ["release/v2-course-*", "main"]
+    paths: ["v2/**", ".github/workflows/v2-course-checks.yml"]
+  pull_request:
+    paths: ["v2/**", ".github/workflows/v2-course-checks.yml"]
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: v2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install minimal dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[test]"
+      - name: Syntax check
+        run: python -m compileall -q recallvision tests
+      - name: Import smoke tests
+        run: python -c "import recallvision; import recallvision.apps.run_manager; import recallvision.memory.store; print('Imports: OK')"
+      - name: Regression tests
+        run: python -m pytest -q tests/test_imports.py tests/test_memory_store.py tests/test_d2_application_services.py
+      - name: Source distribution scan
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          blocked={'.env','secrets.toml'}
+          invalid=[]
+          for p in Path('.').rglob('*'):
+              if not p.is_file(): continue
+              if '.venv' in p.parts or '__pycache__' in p.parts: continue
+              if p.name in blocked or p.suffix.lower() in {'.pt','.pth','.ckpt','.safetensors','.mp4','.mov','.avi','.mkv','.sqlite','.db'}:
+                  invalid.append(str(p))
+          assert not invalid, 'Unintended assets: '+repr(invalid)
+          app=Path('recallvision/apps/identity_review.py').read_text()
+          assert '/home/nsk/' not in app
+          assert 'Path(sys.executable).resolve()' in app
+          print('Release checks: OK')
+          PY

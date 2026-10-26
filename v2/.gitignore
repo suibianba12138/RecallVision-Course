@@ -1,0 +1,37 @@
+# Environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+# Secrets
+.env
+.env.*
+!.env.example
+**/secrets.toml
+# Local videos, models, analysis and review results
+models/
+outputs/
+data/
+uploads/
+tmp/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.bin
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.jpg
+*.png
+*.sqlite
+*.db
+*.log

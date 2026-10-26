@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "recallvision-course-v2"
+version = "2.0.0"
+description = "Evidence-aware visual memory application for course delivery"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+license = {text = "AGPL-3.0-only"}
+dependencies = []
+
+[project.optional-dependencies]
+app = ["streamlit==1.45.1"]
+perception = ["ultralytics==8.4.171", "opencv-python>=4.11,<5", "PyYAML>=6"]
+test = ["pytest>=7,<10"]
+
+[tool.setuptools.packages.find]
+include = ["recallvision*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

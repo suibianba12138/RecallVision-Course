@@ -1,0 +1,16 @@
+{
+  "package_sha256": "74e7fdd4a937c0c3f6aae2a3583c4f760eb1b384034dde15bc307f1bf22f4503",
+  "package_version": "VLM-F1-PACKAGE-1.0",
+  "interpretation": {
+    "brief_reason": "Interaction is visible, but no candidate has sufficient causal support.",
+    "candidate_label": null,
+    "causal_support": false,
+    "evidence_frames": [92],
+    "interaction_supported": true,
+    "status": "NO_SUPPORTED_AGENT"
+  },
+  "interpretation_source": "EXTERNAL_CAPABILITY_EVALUATION_FIXTURE",
+  "move_object_event_id": "move-object:p1b_pixabay_bottle:obj:bottle:0001:1->2",
+  "target_object_id": "obj:bottle:0001",
+  "video_id": "p1b_pixabay_bottle"
+}
