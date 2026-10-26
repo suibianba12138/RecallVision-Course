@@ -1,7 +1,8 @@
 Copyright (C) 2026 suibianba12138
 
-Original RecallVision-Course source is licensed under the GNU Affero General
-Public License, version 3 only (AGPL-3.0-only). See LICENSE.
+Original RecallVision-Course V1 source and the V2 course application source
+are licensed under the GNU Affero General Public License, version 3 only
+(AGPL-3.0-only). See LICENSE.
 
 This notice does not grant rights to third-party software, model weights,
-videos, evidence images, or other media. See docs/THIRD_PARTY_NOTICES.md.
+videos, evidence images, or other media. See docs/THIRD_PARTY_NOTICES.md and v2/docs/THIRD_PARTY_NOTICES.md.
