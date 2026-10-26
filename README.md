@@ -37,7 +37,7 @@ V2 uses a local Streamlit front end. **The GitHub Pages site is a static showcas
 
 **Validation boundary:** the archived V2 regression run reported **416 passed, 7 skipped, 0 failed** on the original engineering worktree with external frozen fixtures. Clean-clone reproducibility and the final V2 manual browser QA are pending. The independent E1 evaluation found **0/5 annotated targets resolved automatically**, so the app is **not** a validated general-purpose video understanding system.
 
-**Source-status disclosure:** the complete V2 source remains in a private archived repository while public release files, third-party notices, absolute paths and fixture-dependent tests are reviewed. This public branch currently contains the preserved **V1 course source**, not the complete V2 application. The V1 and V2 application contracts are intentionally distinct.
+**Source availability:** the reviewed V2 course code and documentation are included under [`v2/`](v2/README.md). The original research repository remains private, and V3 development files are not part of this release. V1 and V2 have separate application contracts and project roots.
 
 ## V1 — preserved recorded C1 demonstration
 
