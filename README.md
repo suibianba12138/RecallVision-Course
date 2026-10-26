@@ -1,101 +1,206 @@
+<div align="center">
+
 # RecallVision
 
-**Object-Centric Visual Memory for Retrospective Video Understanding**
+### Evidence-Aware Visual Memory for Retrospective Video Understanding
 
-RecallVision is a computer vision course project that studies how video observations can be represented as persistent object histories and evidence-linked event records for subsequent retrieval. The project includes two distinct implementations.
+**An object-centric system for organizing video observations into persistent identities, temporal events, and evidence-linked historical queries.**
 
-**[Project Website](https://suibianba12138.github.io/RecallVision-Course/)** · **[V2 Demonstration](https://suibianba12138.github.io/RecallVision-Course/v2/)** · **[V1 Demonstration](https://suibianba12138.github.io/RecallVision-Course/v1/)**
+<br>
 
-## Versions
+[![Python V2](https://img.shields.io/badge/Python%20V2-3.12-3776AB?logo=python&logoColor=white)](v2/README.md)
+[![License](https://img.shields.io/badge/License-AGPL--3.0--only-2B8C8A)](LICENSE)
+[![Course Source Checks](https://github.com/suibianba12138/RecallVision-Course/actions/workflows/v2-course-checks.yml/badge.svg?branch=main)](https://github.com/suibianba12138/RecallVision-Course/actions/workflows/v2-course-checks.yml)
+[![V2 Source](https://img.shields.io/badge/V2%20Source-Public-286A68)](v2/)
+[![V1 Archive](https://img.shields.io/badge/V1%20Demo-Available-526A95)](course_demo/)
 
-| Version | Location | Implementation | Status |
-| --- | --- | --- | --- |
-| **2.0 — Course submission** | **[`v2/`](v2/README.md)** | Local Streamlit application; video import; reviewable object and event histories; evidence-gated WHERE, WHEN, and BEFORE queries | Source published; selected clean-runner tests passed. Full model and browser acceptance remain outstanding. |
-| **1.0 — Original implementation** | **[`recallvision/`](recallvision/) and [`course_demo/`](course_demo/)** | Object-centric detection, tracking, temporal state and event records; four frozen C1 query routes | Source and recorded C1 demonstration preserved. |
+<br>
 
-The V1 package remains at repository root to preserve existing course artifacts. **V2 is an independently packaged Python project**; enter `v2/` before running its commands. Ongoing V3 research is not part of this submission.
+**[Project Website](https://suibianba12138.github.io/RecallVision-Course/)** &nbsp;·&nbsp;
+**[Version 2.0 Demo](https://suibianba12138.github.io/RecallVision-Course/v2/)** &nbsp;·&nbsp;
+**[Version 1.0 Demo](https://suibianba12138.github.io/RecallVision-Course/v1/)** &nbsp;·&nbsp;
+**[V2 Source & Setup](v2/README.md)**
+
+</div>
+
+---
+
+## Overview
+
+RecallVision is a computer vision course project investigating how video observations can be converted into **object histories and event records** for retrospective retrieval. Instead of treating each question as an isolated video-processing task, the system stores structured observations and links its outputs to source frames and timestamps.
+
+The repository preserves two distinct development milestones:
+
+| | **RecallVision 2.0 — Course submission** | **RecallVision 1.0 — Recorded baseline** |
+| :-- | :-- | :-- |
+| **Focus** | Reviewable object memory and evidence-gated retrieval | Offline perception, memory construction and recorded queries |
+| **Interface** | Local Streamlit application: **Analyze → Explore → Ask** | Archived C1 video and interactive result replay |
+| **Queries** | Trusted **WHERE / WHEN / BEFORE** | Four recorded C1 routes, including authorized **WHO** |
+| **Implementation** | [`v2/`](v2/README.md) — independent Python project | [`recallvision/`](recallvision/) and [`course_demo/`](course_demo/) |
+| **Demonstration** | [View V2](https://suibianba12138.github.io/RecallVision-Course/v2/) | [View V1](https://suibianba12138.github.io/RecallVision-Course/v1/) |
+
+**V2 is the primary course submission.** The original V1 source remains at the repository root so that its code and recorded evidence are preserved without breaking existing paths. Ongoing V3 research is not included in this repository.
 
 ## RecallVision 2.0
 
-The V2 system extends the original object-memory pipeline with a local application and explicit review of uncertain evidence.
+### System workflow
+
+V2 extends the original object-memory pipeline with **human-reviewable identity and event evidence** and an integrated local interface.
 
 ```text
-Local video
-    ↓
-YOLO11n detection + ByteTrack
-    ↓
-Object/identity candidates → State and event candidates
-    ↓
-Human evidence review (identity, observation, movement)
-    ↓
-Evidence-aware memory reconstruction
-    ↓
-WHERE / WHEN / BEFORE + source frame and timestamp
+                       LOCAL VIDEO
+                            │
+                   YOLO11n + ByteTrack
+                            │
+                Observations and tracklets
+                            │
+                  Persistent object IDs
+                            │
+                  State / event records
+                            │
+              Identity & evidence review
+                            │
+                 Trusted memory rebuild
+                            │
+                 WHERE / WHEN / BEFORE
+                            │
+                  Answer + source evidence
 ```
 
-| Interface stage | Purpose |
-| --- | --- |
-| **Analyze** | Import a bounded local video, execute the processing pipeline, or reopen an existing run. |
-| **Explore** | Inspect object histories and movement candidates; review or revoke evidence decisions. |
-| **Ask** | Retrieve historical information from reviewed observations and events, or return an explicit insufficient-evidence status. |
+| Stage | Capabilities |
+| :-- | :-- |
+| **01 · Analyze** | Import a supported local video, execute the processing pipeline, inspect object candidates, or reopen a completed analysis. |
+| **02 · Explore** | Examine identity hypotheses and observed histories; explicitly review or revoke frame observations, entity associations, and motion-event candidates. |
+| **03 · Ask** | Retrieve historical states and reviewed event transitions with frame/time evidence. Return explicit uncertainty when the required evidence has not been approved. |
 
-The system does **not** treat unreviewed movement candidates as confirmed events, and it does not provide general automatic person attribution.
+Automatic detections and movement candidates are **not treated as confirmed facts**. Review applies to specific observations or events, not to unobserved intervals. V2 does not claim general automatic person attribution.
 
-### Installation and course assessment
+<div align="center">
 
-The complete V2 source, installation procedure and usage guide are available in **[v2/README.md](v2/README.md)**. The project is intended for **local Linux/Python 3.12 operation** with a separately obtained YOLO11n checkpoint.
+**[Explore the V2 Workflow and Recorded Results →](https://suibianba12138.github.io/RecallVision-Course/v2/)**
 
-Useful references:
+</div>
 
-- [V2 architecture](v2/docs/ARCHITECTURE.md)
-- [V2 code organization](v2/docs/CODE_GUIDE.md)
-- [V2 evaluation and limitations](v2/docs/EVALUATION.md)
-- [Third-party dependencies and licenses](v2/docs/THIRD_PARTY_NOTICES.md)
+### Recorded application results
 
-The [public V2 website](https://suibianba12138.github.io/RecallVision-Course/v2/) presents **recorded** results and a read-only workflow illustration; it does not run the inference system remotely.
+The archived V2 application completed local processing for the C1 bottle and P1-B coffee-cup clips:
 
-### Evaluation status
+<div align="center">
 
-The frozen V2 development environment reported **416 tests passed, 7 skipped**, with some tests using external archived fixtures. In the published repository, the GitHub Actions course-source checks have separately passed **12 dependency-light tests**. These are not equivalent to a complete end-to-end clean installation.
+| **C1 · Bottle** | **P1-B · Coffee cup** |
+| :--: | :--: |
+| **577** total observations | **3,268** total observations |
+| **50** bottle observations | **752** cup observations |
+| **1** persistent bottle candidate | **7** cup candidates |
+| **45.97 s** pipeline runtime | **90.65 s** pipeline runtime |
 
-Archived D2 application runs completed on the C1 bottle and coffee-cup sequences. Independent E1 evaluation, however, resolved **0/5 annotated targets automatically**. The prototype demonstrates an auditable integration workflow, **not validated general-purpose video understanding**. For detailed results and limitations, consult the [evaluation report](v2/docs/EVALUATION.md).
+</div>
+
+These numbers describe **completed application runs**, not confirmed object-level accuracy. Without explicit human review, the trusted query paths correctly report insufficient evidence or require event review.
+
+**Evaluation boundary:** the independent E1 evaluation resolved **0/5 annotated targets automatically** and found motion-event false positives. The prototype demonstrates system integration and inspectable evidence, **not validated general-purpose video understanding**.
+
+**Verification:** the original V2 engineering worktree reported **416 passed, 7 skipped**, including tests relying on external frozen fixtures. The published repository's course-source CI separately passed **14 selected tests** at the latest verified commit; this does not establish full fresh-video inference or browser acceptance.
+
+For complete results and limitations, see [V2 Evaluation](v2/docs/EVALUATION.md).
+
+### Run V2 locally
+
+**Requirements:** Linux, Python 3.12, a compatible locally obtained YOLO11n checkpoint, and the additional perception dependencies. Native Windows is not supported by the archived Streamlit application.
+
+```bash
+git clone https://github.com/suibianba12138/RecallVision-Course.git
+cd RecallVision-Course/v2
+
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ".[app,perception]"
+
+# Download the compatible YOLO11n weights separately.
+export RECALLVISION_MODEL_PATH="$PWD/models/yolo11n.pt"
+python -m streamlit run recallvision/apps/identity_review.py
+```
+
+The checkpoint is **not** included in Git. See the [V2 setup guide](v2/README.md) for environment configuration, supported video inputs, saved runs, and the complete application workflow.
+
+> **Local application only.** The public GitHub Pages demonstration replays recorded evidence and interface states; it does **not** run YOLO or the V2 Streamlit backend. V2 is intended for a trusted local operator and is not configured as an authenticated public service.
 
 ## RecallVision 1.0
 
-V1 preserves the original detection-to-memory pipeline and the recorded 7.91-second C1 bottle sequence. The [V1 interactive demonstration](https://suibianba12138.github.io/RecallVision-Course/case-studies/) replays authentic recorded observations and four saved query outputs (WHERE, WHEN, BEFORE, and an authorized WHO attribution). It does **not** execute fresh inference.
+V1 is the original **perception → object memory → historical retrieval** pipeline. The published C1 demonstration uses a real 7.91-second bottle sequence and replays saved observations, a movement event, and four typed query results.
 
-- [V1 interactive C1 results](https://suibianba12138.github.io/RecallVision-Course/case-studies/)
-- [C1 recorded query fixtures](course_demo/)
-- [V1 source code](recallvision/)
-- [V1 method and evaluation documents](docs/)
+<div align="center">
 
-The V1 application should be executed from the repository root; V2 commands should be executed from `v2/`.
+| **Perception** | **Persistent memory** | **Historical retrieval** |
+| :--: | :--: | :--: |
+| **48** bottle observations | **7 → 1** track IDs to object identity | **4** recorded query routes |
+| YOLO11n + ByteTrack | State timeline + `MOVE_OBJECT` | Query result + timestamp + frame |
 
-## Repository structure
+**[Watch the Annotated C1 Video and Query Replay →](https://suibianba12138.github.io/RecallVision-Course/case-studies/)**
+
+</div>
+
+**Example recorded query**
+
+> **Where was the bottle before it moved?**  
+> **Left region**, supported by **frame 92 (3.0697 s)**. The saved movement evidence spans frames **92–99 (3.0697–3.3033 s)**.
+
+| Query | Recorded C1 result |
+| :-- | :-- |
+| `WHERE_OBJECT` | Center region, frame 152 at 5.0717 s |
+| `WHEN_OBJECT_MOVED` | Movement interval, frames 92–99 |
+| `WHERE_OBJECT_BEFORE` | Left region, frame 92 |
+| `WHO_MOVED_OBJECT` | `obj:person:0001` from a **pre-authorized** attribution record |
+
+The C1 video is an **annotated analysis export**, not an online inference stream. Its query answers are frozen development artifacts; the WHO route does not establish automatic person identification.
+
+Resources: [V1 source](recallvision/) · [Recorded fixtures](course_demo/fixture/) · [Reproduction guide](docs/COURSE_REPRODUCTION.md).
+
+## Repository layout
 
 ```text
 RecallVision-Course/
-├── README.md                  # Version overview and course access
-├── v2/                        # Version 2.0: independent application + docs + tests
-│   ├── recallvision/          # V2 Python implementation
-│   ├── configs/               # V2 inference and event configurations
-│   ├── tests/                 # V2 source and integration tests
-│   ├── docs/                  # Technical guides and evaluations
+├── README.md                 # Project overview and version entry points
+├── v2/                       # V2 course application (independent project)
+│   ├── recallvision/         # App, perception, memory, events, query, pipeline
+│   ├── configs/              # Pipeline configurations
+│   ├── tests/                # Source and integration tests
+│   ├── docs/                 # Architecture, code guide, evaluation and usage
 │   └── pyproject.toml
-├── recallvision/              # Preserved V1 Python implementation
-├── course_demo/               # Original V1 C1 recorded-query fixtures
-├── configs/                   # V1 configuration
-├── tests/                     # V1 tests
-└── docs/                      # V1 documentation and project material
+├── recallvision/             # Preserved V1 implementation
+├── course_demo/              # V1 C1 recorded-query artifacts
+├── configs/                  # V1 configurations
+├── tests/                    # V1 tests
+└── docs/                     # V1 documentation and course resources
 ```
 
-The website is maintained separately on the `gh-pages` branch.
+**Run each version from its own project root.** The separately maintained `gh-pages` branch contains the public project website.
 
-## Security, reproducibility and licensing
+## Documentation & reproducibility
 
-- The course repository intentionally excludes raw third-party videos, model weights, uploaded files, generated outputs, and local review databases.
-- V2 uses bounded upload sizes, controlled subprocess commands and source-hash checks for reopening analyses. These measures **do not** make Streamlit suitable for unauthenticated public deployment.
-- The main application has a Linux/POSIX file-lock dependency. Full fresh-video inference and real-browser acceptance are **not yet verified** for the public release.
-- Project source code is licensed under [AGPL-3.0-only](LICENSE); third-party media and model licenses are independent. See [COPYRIGHT](COPYRIGHT) and [V2 third-party notices](v2/docs/THIRD_PARTY_NOTICES.md).
+| Document | Purpose |
+| :-- | :-- |
+| [V2 README](v2/README.md) | Installation, local execution, and supported workflow |
+| [V2 Architecture](v2/docs/ARCHITECTURE.md) | Processing stages and trust semantics |
+| [V2 Code Guide](v2/docs/CODE_GUIDE.md) | Source entry points, module responsibilities, and reading order |
+| [V2 Evaluation](v2/docs/EVALUATION.md) | Recorded results, testing boundaries, and limitations |
+| [V1 Reproduction](docs/COURSE_REPRODUCTION.md) | Archived C1 evidence and source provenance |
 
-**Repository scope:** final V2 course source and preserved V1 artifacts. V3 research is developed separately.
+**Distribution scope:** this repository includes source code, documentation, configurations and selected recorded C1 fixtures. It excludes private raw videos, trained model weights, uploaded content, generated run outputs and local review databases. Some archived tests require fixtures that are not in the public repository.
+
+**Security:** bounded uploads, fixed subprocess arguments, local-only service binding and provenance checks address specific local failure modes; they do not constitute a comprehensive security audit or make the application suitable for public deployment.
+
+**License:** project source is released under [AGPL-3.0-only](LICENSE). Third-party dependencies, models and media retain their own license terms. See [COPYRIGHT](COPYRIGHT) and [V2 Third-Party Notices](v2/docs/THIRD_PARTY_NOTICES.md).
+
+---
+
+<div align="center">
+
+**RecallVision · Computer Vision Course Project**
+
+[Project Website](https://suibianba12138.github.io/RecallVision-Course/) ·
+[V2 Code](v2/) ·
+[V2 Demonstration](https://suibianba12138.github.io/RecallVision-Course/v2/) ·
+[V1 Demonstration](https://suibianba12138.github.io/RecallVision-Course/v1/)
+
+</div>
