@@ -1,34 +1,46 @@
 <div align="center">
 
-# RecallVision
+# RecallVision 2.0
 
-### See. Remember. Answer.
+### See. Remember. Verify.
 
-**Object-Centric Visual Memory for Retrospective Video Question Answering**
+**Evidence-Aware Visual Memory for Retrospective Video Question Answering**
 
-A computer vision course project that turns frame-level observations into persistent object histories, supported events, and evidence-linked answers.
+A local engineering prototype that connects object detection and tracking with persistent identity candidates, reversible human evidence review and source-linked historical queries.
 
-[**▶️ C1 Analysis Video**](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/c1-analysis.mp4) · [**📖 Architecture**](docs/ARCHITECTURE.md) · [**💻 Code**](recallvision/)
+[**Explore the V2 showcase**](https://suibianba12138.github.io/RecallVision-Course/v2/) · [**V2-first homepage**](https://suibianba12138.github.io/RecallVision-Course/) · [**Watch the V1 C1 recording**](https://suibianba12138.github.io/RecallVision-Course/case-studies/)
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-AGPL--3.0--only-2B8C8A)
-![Project](https://img.shields.io/badge/Project-Computer_Vision_Course-64748B)
-![Demo](https://img.shields.io/badge/Demo-C1_Recorded_Replay-188A69)
+![V2](https://img.shields.io/badge/V2-Showcase_Online-188A69)
+![Source](https://img.shields.io/badge/V2_Source-Release_Audit_Pending-64748B)
 
 </div>
+
+## What's new in RecallVision 2.0?
+
+The project evolved from a recorded C1 visual memory demonstration into an evidence-aware local application:
+
+| Step | V2 capability |
+| --- | --- |
+| **Analyze** | Open a saved analysis or import a supported local video for the YOLO11n + ByteTrack pipeline. |
+| **Explore** | Inspect persistent identities, object-state histories and movement candidates; review or revoke observation, event and identity decisions. |
+| **Ask** | Retrieve trusted **WHERE / WHEN / BEFORE** answers with source-frame and timestamp evidence, or explicit uncertainty. |
+
+V2 uses a local Streamlit front end. **The GitHub Pages site is a static showcase, not a hosted video-analysis service.**
+
+**Validation boundary:** the archived V2 regression run reported **416 passed, 7 skipped, 0 failed** on the original engineering worktree with external frozen fixtures. Clean-clone reproducibility and the final V2 manual browser QA are pending. The independent E1 evaluation found **0/5 annotated targets resolved automatically**, so the app is **not** a validated general-purpose video understanding system.
+
+**Source-status disclosure:** the complete V2 source remains in a private archived repository while public release files, third-party notices, absolute paths and fixture-dependent tests are reviewed. This public branch currently contains the preserved **V1 course source**, not the complete V2 application. The V1 and V2 application contracts are intentionally distinct.
+
+## V1 — preserved recorded C1 demonstration
+
+The original V1 source, C1 JSON query fixtures and recorded analysis video remain available. V1 has four recorded query routes — WHERE, WHEN, BEFORE and a **pre-authorized WHO** artifact. The V2 trusted app implements WHERE / WHEN / BEFORE; it does **not** make automatic person-attribution claims.
+
+[Watch the real C1 video](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/c1-analysis.mp4) · [Explore the interactive C1 replay](https://suibianba12138.github.io/RecallVision-Course/case-studies/)
 
 ---
-
-<div align="center">
-
-[![RecallVision: Video → Memory → QA](docs/assets/recallvision-overview.svg)](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/c1-analysis.mp4)
-
-**Click the illustration to play the published C1 analysis video.**  
-*The diagram is illustrative; the linked MP4 contains annotations derived from recorded observations.*
-
-</div>
-
-## 🎬 Demo — From Video to Visual Memory
+## 🎬 Archived V1 Demo — From Video to Visual Memory
 
 The [**C1 analysis video**](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/c1-analysis.mp4) shows recorded detections, track IDs and structured event annotations from a **7.91-second bottle clip**. The frozen query answers remain available as JSON artifacts in this repository.
 
@@ -55,7 +67,7 @@ The recorded demonstration follows a single bottle across time:
 
 The public MP4 is an **annotated analysis export**, not the original raw source clip. Boxes and IDs are rendered only at frames with recorded observations; the published JSON includes **precomputed C1 answers**, not fresh YOLO inference or a live Python QA service. See [media provenance and export details](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/README.md).
 
-## ✨ Highlights
+## ✨ V1 Highlights
 
 - **Visual perception:** YOLO11n detection and ByteTrack short-term tracking, including bounding boxes, timestamps, confidence and tracker IDs.
 - **Persistent entity memory:** consolidate compatible tracklets into an object-centric identity rather than assuming a tracker ID is permanent.
@@ -63,7 +75,7 @@ The public MP4 is an **annotated analysis export**, not the original raw source 
 - **Evidence-grounded retrieval:** return a recorded answer alongside a timestamp, frame, object ID or event reference.
 - **Explicit uncertainty:** preserve ambiguous or unsupported results rather than inventing an answer.
 
-## 🧩 How It Works
+## 🧩 V1 Architecture
 
 ```text
                OFFLINE: BUILD MEMORY
@@ -85,7 +97,7 @@ The query handlers read **saved memory artifacts**, avoiding repeated video perc
 
 For stage contracts, modules and CLI boundaries, see [**System Architecture**](docs/ARCHITECTURE.md).
 
-## 💬 What Can It Answer?
+## 💬 V1 Recorded Questions
 
 | Query type | Question | Recorded C1 answer |
 |---|---|---|
@@ -96,7 +108,7 @@ For stage contracts, modules and CLI boundaries, see [**System Architecture**](d
 
 These are **frozen development-artifact results**. The WHO answer is read from an already-authorized event record; it is **not** automatic person attribution at query time. The movement interval bounds observed evidence, not the exact physical onset of motion.
 
-## 🚀 Quick Start
+## 🚀 V1 Source Quick Start
 
 **Requirements:** Python 3.10+.
 
@@ -141,7 +153,7 @@ course_demo/fixture/
 
 To locally obtain and hash-check the **exact original input videos**, see [**Course Reproduction Guide**](docs/COURSE_REPRODUCTION.md). Original third-party MP4 inputs, the internal evidence JPGs, model weights and full internal replay adapter are not included in the public `main` branch. The [C1 annotated analysis video](https://github.com/suibianba12138/RecallVision-Course/blob/gh-pages/case-studies/media/c1-analysis.mp4) is published separately on `gh-pages`.
 
-## 📂 Repository Layout
+## 📂 V1 Repository Layout
 
 ```text
 recallvision/       Perception, entity-memory, event, and query code
