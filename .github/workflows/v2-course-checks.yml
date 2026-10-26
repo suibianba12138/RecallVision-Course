@@ -21,6 +21,20 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install -e ".[test]"
+      - name: Packaging and release documentation checks
+        run: |
+          python - <<'PY'
+          import tomllib
+          from pathlib import Path
+          project=tomllib.loads(Path("pyproject.toml").read_text(encoding="utf-8"))
+          assert project["project"]["version"] == "2.0.0"
+          assert "app" in project["project"]["optional-dependencies"]
+          assert "perception" in project["project"]["optional-dependencies"]
+          assert Path("requirements.txt").read_text(encoding="utf-8") == '-e ".[app,perception]"\n'
+          for doc in ("README.md","docs/ARCHITECTURE.md","docs/LOCAL_APP.md","docs/EVALUATION.md","docs/THIRD_PARTY_NOTICES.md","docs/CODE_GUIDE.md"):
+              assert Path(doc).is_file(), f"Missing course documentation: {doc}"
+          print("Packaging and docs: OK")
+          PY
       - name: Syntax check
         run: python -m compileall -q recallvision tests
       - name: Import smoke tests
