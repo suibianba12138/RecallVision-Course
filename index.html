@@ -1,142 +1,67 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="RecallVision 2.0 — evidence-aware visual memory with identity review, trusted queries, and source-linked answers.">
-  <meta name="theme-color" content="#f7f9fc">
-  <meta property="og:title" content="RecallVision 2.0 — Visual memory you can verify">
-  <meta property="og:description" content="Explore structured visual memory, event timelines, and evidence-grounded video questions.">
-  <title>RecallVision 2.0 — Evidence-Aware Visual Memory</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5f7fb">
+<meta name="description" content="RecallVision: object-centric visual memory from recorded C1 results (V1) to an evidence-aware Analyze → Explore → Ask workflow (V2). Explore both versions and their real outcomes.">
+<meta property="og:title" content="RecallVision — From video to visual memory">
+<meta property="og:description" content="Explore RecallVision 2.0 and 1.0 side by side: product workflow, recorded evaluations and the real C1 video demo.">
+<title>RecallVision — Video to Visual Memory</title>
+<link rel="stylesheet" href="pages.css">
 </head>
 <body>
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="RecallVision home"><span class="brand-mark">R<span>V</span></span><span class="brand-name">Recall<span>Vision</span></span></a>
-      <nav class="primary-nav" aria-label="Main navigation">
-        <a href="#overview">Overview</a><a href="v2/">Explore V2</a><a href="#demo">V1 interactive demo</a><a href="case-studies/">C1 video</a><a href="#method">Architecture</a>
-      </nav>
-      <a class="nav-code" href="https://github.com/suibianba12138/RecallVision-Course" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-      <button class="mobile-menu" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-  </header>
-  <main>
-    <section class="hero" id="overview">
-      <div class="hero-halo"></div><div class="hero-lines"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-dot"></span> RECALLVISION 2.0 <span class="tiny-slash">/</span> EVIDENCE-AWARE MEMORY</div>
-          <h1>Video holds moments.<br><em>Build memories<br>you can verify.</em></h1>
-          <p class="hero-desc">RecallVision 2.0 brings video analysis, persistent identity review, reversible evidence decisions, and trusted historical queries into a local Analyze → Explore → Ask workflow.</p>
-          <div class="hero-actions"><a class="btn btn-primary" href="v2/">Explore RecallVision 2.0 <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="case-studies/">Watch the V1 C1 demo <span aria-hidden="true">↗</span></a></div>
-          <div class="hero-footnote"><span class="mini-icon">✳</span> Trusted WHERE / WHEN / BEFORE <span class="foot-separator"></span> Human review <span class="foot-separator"></span> Local analysis</div>
-        </div>
-        <div class="hero-visual" aria-label="Illustration of video memory and evidence retrieval">
-          <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
-          <div class="floating-chip top-chip"><span class="chip-pulse"></span> EVENT REGISTERED <b>03.07–03.30s</b></div>
-          <div class="memory-shell">
-            <div class="memory-titlebar"><div class="memory-dots"><i></i><i></i><i></i></div><span>VISUAL MEMORY / OBJECT 001</span><span>⌁</span></div>
-            <div class="memory-figure">
-              <div class="figure-grid"></div><div class="figure-box"><span class="box-anchor a1"></span><span class="box-anchor a2"></span><span class="box-anchor a3"></span><span class="box-anchor a4"></span><div class="bottle-art"><div class="bottle-cap"></div><div class="bottle-neck"></div><div class="bottle-body"><span></span></div></div><span class="box-tag">BOTTLE · 001</span></div>
-              <div class="figure-stamp">FRAME 0152 <span>05.07s</span></div>
-            </div>
-            <div class="memory-readout"><span>LAST OBSERVED</span><strong>center_region</strong><div class="readout-line"><span class="readout-dot"></span><span class="readout-dot"></span><span class="readout-dot active"></span></div></div>
-          </div>
-          <div class="floating-chip bottom-chip"><span class="answer-symbol">↳</span><div><small>QUERY RESOLVED</small><b>Evidence linked ✓</b></div></div>
-          <div class="hero-visual-label">ILLUSTRATIVE V1 OBJECT RECORD · NOT A REAL V2 SCREENSHOT</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="quick-facts"><div class="container quick-grid">
-      <div class="fact"><strong>02<span> / project version</span></strong><p>Evidence-aware visual memory</p></div>
-      <div class="fact"><strong>03<span> / trusted queries</span></strong><p>WHERE · WHEN · BEFORE</p></div>
-      <div class="fact"><strong>416<span> / regression passed</span></strong><p>7 skipped · browser QA pending</p></div>
-      <div class="fact fact-note"><span class="fact-caps">RESEARCH SCOPE</span><p>V2 is an engineering prototype; E1 found 0/5 targets automatically resolved.</p></div>
-    </div></section>
-
-    <section class="section method-section" id="v2-overview"><div class="container"><div class="section-head"><div><div class="section-kicker">01 <span></span> WHAT'S NEW IN 2.0</div><h2>Analyze. Explore.<br><i>Ask with evidence.</i></h2></div><p class="section-intro">V2 extends the original object-memory prototype with a local analysis app, persistent identity correction, reversible evidence review and three trusted historical queries.</p></div><div class="method-grid"><div class="method-card"><div class="method-top"><span>01 / ANALYZE</span><b>◩</b></div><h3>Video into candidates</h3><p>Import a supported local video or reopen a saved run. The local pipeline detects objects and assembles candidate histories.</p><div class="method-tag">Local Streamlit · YOLO11n · ByteTrack</div></div><div class="method-card"><div class="method-top"><span>02 / EXPLORE</span><b>◎</b></div><h3>Review visual memory</h3><p>Inspect tracklets, persistent identities and events. Confirm, reject or revoke review decisions without rewriting raw observations.</p><div class="method-tag">Identity overlay · Evidence review</div></div><div class="method-card"><div class="method-top"><span>03 / ASK</span><b>↗</b></div><h3>Trusted retrospective QA</h3><p>WHERE, WHEN and BEFORE read reviewed memory and link supported answers to frames and timestamps.</p><div class="method-tag">Trusted D1 query path</div></div><div class="method-card"><div class="method-top"><span>04 / VERIFY</span><b>≋</b></div><h3>Preserve uncertainty</h3><p>Ambiguity, missing detections and unreviewed events are not disguised as confident answers. E1 diagnosed substantial real-video limitations.</p><div class="method-tag">Evidence first · Explicit limitations</div></div></div><p style="margin-top:28px"><a class="btn btn-primary" href="v2/">Explore the full V2 system →</a></p></div></section><section class="section demo-section" id="demo">
-      <div class="container">
-        <div class="section-head dark-head"><div><div class="section-kicker light-kicker">02 <span></span> V1 / RECORDED COURSE ARCHIVE</div><h2>Ask what happened.<br><i>See the evidence.</i></h2></div><p class="section-intro">The following is the preserved V1 C1 replay, not the V2 trusted query app. Explore four genuine recorded answers from the development example. Select a question to navigate its event, state record, and timestamp.</p></div>
-        <div class="demo-mode-banner"><div><span class="live-dot"></span><b>RECORDED ARTIFACT EXPLORER</b><span class="banner-divider">·</span><span>Interactive visualization of precomputed C1 records — not fresh inference</span></div><span class="source-badge">SOURCE: PIXABAY BOTTLE / 7.91s</span></div>
-        <div class="demo-workspace">
-          <div class="workspace-left">
-            <div class="workspace-topline"><span><span class="panel-index">01</span> Video & temporal evidence</span><span id="mediaMode" class="panel-status">SCHEMATIC VIEW</span></div>
-            <div class="media-viewport" id="mediaViewport">
-              <video id="sourceVideo" preload="metadata" playsinline muted aria-label="Optional original bottle video"></video>
-              <div class="schematic-scene" id="schematicScene" aria-label="Schematic illustration; not an original video frame">
-                <div class="scene-grain"></div><div class="scene-window"></div><div class="scene-sun"></div><div class="scene-table"><div class="table-top"></div><div class="table-base"></div></div>
-                <div class="scene-object" id="sceneBottle"><span class="scene-cap"></span><span class="scene-neck"></span><span class="scene-body"><i></i></span></div>
-                <div class="scene-label">ILLUSTRATIVE SCENE <span>NOT RECORDED FOOTAGE</span></div>
-              </div>
-              <div class="zones-overlay"><span>LEFT</span><span>CENTER</span><span>RIGHT</span></div>
-              <div class="recording-hud"><span>◉</span> C1 // RECORDED DATA <span id="hudFrame">FRAME 0092</span></div>
-              <div class="frame-time" id="frameTime">03.070 <small>/ 07.908s</small></div>
-            </div>
-            <div class="player-controls">
-              <button id="playToggle" class="play-toggle" aria-label="Play or pause scene">▶</button>
-              <span class="player-time" id="playerTime">03.07s</span>
-              <input id="scrubber" aria-label="Scrub through the video timeline" type="range" min="0" max="7.9079" step="0.01" value="3.0697">
-              <span class="player-duration">07.91s</span>
-            </div>
-            <div class="evidence-strip">
-              <div class="evidence-strip-header"><span>EVIDENCE POINTS <small>Click to inspect</small></span><span class="data-pill">3 FRAME REFERENCES</span></div>
-              <div class="frame-cards" id="frameCards">
-                <button class="frame-card" type="button" data-frame="92"><span class="frame-icon">01</span><strong>Frame 092</strong><small>3.0697s · left</small><i></i></button>
-                <button class="frame-card" type="button" data-frame="99"><span class="frame-icon">02</span><strong>Frame 099</strong><small>3.3033s · center</small><i></i></button>
-                <button class="frame-card" type="button" data-frame="152"><span class="frame-icon">03</span><strong>Frame 152</strong><small>5.0717s · center</small><i></i></button>
-              </div>
-            </div>
-            <div class="clip-tools"><label class="clip-button" for="videoFile">＋ Load exact original MP4 (optional)</label><input type="file" accept="video/mp4,video/webm,video/*" id="videoFile" hidden><a href="https://pixabay.com/videos/bottle-hands-water-liquid-table-82261/" target="_blank" rel="noopener noreferrer">Original source ↗</a><span id="clipNotice">Published C1 analysis video loads automatically.</span></div>
-          </div>
-          <div class="workspace-right">
-            <div class="workspace-topline"><span><span class="panel-index">02</span> Memory query</span><span class="panel-status query-status"><span></span> C1 FIXTURE</span></div>
-            <div class="query-prompt">What would you like to recall?</div>
-            <div class="query-options" role="group" aria-label="Choose a recorded question">
-              <button class="query-option active" data-query="where" type="button"><span class="q-number">01</span><span class="q-text"><b>Where was the bottle last seen?</b><small>WHERE_OBJECT</small></span><span class="q-arrow">↗</span></button>
-              <button class="query-option" data-query="when" type="button"><span class="q-number">02</span><span class="q-text"><b>When did the bottle move?</b><small>WHEN_OBJECT_MOVED</small></span><span class="q-arrow">↗</span></button>
-              <button class="query-option" data-query="before" type="button"><span class="q-number">03</span><span class="q-text"><b>Where was it before moving?</b><small>WHERE_OBJECT_BEFORE</small></span><span class="q-arrow">↗</span></button>
-              <button class="query-option" data-query="who" type="button"><span class="q-number">04</span><span class="q-text"><b>Who moved the bottle?</b><small>WHO_MOVED_OBJECT</small></span><span class="q-arrow">↗</span></button>
-            </div>
-            <div class="answer-pane" aria-live="polite">
-              <div class="answer-top"><div class="answer-label">RETRIEVED ANSWER</div><span class="answer-validated"><span>✓</span> RECORDED RESULT</span></div>
-              <h3 id="answerHeadline">Center region</h3><p id="answerText">The bottle was last observed in the center region at 5.07 seconds.</p>
-              <div class="answer-meta"><div><span>SUPPORT</span><b id="answerSupport">Frame 152 · 5.0717s</b></div><div><span>ENTITY</span><b id="answerEntity">obj:bottle:0001</b></div></div>
-              <button class="jump-evidence" id="jumpEvidence" type="button">Jump to supporting frame <span>→</span></button>
-            </div>
-          </div>
-        </div>
-        <div class="memory-panel"><div class="memory-panel-head"><div><span class="panel-index">03</span> <strong>Object memory</strong><small>obj:bottle:0001</small></div><span>OBSERVED STATES ONLY</span></div>
-          <div class="memory-timeline"><div class="timeline-scale"><span>0s</span><span>2s</span><span>4s</span><span>6s</span><span>7.91s</span></div><div class="timeline-track"><div class="state-block block-left" id="leftBlock"><span>LEFT REGION</span></div><div class="event-block" id="eventBlock"><span>MOVE_OBJECT</span></div><div class="state-block block-center" id="centerBlock"><span>CENTER REGION</span></div><span class="timeline-cursor" id="timelineCursor"></span></div>
-            <div class="timeline-key"><span><i class="key-left"></i> State 1 <em>2.30–3.07s</em></span><span><i class="key-event"></i> Movement evidence <em>3.07–3.30s</em></span><span><i class="key-center"></i> State 2 <em>3.30–5.07s</em></span></div></div>
-        </div>
-        <p class="demo-disclaimer"><span>ⓘ</span> If no local MP4 is loaded, the player shows a labeled schematic illustration. The answer/timestamp values come from the publicly documented C1 records. WHO attribution uses a previously authorized artifact; no VLM runs here.</p>
-      </div>
-    </section>
-
-    <section class="section method-section" id="method"><div class="container">
-      <div class="section-head"><div><div class="section-kicker">03 <span></span> V1 PIPELINE</div><h2>From pixels to<br><i>persistent memory.</i></h2></div><p class="section-intro">A modular, inspectable pipeline separates expensive offline perception from lightweight, evidence-grounded query retrieval.</p></div>
-      <div class="method-flow"><div class="flow-pill">VIDEO INPUT <span>→</span></div><div class="flow-pill">PERCEPTION <span>→</span></div><div class="flow-pill">PERSISTENT ENTITIES <span>→</span></div><div class="flow-pill">STATE + EVENT MEMORY <span>→</span></div><div class="flow-pill is-final">QUERY + EVIDENCE ↗</div></div>
-      <div class="method-grid"><div class="method-card"><div class="method-top"><span>01 / PERCEIVE</span><b>◩</b></div><h3>Detect & track</h3><p>YOLO11n provides frame-level detections; ByteTrack associates short-term observations across time.</p><div class="method-tag">YOLO11n · ByteTrack</div></div>
-      <div class="method-card"><div class="method-top"><span>02 / CONSOLIDATE</span><b>◎</b></div><h3>Build identity</h3><p>Tracklets are organized into persistent entity hypotheses. Ambiguous identity is retained rather than guessed.</p><div class="method-tag">P2A-R1 · Persistent entities</div></div>
-      <div class="method-card"><div class="method-top"><span>03 / REMEMBER</span><b>≋</b></div><h3>Record states & events</h3><p>Observed spatial states and evidence-bounded transitions become timestamped memory records.</p><div class="method-tag">P2B · P2C · P2D</div></div>
-      <div class="method-card"><div class="method-top"><span>04 / RETRIEVE</span><b>↗</b></div><h3>Answer with evidence</h3><p>Typed queries read the stored state, event, and authorized-attribution records—without rerunning perception.</p><div class="method-tag">Four query contracts</div></div></div>
-      <div class="principle"><span class="principle-symbol">“</span><blockquote>Answers should point back to the observation—not outrun the evidence.</blockquote><span>RECALLVISION DESIGN PRINCIPLE</span></div>
-    </div></section>
-
-    <section class="section results-section" id="results"><div class="container">
-<div class="section-head"><div><div class="section-kicker">04 <span></span> V1 C1 RECORDED RESULTS</div><h2>From detection<br><i>to historical answers.</i></h2></div><p class="section-intro">Follow one real development video, its recorded object memory, and four evidence-grounded query outcomes.</p></div>
-<div class="results-grid">
-<div class="result-card success-result"><div class="result-head"><span>01 / PERCEPTION</span><span class="result-indicator">● RECORDED</span></div><div class="result-hero">48<span> observations</span></div><h3>Tracked bottle</h3><p>Recorded YOLO11n and ByteTrack bounding boxes appear only on the exact source frames with observations.</p><div class="result-footer"><span>REAL C1 VIDEO</span><span>7.91 seconds</span></div></div>
-<div class="result-card success-result"><div class="result-head"><span>02 / MEMORY</span><span class="result-indicator">● RECORDED</span></div><div class="result-hero">07<span> → 01</span></div><h3>Persistent entity</h3><p>Seven short-term track IDs consolidated into one bottle identity, two state segments and one evidence-supported movement interval.</p><div class="result-footer"><span>LEFT → CENTER</span><span>3.07–3.30 s</span></div></div>
-<div class="result-card success-result"><div class="result-head"><span>03 / QUERY</span><span class="result-indicator">● RECORDED PASS</span></div><div class="result-hero">04<span>/04</span></div><h3>Historical queries</h3><p>WHERE, WHEN, BEFORE and pre-authorized WHO show the saved answer alongside the corresponding time-linked evidence.</p><div class="result-footer"><span>C1 ARTIFACT REPLAY</span><span>Not new inference</span></div></div>
-</div><div class="limits-band"><div><strong>What this demo shows</strong><p>A recorded C1 object-memory pipeline with genuine observations and query evidence.</p></div><span class="limits-separator"></span><div><strong>Scope</strong><p>This is a development-artifact replay, not evidence of reliable general-purpose long-video or new-video QA.</p></div></div>
+<header class="topbar"><div class="wrap topbar-inner">
+<a class="logo" href="./" aria-label="RecallVision home"><span class="logo-mark">R<b>V</b></span>RecallVision</a>
+<nav class="navlinks" aria-label="Main navigation"><a class="active" href="./">Overview</a><a href="v2/">Version 2.0</a><a href="v1/">Version 1.0</a><a class="minor" href="#versions">Compare</a></nav>
+<a class="github-link" href="https://github.com/suibianba12138/RecallVision-Course" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+</div></header>
+<main>
+<section class="home-hero" id="overview"><div class="wrap hero-grid">
+<div>
+<div class="eyebrow">Computer vision · course project</div>
+<h1>From seeing<br>to <span class="hero-accent">remembering.</span></h1>
+<p class="lead">RecallVision explores how video observations can become searchable object histories, event records, and answers linked to visual evidence. Follow the project from its recorded V1 demonstration to the evidence-aware V2 application.</p>
+<div class="btnrow"><a class="btn btn-primary" href="v2/">Explore V2 <span aria-hidden="true">↗</span></a><a class="btn btn-secondary" href="v1/">Explore V1 <span aria-hidden="true">→</span></a></div>
+<p class="hero-note">Two distinct versions · separate evidence and limitations · no simulated live inference</p>
+</div>
+<div class="showcase-window" aria-label="Illustrative diagram of the visual-memory workflow, not an application screenshot">
+<div class="window-top"><span class="dots"><i></i><i></i><i></i></span><span>RECALLVISION / SYSTEM OVERVIEW</span><span>↗</span></div>
+<div class="window-body"><div class="mini-kicker">HOW VISUAL MEMORY WORKS</div><h3>Observe. Remember. Retrieve.</h3>
+<div class="flow-row">
+<div class="flow-item"><em>◩</em><strong>Video</strong><small>Visual evidence</small></div>
+<div class="flow-item"><em>◎</em><strong>Memory</strong><small>States + events</small></div>
+<div class="flow-item"><em>↗</em><strong>Answers</strong><small>Time-linked</small></div>
+</div>
+<div class="window-foot">Conceptual illustration · see each version for recorded results</div>
+</div></div>
 </div></section>
-
-<section class="outro"><div class="container outro-inner"><div class="outro-lines"></div><div class="section-kicker light-kicker">RECALLVISION 2.0 / COURSE PROJECT</div><h2>Give every video<br><i>a memory.</i></h2><p>Explore the V2 workflow and the preserved C1 recorded demonstration. V2 source publication remains a separate release gate.</p><div class="outro-actions"><a class="btn btn-white" href="v2/" target="_blank" rel="noopener noreferrer">Explore V2 <span>↗</span></a><a class="btn btn-glass" href="https://github.com/suibianba12138/RecallVision-Course/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer">Read the architecture <span>↗</span></a></div></div></section>
-  </main>
-  <footer class="site-footer"><div class="container footer-inner"><div class="footer-brand"><span class="brand-mark small">R<span>V</span></span><span>RecallVision <small>· structured visual memory</small></span></div><p>Course prototype · © 2026 <span>·</span> C1 evidence linked to recorded artifacts</p><a href="https://pixabay.com/videos/bottle-hands-water-liquid-table-82261/" target="_blank" rel="noopener noreferrer">Original video credit: AldoRafa / Pixabay ↗</a></div></footer>
-  <script src="script.js"></script>
-</body>
-</html>
+<section class="section versions" id="versions"><div class="wrap">
+<div class="section-heading"><div class="eyebrow">Explore the evolution</div><h2>Two versions, two different milestones.</h2><p>Each version has its own page, results, and boundaries. V2 is the primary showcase; V1 is preserved as the original recorded course demonstration.</p></div>
+<div class="version-grid">
+<article class="version-card v2">
+<div class="version-icon" aria-hidden="true">◎</div><div class="version-label">02 / PRIMARY SHOWCASE</div>
+<h3>RecallVision 2.0</h3>
+<p>An evidence-aware local application: upload a video, inspect object candidates, review uncertain observations and movement events, then ask trusted historical questions.</p>
+<div class="version-features"><span>Analyze → Explore → Ask</span><span>Identity review</span><span>Trusted queries</span><span>Real D2 run records</span></div>
+<a class="btn btn-mint" href="v2/">Explore V2 workflow and actual results ↗</a>
+<div class="capability">Recorded engineering milestone · real-video reliability remains limited · V2 source not yet public</div>
+</article>
+<article class="version-card v1">
+<div class="version-icon" aria-hidden="true">▶</div><div class="version-label">01 / RECORDED FOUNDATION</div>
+<h3>RecallVision 1.0</h3>
+<p>The original object-memory pipeline, demonstrated with the real 7.91-second C1 bottle video and four recorded, evidence-linked query routes.</p>
+<div class="version-features"><span>Real C1 video</span><span>Recorded timeline</span><span>Four query types</span><span>Interactive replay</span></div>
+<a class="btn btn-secondary" href="v1/">Explore V1 demo and results ↗</a>
+<div class="capability">Frozen development-artifact replay · original V1 source available in the public repository</div>
+</article>
+</div></div></section>
+<section class="section difference"><div class="wrap"><div class="section-heading"><div class="eyebrow">What changed</div><h2>From a recorded evidence chain<br>to a reviewable application.</h2></div>
+<div class="compare">
+<div><strong>01 · Original proof of concept</strong><p>V1 shows saved object observations, movement evidence and query results on a single real C1 example. Its interactive website replays frozen records.</p></div>
+<div><strong>02 · Application and human review</strong><p>V2 adds controlled video import, saved-run reopening, identity and frame review, and explicit query refusal when evidence has not been approved.</p></div>
+<div><strong>03 · Honest evidence</strong><p>The V1 page includes the real C1 analysis video. The V2 page walks through recorded D2 application outputs, including uncertainty and known failure cases—not invented accuracy claims.</p></div>
+</div></div></section>
+<section class="cta"><div class="wrap cta-grid"><div><div class="eyebrow" style="color:#6de8d6">Start with version 2.0</div><h2>Explore the system, not just the idea.</h2><p>See what each release actually built, what it returned, and where it still falls short.</p></div><div class="btnrow"><a class="btn btn-mint" href="v2/">Go to RecallVision 2.0 ↗</a><a class="btn btn-ghost" href="v1/">Version 1.0 →</a></div></div></section>
+</main>
+<footer class="footer"><div class="wrap footinner"><span>© 2026 RecallVision · Object-centric visual memory</span><span><a href="v2/">V2 overview</a> &nbsp;·&nbsp; <a href="v1/">V1 overview</a> &nbsp;·&nbsp; <a href="https://github.com/suibianba12138/RecallVision-Course">Source repository</a></span></div></footer>
+</body></html>
