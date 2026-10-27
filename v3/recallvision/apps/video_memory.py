@@ -56,7 +56,7 @@ from recallvision.video_ai.runtime import (
 from recallvision.video_ai.video_cache import VideoAnalysisCache
 
 
-UPLOAD_ROOT = Path(tempfile.gettempdir()) / "recallvision-v3-video-memory" / "uploads"
+UPLOAD_ROOT: Path  # Set from the private PersistentMemoryStore below.
 CACHE_ROOT = Path(os.environ.get(
     "RECALLVISION_VIDEO_CACHE_DIR",
     str(Path(tempfile.gettempdir()) / "recallvision-v3-video-memory" / "cache"),
@@ -78,6 +78,7 @@ GROUNDING_DINO_FINGERPRINT = f"grounding-dino-tiny:{GROUNDING_DINO_REVISION}:{GR
 VERIFICATION_MODEL_FINGERPRINT = f"{GROUNDING_DINO_FINGERPRINT}+{QWEN_FINGERPRINT}"
 VERIFICATION_CONFIG_FINGERPRINT = f"adaptive-visibility-probe-v5:reference-crop-identity-v1:frame-local-crop-agreement-v2:{GROUNDING_DINO_FINGERPRINT}:qwen-crop-id-v2"
 MEMORY_STORE = PersistentMemoryStore()
+UPLOAD_ROOT = MEMORY_STORE.root / "uploads"
 
 
 def _save_upload(uploaded: Any) -> tuple[Path, str]:
@@ -86,11 +87,27 @@ def _save_upload(uploaded: Any) -> tuple[Path, str]:
         raise ValueError("The selected video is empty.")
     if len(data) > MAX_VIDEO_BYTES:
         raise ValueError("Videos must be 250 MB or smaller.")
+    suffix = Path(str(uploaded.name)).suffix.lower()
+    if suffix not in {".mp4", ".mov", ".m4v", ".avi", ".webm"}:
+        raise ValueError("Choose a supported video file.")
     digest = hashlib.sha256(data).hexdigest()
-    UPLOAD_ROOT.mkdir(parents=True, exist_ok=True)
-    path = UPLOAD_ROOT / f"{digest}{Path(uploaded.name).suffix.lower()}"
+    UPLOAD_ROOT.mkdir(parents=True, exist_ok=True, mode=0o700)
+    os.chmod(UPLOAD_ROOT, 0o700)
+    path = UPLOAD_ROOT / f"{digest}{suffix}"
+    if path.is_symlink():
+        raise ValueError("A conflicting upload path exists.")
     if not path.is_file():
-        path.write_bytes(data)
+        fd, temp_name = tempfile.mkstemp(prefix=".upload-", suffix=".tmp", dir=UPLOAD_ROOT)
+        try:
+            with os.fdopen(fd, "wb") as stream:
+                stream.write(data)
+                stream.flush()
+                os.fsync(stream.fileno())
+            os.chmod(temp_name, 0o600)
+            os.replace(temp_name, path)
+        finally:
+            if os.path.exists(temp_name):
+                os.unlink(temp_name)
     return path, digest
 
 
