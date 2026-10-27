@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+"""Check official Mixkit source pages and 720p media candidates (read-only)."""
+import html
+import re
+from urllib.request import Request, urlopen
+from urllib.error import HTTPError, URLError
+
+SOURCES = {
+    "backpack": ("101309", "https://mixkit.co/free-stock-video/panning-shot-of-college-study-desk-101309/"),
+    "tablet": ("100072", "https://mixkit.co/free-stock-video/the-hands-of-a-young-individual-take-the-tablet-from-100072/"),
+    "plant": ("43699", "https://mixkit.co/free-stock-video/gardener-changing-a-pot-plant-43699/"),
+}
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; RecallVision-Course/1.0)", "Accept": "text/html,application/xhtml+xml,*/*"}
+
+def fetch(url, *, method="GET"):
+    req = Request(url, headers=HEADERS, method=method)
+    with urlopen(req, timeout=22) as res:
+        return res.status, res.geturl(), res.headers, res.read(2_000_000) if method == "GET" else b""
+
+for key, (vid, page) in SOURCES.items():
+    print(f"\n=== {key} / Mixkit item {vid} ===", flush=True)
+    try:
+        status, final_url, _, raw = fetch(page)
+        source = html.unescape(raw.decode("utf-8", errors="replace")).replace("\\/", "/")
+        print("page status", status, "chars", len(source), "url", final_url)
+        urls = sorted(set(re.findall(r'(?:https?:)?//[^\s"<>]+(?:\.mp4|\.webm)(?:\?[^\s"<>]*)?', source)))
+        urls += sorted(set(re.findall(r'https?://assets\.mixkit\.co/[^"\s<>]+', source)))[:20]
+        print("media references", len(urls), *(x[:220] for x in urls[:20]), sep="\n   ")
+        for term in ["video-720", "video_items", "download", "video_url", "videoUrl", "cloudinary", "assets.mixkit.co"]:
+            at = source.find(term)
+            if at >= 0: print("context",term,repr(source[max(0,at-95):at+195]))
+    except Exception as exc:
+        print("page fetch failed",type(exc).__name__,str(exc)[:240])
+    candidates = [
+        f"https://assets.mixkit.co/videos/{vid}/{vid}-720.mp4",
+        f"https://assets.mixkit.co/videos/preview/mixkit-{page.rstrip('/').split('/')[-1]}-large.mp4",
+    ]
+    for url in candidates:
+        try:
+            status, resolved, headers, _ = fetch(url, method="HEAD")
+            print("candidate",status,headers.get("Content-Type"),headers.get("Content-Length"),resolved)
+        except Exception as exc:
+            print("candidate failed", type(exc).__name__,str(exc)[:190],url)

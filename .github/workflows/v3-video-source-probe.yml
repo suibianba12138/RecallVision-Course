@@ -1,0 +1,18 @@
+name: V3 Mixkit Source Probe
+on:
+  push:
+    branches: ["feature/v3-embedded-videos-20261027"]
+    paths:
+      - ".github/workflows/v3-video-source-probe.yml"
+      - "scripts/probe_v3_mixkit.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe official video sources
+        run: python scripts/probe_v3_mixkit.py
