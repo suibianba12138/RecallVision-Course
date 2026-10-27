@@ -44,7 +44,7 @@ def main():
             if actual!=sha:raise RuntimeError(f"{key} source sha mismatch {actual}")
             print(key,"verified sha256",sha,flush=True)
             for idx,name in frames.items():
-                raw=OUT/(name+".png")
+                raw=OUT/(name.removesuffix(".webp")+".png")
                 still(mp4,idx,raw)
                 print("wrote",name,(OUT/name).stat().st_size,flush=True)
     # Two closeups of the actual source frame at index 119. The original saved
