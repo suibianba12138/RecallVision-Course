@@ -1,0 +1,47 @@
+name: V3 Visual Tour Validation
+on:
+  push:
+    branches: ["feature/v3-visual-evidence-tour-20261027"]
+    paths: ["v3/**", ".github/workflows/v3-visual-tour-check.yml"]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: JavaScript syntax
+        run: node --check v3/tour.js
+      - name: Verify real data, video URLs, and HTML wiring
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          p=Path('v3')
+          data=json.loads((p/'demo-data.json').read_text())
+          html=(p/'index.html').read_text()
+          js=(p/'tour.js').read_text()
+          assert len(data['cases']) == 3
+          assert {v['id'] for v in data['cases']} == {'backpack','tablet','plant'}
+          assert len(re.findall(r'data-rv3-case=',html)) == 3
+          assert len(re.findall(r'data-rv3-step=',html)) == 3
+          assert 'id="rv3tourVideo"' in html
+          assert 'src="tour.js"' in html
+          for i in ["rv3tourVideo","rv3tourOverlay","rv3tourTimeline","rv3tourEvidence","rv3tourPanel","rv3tourCaseTitle","rv3tourCaseHash","rv3tourSource","rv3tourMax","rv3tourVideoLabel"]:
+              assert f'id="{i}"' in html,i
+          for v in data['cases']:
+              assert v['media'].startswith('https://assets.mixkit.co/')
+              assert len(v['hash'])==64
+              assert len(v['frames']) in (6,8,11)
+              assert len(v['memories'])>0
+              assert len(v['query']['answer'])>20
+          bag=next(x for x in data['cases'] if x['id']=='backpack')
+          assert round(bag['overlay']['time'],3)==4.963
+          assert len(bag['overlay']['proposals']) == 2
+          assert sum(bool(p['supported']) for p in bag['overlay']['proposals']) == 1
+          assert all(0 <= f['time'] <= v['duration']+.1 for v in data['cases'] for f in v['frames'])
+          assert len(set(js.count(f'getElementById("{i}")') for i in ["rv3tourVideo"]))==1
+          print('V3 real-memory tour static checks: PASS')
+          PY
