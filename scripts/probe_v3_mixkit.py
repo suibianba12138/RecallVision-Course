@@ -31,6 +31,25 @@ for key, (vid, page) in SOURCES.items():
             if at >= 0: print("context",term,repr(source[max(0,at-95):at+195]))
     except Exception as exc:
         print("page fetch failed",type(exc).__name__,str(exc)[:240])
+
+    for term in ['og:video', '<video', 'contentUrl', 'embedUrl', 'data-controller="video', 'data-video', 'video-720', 'video-360', 'active_storage', 'download-link', 'data-action="click->download']:
+        at = source.find(term)
+        if at >= 0: print("special", term, repr(source[max(0,at-290):at+600]))
+    video_mp4 = sorted(set(re.findall(r'https?://[^"\\s<>]+?\\.mp4', source)))
+    for url in video_mp4[:4]:
+        try:
+            status, resolved, headers, _ = fetch(url, method="HEAD")
+            print("page-video-head", status, headers.get("Content-Type"), headers.get("Content-Length"), resolved)
+            if "720.mp4" in url and status == 200:
+                import hashlib
+                req = Request(url, headers=HEADERS)
+                sha = hashlib.sha256(); total = 0
+                with urlopen(req, timeout=50) as res:
+                    while data := res.read(1_048_576):
+                        sha.update(data); total += len(data)
+                print("PAGE VIDEO SHA256", key, total, sha.hexdigest())
+        except Exception as exc:
+            print("page-video-failed",type(exc).__name__,str(exc)[:150])
     candidates = [
         f"https://assets.mixkit.co/videos/{vid}/{vid}-720.mp4",
         f"https://assets.mixkit.co/videos/preview/mixkit-{page.rstrip('/').split('/')[-1]}-large.mp4",
