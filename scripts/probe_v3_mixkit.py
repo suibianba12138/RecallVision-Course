@@ -50,6 +50,23 @@ for key, (vid, page) in SOURCES.items():
                 print("PAGE VIDEO SHA256", key, total, sha.hexdigest())
         except Exception as exc:
             print("page-video-failed",type(exc).__name__,str(exc)[:150])
+
+    for field in ("contentUrl","embedUrl"):
+        match = re.search(r'"'+field+r'":"([^"]+)"',source)
+        if not match: print("structured",field,"MISSING"); continue
+        url = match.group(1)
+        print("structured",field,url)
+        try:
+            status,resolved,headers,_ = fetch(url,method="HEAD")
+            print("structured-head",field,status,headers.get("Content-Type"),headers.get("Content-Length"),resolved)
+            if field == "contentUrl" and status == 200:
+                import hashlib
+                h=hashlib.sha256(); n=0
+                with urlopen(Request(url,headers=HEADERS),timeout=90) as resp:
+                    while chunk:=resp.read(2_097_152):
+                        h.update(chunk);n+=len(chunk)
+                print("structured-sha256",key,n,h.hexdigest())
+        except Exception as ex: print("structured-error",field,type(ex).__name__,str(ex)[:180])
     candidates = [
         f"https://assets.mixkit.co/videos/{vid}/{vid}-720.mp4",
         f"https://assets.mixkit.co/videos/preview/mixkit-{page.rstrip('/').split('/')[-1]}-large.mp4",
