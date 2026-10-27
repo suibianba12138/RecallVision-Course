@@ -8,18 +8,19 @@
 
 <br>
 
-[![Python V2](https://img.shields.io/badge/Python%20V2-3.12-3776AB?logo=python&logoColor=white)](v2/README.md)
+[![Python V3](https://img.shields.io/badge/Python%20V3-3.12-3776AB?logo=python&logoColor=white)](v3/README.md)
 [![License](https://img.shields.io/badge/License-AGPL--3.0--only-2B8C8A)](LICENSE)
-[![Course Source Checks](https://github.com/suibianba12138/RecallVision-Course/actions/workflows/v2-course-checks.yml/badge.svg?branch=main)](https://github.com/suibianba12138/RecallVision-Course/actions/workflows/v2-course-checks.yml)
-[![V2 Source](https://img.shields.io/badge/V2%20Source-Public-286A68)](v2/)
+[![V3 Source Checks](https://github.com/suibianba12138/RecallVision-Course/actions/workflows/v3-course-checks.yml/badge.svg?branch=main)](https://github.com/suibianba12138/RecallVision-Course/actions/workflows/v3-course-checks.yml)
+[![V3 Source](https://img.shields.io/badge/V3%20Source-Public-286A68)](v3/)
 [![V1 Archive](https://img.shields.io/badge/V1%20Demo-Available-526A95)](course_demo/)
 
 <br>
 
 **[Project Website](https://suibianba12138.github.io/RecallVision-Course/)** &nbsp;·&nbsp;
+**[Version 3.0 Demo](https://suibianba12138.github.io/RecallVision-Course/v3/)** &nbsp;·&nbsp;
 **[Version 2.0 Demo](https://suibianba12138.github.io/RecallVision-Course/v2/)** &nbsp;·&nbsp;
 **[Version 1.0 Demo](https://suibianba12138.github.io/RecallVision-Course/v1/)** &nbsp;·&nbsp;
-**[V2 Source & Setup](v2/README.md)**
+**[V3 Source & Setup](v3/README.md)**
 
 </div>
 
@@ -36,7 +37,7 @@ The repository preserves three distinct development milestones:
 | **Focus** | Persistent semantic memory and natural-language Ask | Reviewable object memory and evidence-gated retrieval | Offline perception and recorded queries |
 | **Interface** | **Analyze → Explore → Ask → Reopen** | Local Streamlit evidence review | Archived C1 interactive replay |
 | **Queries** | Memory-first natural-language retrieval and source-linked evidence | Trusted **WHERE / WHEN / BEFORE** | Four recorded C1 routes, including authorized **WHO** |
-| **Implementation** | [`v2/`](v2/README.md) — independent Python project | [`recallvision/`](recallvision/) and [`course_demo/`](course_demo/) |
+| **Implementation** | [`v3/`](v3/README.md) | [`v2/`](v2/README.md) | [`recallvision/`](recallvision/) and [`course_demo/`](course_demo/) |
 | **Demonstration** | [View V3](https://suibianba12138.github.io/RecallVision-Course/v3/) | [View V2](https://suibianba12138.github.io/RecallVision-Course/v2/) | [View V1](https://suibianba12138.github.io/RecallVision-Course/v1/) |
 
 **V3 is the current course release candidate.** V3 is a separately packaged short-video memory application, with real saved-result demonstrations; first-pass inference and browser visual QA are not fully independently accepted. V2 remains the prior course milestone. The original V1 source remains at the repository root so that its code and recorded evidence are preserved without breaking existing paths. Ongoing V3 research is not included in this repository.
@@ -45,7 +46,7 @@ The repository preserves three distinct development milestones:
 
 V3 turns video analysis into a reusable visual record. The local application generates timestamped scene, object, and event descriptions, stores them in SQLite, and retrieves them for later natural-language questions. The **Analyze → Explore → Ask → Reopen** workflow keeps observations connected to the original video.
 
-**[Explore V3 and video cases](https://suibianba12138.github.io/RecallVision-Course/v3/)** · **[Watch original clips](https://suibianba12138.github.io/RecallVision-Course/v3/#videos)** · **[Run locally](v3/README.md)** · **[Restore course demonstrations](v3/demo/README.md)****
+**[Explore V3 and video cases](https://suibianba12138.github.io/RecallVision-Course/v3/)** · **[Watch original clips](https://suibianba12138.github.io/RecallVision-Course/v3/#videos)** · **[Run locally](v3/README.md)** · **[Restore course demonstrations](v3/demo/README.md)**
 
 | Recorded course case | Stored memories / evidence frames | Recorded outcome |
 | :-- | :-- | :-- |
@@ -201,7 +202,10 @@ RecallVision-Course/
 
 | Document | Purpose |
 | :-- | :-- |
-| [V2 README](v2/README.md) | Installation, local execution, and supported workflow |
+| [V3 README](v3/README.md) | Final course application setup, upload/analysis and local demo | 
+| [V3 Demo Guide](v3/demo/README.md) | Original clips, SHA-256 checks, memory-pack restoration | 
+| [V3 User Guide](v3/docs/RECALLVISION_V3_USER_GUIDE.md) | Analyze, Explore, Ask and Reopen | 
+| [V2 README](v2/README.md) | Previous reviewable application and setup |
 | [V2 Architecture](v2/docs/ARCHITECTURE.md) | Processing stages and trust semantics |
 | [V2 Code Guide](v2/docs/CODE_GUIDE.md) | Source entry points, module responsibilities, and reading order |
 | [V2 Evaluation](v2/docs/EVALUATION.md) | Recorded results, testing boundaries, and limitations |
@@ -220,7 +224,8 @@ RecallVision-Course/
 **RecallVision · Computer Vision Course Project**
 
 [Project Website](https://suibianba12138.github.io/RecallVision-Course/) ·
-[V2 Code](v2/) ·
+[V3 Code](v3/) ·
+[V3 Demonstration](https://suibianba12138.github.io/RecallVision-Course/v3/) ·
 [V2 Demonstration](https://suibianba12138.github.io/RecallVision-Course/v2/) ·
 [V1 Demonstration](https://suibianba12138.github.io/RecallVision-Course/v1/)
 
