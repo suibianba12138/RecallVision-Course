@@ -1,0 +1,1677 @@
+{
+  "format": "recallvision-course-memory-pack",
+  "pack_id": "recallvision-v3-course-demo-rc1-v1",
+  "source": "Exported from the locally persisted completed V3 real-video runs; no model output was fabricated.",
+  "verification_config_fingerprint": "adaptive-visibility-probe-v5:reference-crop-identity-v1:frame-local-crop-agreement-v2:grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3:qwen-crop-id-v2",
+  "version": 1,
+  "videos": [
+    {
+      "analysis_metadata": {
+        "generation_seconds": 202.07582089898642,
+        "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+        "model_load_seconds": 0.85396163596306,
+        "partial_output": false,
+        "prompt_characters": 2674,
+        "route": "automatic_memory_generation",
+        "source_timestamps": [
+          0.0,
+          1.75175,
+          3.545208333333333,
+          5.2969583333333325,
+          7.090416666666666,
+          8.842166666666666
+        ]
+      },
+      "demo_title": "Tablet & Mug — Fixed Camera",
+      "evidence_frames": [
+        {
+          "frame_index": 0,
+          "time_seconds": 0.0
+        },
+        {
+          "frame_index": 42,
+          "time_seconds": 1.752
+        },
+        {
+          "frame_index": 85,
+          "time_seconds": 3.545
+        },
+        {
+          "frame_index": 127,
+          "time_seconds": 5.297
+        },
+        {
+          "frame_index": 170,
+          "time_seconds": 7.09
+        },
+        {
+          "frame_index": 212,
+          "time_seconds": 8.842
+        }
+      ],
+      "license_name": "Mixkit Stock Video Free License",
+      "license_url": "https://mixkit.co/license/modal/videoFree/",
+      "memories": [
+        {
+          "claim": "A wooden desk surface with various office supplies and a green screen tablet",
+          "confidence": "high",
+          "end_seconds": 8.842,
+          "evidence_seconds": [
+            0.0,
+            1.752,
+            3.545,
+            5.297,
+            7.09,
+            8.842
+          ],
+          "identity_status": "unverified",
+          "kind": "scene",
+          "label": "Scene",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": null
+          },
+          "start_seconds": 0.0,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A black tablet with a green screen displaying four plus signs",
+          "confidence": "high",
+          "end_seconds": 0.0,
+          "evidence_seconds": [
+            0.0
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Device",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "tablet"
+          },
+          "start_seconds": 0.0,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A black tablet with a green screen displaying four plus signs",
+          "confidence": "high",
+          "end_seconds": 1.752,
+          "evidence_seconds": [
+            1.752
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Device",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "tablet"
+          },
+          "start_seconds": 1.752,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A black tablet with a green screen displaying four plus signs",
+          "confidence": "high",
+          "end_seconds": 3.545,
+          "evidence_seconds": [
+            3.545
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Device",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "tablet"
+          },
+          "start_seconds": 3.545,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A black tablet with a green screen displaying four plus signs",
+          "confidence": "high",
+          "end_seconds": 5.297,
+          "evidence_seconds": [
+            5.297
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Device",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "tablet"
+          },
+          "start_seconds": 5.297,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "Hands enter the frame and interact with the tablet",
+          "confidence": "high",
+          "end_seconds": 7.09,
+          "evidence_seconds": [
+            5.297,
+            7.09
+          ],
+          "identity_status": "unverified",
+          "kind": "event",
+          "label": "Action",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "hands"
+          },
+          "start_seconds": 5.297,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A blue speckled mug appears on the right side of the desk",
+          "confidence": "high",
+          "end_seconds": 5.297,
+          "evidence_seconds": [
+            5.297
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Object",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "mug"
+          },
+          "start_seconds": 5.297,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A black tablet with a green screen displaying four plus signs",
+          "confidence": "high",
+          "end_seconds": 7.09,
+          "evidence_seconds": [
+            7.09
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Device",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "tablet"
+          },
+          "start_seconds": 7.09,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A blue speckled mug appears on the right side of the desk",
+          "confidence": "high",
+          "end_seconds": 7.09,
+          "evidence_seconds": [
+            7.09
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Object",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "mug"
+          },
+          "start_seconds": 7.09,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A black tablet with a green screen displaying four plus signs",
+          "confidence": "high",
+          "end_seconds": 8.842,
+          "evidence_seconds": [
+            8.842
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Device",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "tablet"
+          },
+          "start_seconds": 8.842,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A blue speckled mug appears on the right side of the desk",
+          "confidence": "high",
+          "end_seconds": 8.842,
+          "evidence_seconds": [
+            8.842
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Object",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "mug"
+          },
+          "start_seconds": 8.842,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        }
+      ],
+      "memory_count": 11,
+      "metadata": {
+        "duration": 8.883875,
+        "fps": 23.976023976023978,
+        "frame_count": 213,
+        "height": 720,
+        "width": 1280
+      },
+      "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+      "saved_answers": [
+        {
+          "answer": {
+            "abstain": false,
+            "answer": "The stored memory lists these unverified object candidates: A black tablet with a green screen displaying four plus signs (sampled at 0.00 s, 1.75 s, 3.54 s, 5.30 s); A blue speckled mug appears on the right side of the desk (sampled at 5.30 s, 7.09 s, 8.84 s).",
+            "cache_used": true,
+            "confidence": "not calibrated",
+            "event_resolution": null,
+            "evidence_seconds": [
+              0.0,
+              1.752,
+              3.545,
+              5.297,
+              7.09,
+              8.842
+            ],
+            "input_mode": "persistent visual memory",
+            "intervals": [],
+            "memory_match_count": 11,
+            "question": "What objects appeared in the video?",
+            "uncertainty": "This is a model-generated object inventory, not an independently confirmed list. Some objects may be missing, mislabeled, or represented by only a sampled observation.",
+            "verification_status": "unverified",
+            "video_hash": "38b6f9fee3c0e22fb7547dfeab92a391ca01476a1da6f1e3d6ed4f807e2a1e38",
+            "visibility_resolution": null
+          },
+          "provenance": {
+            "memory_item_id": null,
+            "memory_item_ids": [
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              27,
+              28,
+              29
+            ],
+            "route": "persistent_memory"
+          },
+          "question": "What objects appeared in the video?"
+        }
+      ],
+      "schema_version": 2,
+      "sha256": "38b6f9fee3c0e22fb7547dfeab92a391ca01476a1da6f1e3d6ed4f807e2a1e38",
+      "source_name": "mixkit_100072_720.mp4",
+      "source_url": "https://mixkit.co/free-stock-video/the-hands-of-a-young-individual-take-the-tablet-from-100072/",
+      "terms_url": "https://mixkit.co/terms/"
+    },
+    {
+      "analysis_metadata": {
+        "elapsed_seconds": 271.7,
+        "frame_count": 8
+      },
+      "demo_title": "Backpack — Moving Camera",
+      "evidence_frames": [
+        {
+          "frame_index": 0,
+          "time_seconds": 0.0
+        },
+        {
+          "frame_index": 37,
+          "time_seconds": 1.543
+        },
+        {
+          "frame_index": 75,
+          "time_seconds": 3.128
+        },
+        {
+          "frame_index": 94,
+          "time_seconds": 3.921
+        },
+        {
+          "frame_index": 112,
+          "time_seconds": 4.671
+        },
+        {
+          "frame_index": 119,
+          "time_seconds": 4.963
+        },
+        {
+          "frame_index": 127,
+          "time_seconds": 5.297
+        },
+        {
+          "frame_index": 149,
+          "time_seconds": 6.215
+        },
+        {
+          "frame_index": 186,
+          "time_seconds": 7.758
+        },
+        {
+          "frame_index": 224,
+          "time_seconds": 9.343
+        },
+        {
+          "frame_index": 261,
+          "time_seconds": 10.886
+        }
+      ],
+      "license_name": "Mixkit Stock Video Free License",
+      "license_url": "https://mixkit.co/license/modal/videoFree/",
+      "memories": [
+        {
+          "claim": "A wooden desk surface containing study materials",
+          "confidence": "high",
+          "end_seconds": 10.886,
+          "evidence_seconds": [
+            0.0,
+            1.543,
+            3.128,
+            4.671,
+            6.215,
+            7.758,
+            9.343,
+            10.886
+          ],
+          "identity_status": "unverified",
+          "kind": "scene",
+          "label": "Study Desk",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": null
+          },
+          "start_seconds": 0.0,
+          "uncertainty_reason": "Legacy model claim; no independent visual verification was saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "The camera pans slowly to the right, revealing more of the desk surface",
+          "confidence": "high",
+          "end_seconds": 6.215,
+          "evidence_seconds": [
+            0.0,
+            6.215
+          ],
+          "identity_status": "unverified",
+          "kind": "event",
+          "label": "Camera Movement",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": null
+          },
+          "start_seconds": 0.0,
+          "uncertainty_reason": "Legacy model claim; no independent visual verification was saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A black backpack is visible on the left side of the frame",
+          "confidence": "high",
+          "end_seconds": 0.0,
+          "evidence_seconds": [
+            0.0
+          ],
+          "identity_status": "ambiguous",
+          "kind": "entity_observation",
+          "label": "Bag",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "bag"
+          },
+          "start_seconds": 0.0,
+          "uncertainty_reason": "Multiple or unresolved target candidates prevent a reliable frame-local match; visibility remains UNKNOWN.",
+          "verification_config_fingerprint": "adaptive-visibility-probe-v5:reference-crop-identity-v1:frame-local-crop-agreement-v2:grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3:qwen-crop-id-v2",
+          "verification_model_fingerprint": "grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3+qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+          "verification_status": "conflicted",
+          "visibility_state": "unknown",
+          "visual_evidence": [
+            {
+              "detections": [
+                {
+                  "area_fraction": 0.463789,
+                  "bbox_xyxy": [
+                    0.45116424560546875,
+                    0.8226871490478516,
+                    596.0382690429688,
+                    718.4815673828125
+                  ],
+                  "candidate_accepted": false,
+                  "candidate_id": "0:0",
+                  "raw_model_label": "backpack",
+                  "rejection_reason": "implausibly broad detector box",
+                  "score": 0.7340335845947266,
+                  "target_presence_corroborated": false
+                }
+              ],
+              "frame_index": 0,
+              "frame_sha256": "a1c0f4fdc4a646b9b1ca9e76121a2be7ae6c4850f8687b2e4c5fca158eb90df8",
+              "timestamp_seconds": 0.0
+            }
+          ]
+        },
+        {
+          "claim": "A light green pen lies horizontally on the desk",
+          "confidence": "high",
+          "end_seconds": 0.0,
+          "evidence_seconds": [
+            0.0
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Pen",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "pen"
+          },
+          "start_seconds": 0.0,
+          "uncertainty_reason": "Legacy model-generated claim; this exact sampled frame has not been independently verified.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A black backpack is visible on the left side of the frame",
+          "confidence": "high",
+          "end_seconds": 1.543,
+          "evidence_seconds": [
+            1.543
+          ],
+          "identity_status": "ambiguous",
+          "kind": "entity_observation",
+          "label": "Bag",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "bag"
+          },
+          "start_seconds": 1.543,
+          "uncertainty_reason": "Multiple or unresolved target candidates prevent a reliable frame-local match; visibility remains UNKNOWN.",
+          "verification_config_fingerprint": "adaptive-visibility-probe-v5:reference-crop-identity-v1:frame-local-crop-agreement-v2:grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3:qwen-crop-id-v2",
+          "verification_model_fingerprint": "grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3+qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+          "verification_status": "conflicted",
+          "visibility_state": "unknown",
+          "visual_evidence": [
+            {
+              "detections": [
+                {
+                  "area_fraction": 0.347622,
+                  "bbox_xyxy": [
+                    1.0755348205566406,
+                    0.4202699661254883,
+                    447.09228515625,
+                    718.7086181640625
+                  ],
+                  "candidate_accepted": false,
+                  "candidate_id": "37:0",
+                  "raw_model_label": "backpack",
+                  "rejection_reason": "implausibly broad detector box",
+                  "score": 0.6200670003890991,
+                  "target_presence_corroborated": false
+                }
+              ],
+              "frame_index": 37,
+              "frame_sha256": "675db00a04717a7543fb17e90077f9942dfa345501c016920c3c5a2027cc973a",
+              "timestamp_seconds": 1.543
+            }
+          ]
+        },
+        {
+          "claim": "A light green pen lies horizontally on the desk",
+          "confidence": "high",
+          "end_seconds": 1.543,
+          "evidence_seconds": [
+            1.543
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Pen",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "pen"
+          },
+          "start_seconds": 1.543,
+          "uncertainty_reason": "Legacy model-generated claim; this exact sampled frame has not been independently verified.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A black backpack is visible on the left side of the frame",
+          "confidence": "high",
+          "end_seconds": 3.128,
+          "evidence_seconds": [
+            3.128
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Bag",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "bag"
+          },
+          "start_seconds": 3.128,
+          "uncertainty_reason": "Exactly one target candidate crop supports presence at this source frame; cross-frame identity remains unverified.",
+          "verification_config_fingerprint": "adaptive-visibility-probe-v5:reference-crop-identity-v1:frame-local-crop-agreement-v2:grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3:qwen-crop-id-v2",
+          "verification_model_fingerprint": "grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3+qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+          "verification_status": "corroborated",
+          "visibility_state": "present",
+          "visual_evidence": [
+            {
+              "detections": [
+                {
+                  "area_fraction": 0.206189,
+                  "bbox_xyxy": [
+                    0.6466007232666016,
+                    0.0,
+                    265.3602600097656,
+                    717.8471069335938
+                  ],
+                  "bbox_xyxy_unclipped": [
+                    0.6466007232666016,
+                    -0.06757020950317383,
+                    265.3602600097656,
+                    717.8471069335938
+                  ],
+                  "candidate_accepted": false,
+                  "candidate_id": "75:0",
+                  "crop_review": {
+                    "candidate_id": "75:0",
+                    "confidence": "high",
+                    "location": "Bottom right corner of the black fabric item",
+                    "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+                    "visibility": "present"
+                  },
+                  "raw_model_label": "backpack",
+                  "rejection_reason": "implausibly broad detector box",
+                  "score": 0.4382939040660858,
+                  "target_presence_corroborated": true
+                }
+              ],
+              "frame_index": 75,
+              "frame_sha256": "76aebcf5b7b29cb9f94adfdf99de7d9c909ac8a71ab909acb11d3fc54594f512",
+              "timestamp_seconds": 3.128
+            }
+          ]
+        },
+        {
+          "claim": "A light green pen lies horizontally on the desk",
+          "confidence": "high",
+          "end_seconds": 3.128,
+          "evidence_seconds": [
+            3.128
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Pen",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "pen"
+          },
+          "start_seconds": 3.128,
+          "uncertainty_reason": "Legacy model-generated claim; this exact sampled frame has not been independently verified.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "Frame-local visual recheck for the requested backpack candidate.",
+          "confidence": "unknown",
+          "end_seconds": 3.921,
+          "evidence_seconds": [
+            3.921
+          ],
+          "identity_status": "ambiguous",
+          "kind": "visual_observation",
+          "label": "backpack",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "source": "targeted_visual_recheck",
+            "target_description": "backpack"
+          },
+          "start_seconds": 3.921,
+          "uncertainty_reason": "Multiple or unresolved target candidates prevent a reliable frame-local match; visibility remains UNKNOWN.",
+          "verification_config_fingerprint": "adaptive-visibility-probe-v4:reference-crop-identity-v1:frame-local-crop-agreement-v2:grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3:qwen-crop-id-v2:adaptive-probe-v1",
+          "verification_model_fingerprint": "grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3+qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+          "verification_status": "conflicted",
+          "visibility_state": "unknown",
+          "visual_evidence": [
+            {
+              "detections": [
+                {
+                  "area_fraction": 0.12173,
+                  "bbox_xyxy": [
+                    0.6136894226074219,
+                    1.0761237144470215,
+                    173.4742889404297,
+                    650.0777587890625
+                  ],
+                  "candidate_accepted": true,
+                  "candidate_id": "94:0",
+                  "raw_model_label": "backpack",
+                  "score": 0.4324031472206116,
+                  "target_presence_corroborated": false
+                }
+              ],
+              "frame_index": 94,
+              "frame_sha256": "76788f31069f8a612e628811f7bfd4739d8c886e3cbdb0121386a1b835a6812b",
+              "timestamp_seconds": 3.921
+            }
+          ]
+        },
+        {
+          "claim": "Frame-local visual recheck for the requested backpack candidate.",
+          "confidence": "unknown",
+          "end_seconds": 3.921,
+          "evidence_seconds": [
+            3.921
+          ],
+          "identity_status": "ambiguous",
+          "kind": "visual_observation",
+          "label": "backpack",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "source": "targeted_visual_recheck",
+            "target_description": "backpack"
+          },
+          "start_seconds": 3.921,
+          "uncertainty_reason": "Multiple or unresolved target candidates prevent a reliable frame-local match; visibility remains UNKNOWN.",
+          "verification_config_fingerprint": "adaptive-visibility-probe-v5:reference-crop-identity-v1:frame-local-crop-agreement-v2:grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3:qwen-crop-id-v2:adaptive-probe-v1",
+          "verification_model_fingerprint": "grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3+qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+          "verification_status": "conflicted",
+          "visibility_state": "unknown",
+          "visual_evidence": [
+            {
+              "detections": [
+                {
+                  "area_fraction": 0.12173,
+                  "bbox_xyxy": [
+                    0.6136894226074219,
+                    1.0761237144470215,
+                    173.4742889404297,
+                    650.0777587890625
+                  ],
+                  "candidate_accepted": true,
+                  "candidate_id": "94:0",
+                  "raw_model_label": "backpack",
+                  "score": 0.4324031472206116,
+                  "target_presence_corroborated": false
+                }
+              ],
+              "frame_index": 94,
+              "frame_sha256": "76788f31069f8a612e628811f7bfd4739d8c886e3cbdb0121386a1b835a6812b",
+              "timestamp_seconds": 3.921
+            }
+          ]
+        },
+        {
+          "claim": "A black backpack is visible on the left side of the frame",
+          "confidence": "high",
+          "end_seconds": 4.671,
+          "evidence_seconds": [
+            4.671
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Bag",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "bag"
+          },
+          "start_seconds": 4.671,
+          "uncertainty_reason": "No localized target-labeled candidate was found; absence remains unknown.",
+          "verification_config_fingerprint": "adaptive-visibility-probe-v5:reference-crop-identity-v1:frame-local-crop-agreement-v2:grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3:qwen-crop-id-v2",
+          "verification_model_fingerprint": "grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3+qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+          "verification_status": "unknown",
+          "visibility_state": "unknown",
+          "visual_evidence": [
+            {
+              "detections": [],
+              "frame_index": 112,
+              "frame_sha256": "05a8b921446e191b3ae2ac22a115ad6c406a6777c9996dd5bbc26de6b64c3f3d",
+              "timestamp_seconds": 4.671
+            }
+          ]
+        },
+        {
+          "claim": "A light green pen lies horizontally on the desk",
+          "confidence": "high",
+          "end_seconds": 4.671,
+          "evidence_seconds": [
+            4.671
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Pen",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "pen"
+          },
+          "start_seconds": 4.671,
+          "uncertainty_reason": "Legacy model-generated claim; this exact sampled frame has not been independently verified.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "Frame-local visual recheck for the requested backpack candidate.",
+          "confidence": "unknown",
+          "end_seconds": 4.963,
+          "evidence_seconds": [
+            4.963
+          ],
+          "identity_status": "associated",
+          "kind": "visual_observation",
+          "label": "backpack",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "source": "targeted_visual_recheck",
+            "target_description": "backpack"
+          },
+          "start_seconds": 4.963,
+          "uncertainty_reason": "A unique candidate matched the previously supported reference crop; association is based on this targeted visual comparison.",
+          "verification_config_fingerprint": "adaptive-visibility-probe-v4:reference-crop-identity-v1:frame-local-crop-agreement-v2:grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3:qwen-crop-id-v2:adaptive-probe-v1",
+          "verification_model_fingerprint": "grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3+qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+          "verification_status": "corroborated",
+          "visibility_state": "present",
+          "visual_evidence": [
+            {
+              "detections": [
+                {
+                  "area_fraction": 0.014381,
+                  "bbox_xyxy": [
+                    0.4579448699951172,
+                    187.6985626220703,
+                    47.02472686767578,
+                    472.3038635253906
+                  ],
+                  "candidate_accepted": true,
+                  "candidate_id": "119:0",
+                  "crop_review": {
+                    "candidate_id": "119:0",
+                    "confidence": "high",
+                    "location": "",
+                    "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+                    "reference_match": "same",
+                    "visibility": "present"
+                  },
+                  "raw_model_label": "backpack",
+                  "score": 0.2015397995710373,
+                  "target_presence_corroborated": true
+                },
+                {
+                  "area_fraction": 0.113263,
+                  "bbox_xyxy": [
+                    1004.6060180664062,
+                    334.53466796875,
+                    1278.81640625,
+                    715.204345703125
+                  ],
+                  "candidate_accepted": true,
+                  "candidate_id": "119:1",
+                  "crop_review": {
+                    "candidate_id": "119:1",
+                    "confidence": "high",
+                    "location": "",
+                    "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+                    "reference_match": "different",
+                    "visibility": "absent"
+                  },
+                  "raw_model_label": "backpack",
+                  "score": 0.20097877085208893,
+                  "target_presence_corroborated": false
+                }
+              ],
+              "frame_index": 119,
+              "frame_sha256": "4f4cfc83c09a68838f4f5bd4027cae189a4a27d65ae0fc641bff0ed7fc418404",
+              "timestamp_seconds": 4.963
+            }
+          ]
+        },
+        {
+          "claim": "Frame-local visual recheck for the requested backpack candidate.",
+          "confidence": "unknown",
+          "end_seconds": 4.963,
+          "evidence_seconds": [
+            4.963
+          ],
+          "identity_status": "associated",
+          "kind": "visual_observation",
+          "label": "backpack",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "source": "targeted_visual_recheck",
+            "target_description": "backpack"
+          },
+          "start_seconds": 4.963,
+          "uncertainty_reason": "A unique candidate matched the previously supported reference crop; association is based on this targeted visual comparison.",
+          "verification_config_fingerprint": "adaptive-visibility-probe-v5:reference-crop-identity-v1:frame-local-crop-agreement-v2:grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3:qwen-crop-id-v2:adaptive-probe-v1",
+          "verification_model_fingerprint": "grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3+qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+          "verification_status": "corroborated",
+          "visibility_state": "present",
+          "visual_evidence": [
+            {
+              "detections": [
+                {
+                  "area_fraction": 0.014381,
+                  "bbox_xyxy": [
+                    0.4579448699951172,
+                    187.6985626220703,
+                    47.02472686767578,
+                    472.3038635253906
+                  ],
+                  "candidate_accepted": true,
+                  "candidate_id": "119:0",
+                  "crop_review": {
+                    "candidate_id": "119:0",
+                    "confidence": "high",
+                    "location": "",
+                    "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+                    "reference_match": "same",
+                    "visibility": "present"
+                  },
+                  "raw_model_label": "backpack",
+                  "score": 0.2015397995710373,
+                  "target_presence_corroborated": true
+                },
+                {
+                  "area_fraction": 0.113263,
+                  "bbox_xyxy": [
+                    1004.6060180664062,
+                    334.53466796875,
+                    1278.81640625,
+                    715.204345703125
+                  ],
+                  "candidate_accepted": true,
+                  "candidate_id": "119:1",
+                  "crop_review": {
+                    "candidate_id": "119:1",
+                    "confidence": "high",
+                    "location": "",
+                    "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+                    "reference_match": "different",
+                    "visibility": "absent"
+                  },
+                  "raw_model_label": "backpack",
+                  "score": 0.20097877085208893,
+                  "target_presence_corroborated": false
+                }
+              ],
+              "frame_index": 119,
+              "frame_sha256": "4f4cfc83c09a68838f4f5bd4027cae189a4a27d65ae0fc641bff0ed7fc418404",
+              "timestamp_seconds": 4.963
+            }
+          ]
+        },
+        {
+          "claim": "Frame-local visual recheck for the requested backpack candidate.",
+          "confidence": "unknown",
+          "end_seconds": 5.297,
+          "evidence_seconds": [
+            5.297
+          ],
+          "identity_status": "ambiguous",
+          "kind": "visual_observation",
+          "label": "backpack",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "source": "targeted_visual_recheck",
+            "target_description": "backpack"
+          },
+          "start_seconds": 5.297,
+          "uncertainty_reason": "Multiple or unresolved target candidates prevent a reliable frame-local match; visibility remains UNKNOWN.",
+          "verification_config_fingerprint": "adaptive-visibility-probe-v4:reference-crop-identity-v1:frame-local-crop-agreement-v2:grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3:qwen-crop-id-v2:adaptive-probe-v1",
+          "verification_model_fingerprint": "grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3+qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+          "verification_status": "conflicted",
+          "visibility_state": "unknown",
+          "visual_evidence": [
+            {
+              "detections": [
+                {
+                  "area_fraction": 0.135361,
+                  "bbox_xyxy": [
+                    957.8349609375,
+                    300.7398681640625,
+                    1278.7286376953125,
+                    689.4946899414062
+                  ],
+                  "candidate_accepted": true,
+                  "candidate_id": "127:0",
+                  "raw_model_label": "backpack",
+                  "score": 0.23869265615940094,
+                  "target_presence_corroborated": false
+                }
+              ],
+              "frame_index": 127,
+              "frame_sha256": "33970c0fa7ecebfdad4a1e9e7abda56738078b26271761b092a8ce41e6a3e95a",
+              "timestamp_seconds": 5.297
+            }
+          ]
+        },
+        {
+          "claim": "Frame-local visual recheck for the requested backpack candidate.",
+          "confidence": "unknown",
+          "end_seconds": 5.297,
+          "evidence_seconds": [
+            5.297
+          ],
+          "identity_status": "ambiguous",
+          "kind": "visual_observation",
+          "label": "backpack",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "source": "targeted_visual_recheck",
+            "target_description": "backpack"
+          },
+          "start_seconds": 5.297,
+          "uncertainty_reason": "Multiple or unresolved target candidates prevent a reliable frame-local match; visibility remains UNKNOWN.",
+          "verification_config_fingerprint": "adaptive-visibility-probe-v5:reference-crop-identity-v1:frame-local-crop-agreement-v2:grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3:qwen-crop-id-v2:adaptive-probe-v1",
+          "verification_model_fingerprint": "grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3+qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+          "verification_status": "conflicted",
+          "visibility_state": "unknown",
+          "visual_evidence": [
+            {
+              "detections": [
+                {
+                  "area_fraction": 0.135361,
+                  "bbox_xyxy": [
+                    957.8349609375,
+                    300.7398681640625,
+                    1278.7286376953125,
+                    689.4946899414062
+                  ],
+                  "candidate_accepted": true,
+                  "candidate_id": "127:0",
+                  "raw_model_label": "backpack",
+                  "score": 0.23869265615940094,
+                  "target_presence_corroborated": false
+                }
+              ],
+              "frame_index": 127,
+              "frame_sha256": "33970c0fa7ecebfdad4a1e9e7abda56738078b26271761b092a8ce41e6a3e95a",
+              "timestamp_seconds": 5.297
+            }
+          ]
+        },
+        {
+          "claim": "A black backpack is visible on the left side of the frame",
+          "confidence": "high",
+          "end_seconds": 6.215,
+          "evidence_seconds": [
+            6.215
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Bag",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "bag"
+          },
+          "start_seconds": 6.215,
+          "uncertainty_reason": "No localized target-labeled candidate was found; absence remains unknown.",
+          "verification_config_fingerprint": "adaptive-visibility-probe-v5:reference-crop-identity-v1:frame-local-crop-agreement-v2:grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3:qwen-crop-id-v2",
+          "verification_model_fingerprint": "grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3+qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+          "verification_status": "unknown",
+          "visibility_state": "unknown",
+          "visual_evidence": [
+            {
+              "detections": [],
+              "frame_index": 149,
+              "frame_sha256": "e14da4396b647c914b2bec628f9db84aa85ac9d7ddf656920550c2b00bf4e3c2",
+              "timestamp_seconds": 6.215
+            }
+          ]
+        },
+        {
+          "claim": "A light green pen lies horizontally on the desk",
+          "confidence": "high",
+          "end_seconds": 6.215,
+          "evidence_seconds": [
+            6.215
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Pen",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "pen"
+          },
+          "start_seconds": 6.215,
+          "uncertainty_reason": "Legacy model-generated claim; this exact sampled frame has not been independently verified.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A black backpack is visible on the left side of the frame",
+          "confidence": "high",
+          "end_seconds": 7.758,
+          "evidence_seconds": [
+            7.758
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Bag",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "bag"
+          },
+          "start_seconds": 7.758,
+          "uncertainty_reason": "No localized target-labeled candidate was found; absence remains unknown.",
+          "verification_config_fingerprint": "adaptive-visibility-probe-v5:reference-crop-identity-v1:frame-local-crop-agreement-v2:grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3:qwen-crop-id-v2",
+          "verification_model_fingerprint": "grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3+qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+          "verification_status": "unknown",
+          "visibility_state": "unknown",
+          "visual_evidence": [
+            {
+              "detections": [],
+              "frame_index": 186,
+              "frame_sha256": "2c25cabaeb39651877f049a009ab495417c6ecea4a2c18c1b0d8e86ec8d41736",
+              "timestamp_seconds": 7.758
+            }
+          ]
+        },
+        {
+          "claim": "A light green pen lies horizontally on the desk",
+          "confidence": "high",
+          "end_seconds": 7.758,
+          "evidence_seconds": [
+            7.758
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Pen",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "pen"
+          },
+          "start_seconds": 7.758,
+          "uncertainty_reason": "Legacy model-generated claim; this exact sampled frame has not been independently verified.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A black backpack is visible on the left side of the frame",
+          "confidence": "high",
+          "end_seconds": 9.343,
+          "evidence_seconds": [
+            9.343
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Bag",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "bag"
+          },
+          "start_seconds": 9.343,
+          "uncertainty_reason": "No localized target-labeled candidate was found; absence remains unknown.",
+          "verification_config_fingerprint": "adaptive-visibility-probe-v5:reference-crop-identity-v1:frame-local-crop-agreement-v2:grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3:qwen-crop-id-v2",
+          "verification_model_fingerprint": "grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3+qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+          "verification_status": "unknown",
+          "visibility_state": "unknown",
+          "visual_evidence": [
+            {
+              "detections": [],
+              "frame_index": 224,
+              "frame_sha256": "e4f8530d476efca1d19ed3ab420a2f3e3bd246d666d2d631222a3c18a2912003",
+              "timestamp_seconds": 9.343
+            }
+          ]
+        },
+        {
+          "claim": "A light green pen lies horizontally on the desk",
+          "confidence": "high",
+          "end_seconds": 9.343,
+          "evidence_seconds": [
+            9.343
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Pen",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "pen"
+          },
+          "start_seconds": 9.343,
+          "uncertainty_reason": "Legacy model-generated claim; this exact sampled frame has not been independently verified.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A black backpack is visible on the left side of the frame",
+          "confidence": "high",
+          "end_seconds": 10.886,
+          "evidence_seconds": [
+            10.886
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Bag",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "bag"
+          },
+          "start_seconds": 10.886,
+          "uncertainty_reason": "No localized target-labeled candidate was found; absence remains unknown.",
+          "verification_config_fingerprint": "adaptive-visibility-probe-v5:reference-crop-identity-v1:frame-local-crop-agreement-v2:grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3:qwen-crop-id-v2",
+          "verification_model_fingerprint": "grounding-dino-tiny:a2bb814dd30d776dcf7e30523b00659f4f141c71:1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3+qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+          "verification_status": "unknown",
+          "visibility_state": "unknown",
+          "visual_evidence": [
+            {
+              "detections": [],
+              "frame_index": 261,
+              "frame_sha256": "e4e2f9dd123f41dd65848216d96e35ec1ff422f883a4e0e1195c1b36d563b5dc",
+              "timestamp_seconds": 10.886
+            }
+          ]
+        },
+        {
+          "claim": "A light green pen lies horizontally on the desk",
+          "confidence": "high",
+          "end_seconds": 10.886,
+          "evidence_seconds": [
+            10.886
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "Pen",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "pen"
+          },
+          "start_seconds": 10.886,
+          "uncertainty_reason": "Legacy model-generated claim; this exact sampled frame has not been independently verified.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        }
+      ],
+      "memory_count": 24,
+      "metadata": {
+        "duration": 10.927583333333333,
+        "fps": 23.976023976023978,
+        "frame_count": 262,
+        "height": 720,
+        "width": 1280
+      },
+      "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+      "saved_answers": [
+        {
+          "answer": {
+            "abstain": false,
+            "answer": "A targeted crop comparison supports the same backpack in the middle-left area of the frame at about 4.96 s. This is the latest sampled frame with a supported candidate, not an exact disappearance time or a real-world location. Later sample checks at 5.30 s, 6.21 s, 7.76 s were inconclusive; the detector's misses do not establish that the object was absent.",
+            "cache_used": true,
+            "confidence": "not calibrated",
+            "event_resolution": null,
+            "evidence_seconds": [
+              4.963,
+              5.297,
+              6.215
+            ],
+            "input_mode": "target detector on sampled source frames",
+            "intervals": [],
+            "question": "Where did I leave my backpack?",
+            "uncertainty": "Later visibility is UNKNOWN; this reports a frame-local candidate, not continuous visibility.",
+            "video_hash": "025bb4c46ec15ccfa44dbff8375911d4450ff2a85708ff9cef8e894f3bbc1dd1",
+            "visibility_resolution": {
+              "continuous_visibility": false,
+              "identity_status": "associated to the earlier reference crop for this sighting",
+              "last_supported_sample_seconds": 4.963,
+              "later_unknown_seconds": [
+                5.297,
+                6.215,
+                7.758,
+                9.343,
+                10.886
+              ],
+              "status": "sampled_candidate_with_unknown_later_visibility"
+            }
+          },
+          "provenance": {
+            "direct_model": null,
+            "route": "video_qa",
+            "temporal_model": null
+          },
+          "question": "Where did I leave my backpack?"
+        }
+      ],
+      "schema_version": 2,
+      "sha256": "025bb4c46ec15ccfa44dbff8375911d4450ff2a85708ff9cef8e894f3bbc1dd1",
+      "source_name": "mixkit_101309_720.mp4",
+      "source_url": "https://mixkit.co/free-stock-video/panning-shot-of-college-study-desk-101309/",
+      "terms_url": "https://mixkit.co/terms/"
+    },
+    {
+      "analysis_metadata": {
+        "generation_seconds": 253.75666081602685,
+        "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+        "model_load_seconds": 0.85396163596306,
+        "partial_output": false,
+        "prompt_characters": 2838,
+        "route": "automatic_memory_generation",
+        "source_timestamps": [
+          0.0,
+          1.6683333333333332,
+          3.3366666666666664,
+          5.005,
+          6.673333333333333,
+          8.341666666666667,
+          10.01,
+          11.678333333333333
+        ]
+      },
+      "demo_title": "Plant Interaction",
+      "evidence_frames": [
+        {
+          "frame_index": 0,
+          "time_seconds": 0.0
+        },
+        {
+          "frame_index": 40,
+          "time_seconds": 1.668
+        },
+        {
+          "frame_index": 80,
+          "time_seconds": 3.337
+        },
+        {
+          "frame_index": 120,
+          "time_seconds": 5.005
+        },
+        {
+          "frame_index": 160,
+          "time_seconds": 6.673
+        },
+        {
+          "frame_index": 200,
+          "time_seconds": 8.342
+        },
+        {
+          "frame_index": 240,
+          "time_seconds": 10.01
+        },
+        {
+          "frame_index": 280,
+          "time_seconds": 11.678
+        }
+      ],
+      "license_name": "Mixkit Stock Video Free License",
+      "license_url": "https://mixkit.co/license/modal/videoFree/",
+      "memories": [
+        {
+          "claim": "A person wearing a grey apron and green gloves is kneeling in a garden, handling a potted plant",
+          "confidence": "high",
+          "end_seconds": 11.678,
+          "evidence_seconds": [
+            0.0,
+            1.668,
+            3.337,
+            5.005,
+            6.673,
+            8.342,
+            10.01,
+            11.678
+          ],
+          "identity_status": "unverified",
+          "kind": "scene",
+          "label": "garden setting",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {},
+          "start_seconds": 0.0,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A person is holding a small potted plant with green leaves",
+          "confidence": "high",
+          "end_seconds": 0.0,
+          "evidence_seconds": [
+            0.0
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "potted herb",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "plant_1"
+          },
+          "start_seconds": 0.0,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A person is holding a small potted plant with green leaves",
+          "confidence": "high",
+          "end_seconds": 1.668,
+          "evidence_seconds": [
+            1.668
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "potted herb",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "plant_1"
+          },
+          "start_seconds": 1.668,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A person is holding a small potted plant with green leaves",
+          "confidence": "high",
+          "end_seconds": 3.337,
+          "evidence_seconds": [
+            3.337
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "potted herb",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "plant_1"
+          },
+          "start_seconds": 3.337,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A person is holding a small potted plant with green leaves",
+          "confidence": "high",
+          "end_seconds": 5.005,
+          "evidence_seconds": [
+            5.005
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "potted herb",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "plant_1"
+          },
+          "start_seconds": 5.005,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "The person is placing the potted plant into a black pot",
+          "confidence": "high",
+          "end_seconds": 8.342,
+          "evidence_seconds": [
+            5.005,
+            6.673,
+            8.342
+          ],
+          "identity_status": "unverified",
+          "kind": "event",
+          "label": "planting action",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {},
+          "start_seconds": 5.005,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "Gardening tools are placed inside a black tool bag",
+          "confidence": "high",
+          "end_seconds": 8.342,
+          "evidence_seconds": [
+            5.005,
+            6.673,
+            8.342
+          ],
+          "identity_status": "unverified",
+          "kind": "relation",
+          "label": "tool_placement",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {},
+          "start_seconds": 5.005,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A person is holding a small potted plant with green leaves",
+          "confidence": "high",
+          "end_seconds": 6.673,
+          "evidence_seconds": [
+            6.673
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "potted herb",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "plant_1"
+          },
+          "start_seconds": 6.673,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A person is holding a small potted plant with green leaves",
+          "confidence": "high",
+          "end_seconds": 8.342,
+          "evidence_seconds": [
+            8.342
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "potted herb",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "plant_1"
+          },
+          "start_seconds": 8.342,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A person is holding a small potted plant with green leaves",
+          "confidence": "high",
+          "end_seconds": 10.01,
+          "evidence_seconds": [
+            10.01
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "potted herb",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "plant_1"
+          },
+          "start_seconds": 10.01,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        },
+        {
+          "claim": "A person is holding a small potted plant with green leaves",
+          "confidence": "high",
+          "end_seconds": 11.678,
+          "evidence_seconds": [
+            11.678
+          ],
+          "identity_status": "unverified",
+          "kind": "entity_observation",
+          "label": "potted herb",
+          "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+          "payload": {
+            "entity_id": "plant_1"
+          },
+          "start_seconds": 11.678,
+          "uncertainty_reason": "Model-generated semantic claim; no independent visual verification has been saved.",
+          "verification_config_fingerprint": null,
+          "verification_model_fingerprint": null,
+          "verification_status": "unverified",
+          "visibility_state": "unknown",
+          "visual_evidence": []
+        }
+      ],
+      "memory_count": 11,
+      "metadata": {
+        "duration": 11.720041666666665,
+        "fps": 23.976023976023978,
+        "frame_count": 281,
+        "height": 720,
+        "width": 1280
+      },
+      "model_fingerprint": "qwen3.5-2b:aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1:structured-video-memory-v1",
+      "saved_answers": [
+        {
+          "answer": {
+            "abstain": false,
+            "answer": "The stored event memory reports these candidates: The person is placing the potted plant into a black pot (sampled at 5.00 s, 6.67 s, 8.34 s).",
+            "cache_used": true,
+            "confidence": "not calibrated",
+            "event_resolution": null,
+            "evidence_seconds": [
+              5.005,
+              6.673,
+              8.342
+            ],
+            "input_mode": "persistent visual memory",
+            "intervals": [],
+            "memory_match_count": 11,
+            "question": "What happened to the plant?",
+            "uncertainty": "Event verification status is UNVERIFIED; descriptions are model-generated claims. The listed times are sampled evidence frames, not exact event boundaries. Check the source frames before treating the event as confirmed.",
+            "verification_status": "unverified",
+            "video_hash": "a6b0fcd0eb43be64ee5525ed5dc2ad90ec3707bacd6318472d122d5f7021e10d",
+            "visibility_resolution": null
+          },
+          "provenance": {
+            "memory_item_id": null,
+            "memory_item_ids": [
+              39
+            ],
+            "route": "persistent_memory"
+          },
+          "question": "What happened to the plant?"
+        }
+      ],
+      "schema_version": 2,
+      "sha256": "a6b0fcd0eb43be64ee5525ed5dc2ad90ec3707bacd6318472d122d5f7021e10d",
+      "source_name": "mixkit_43699_720.mp4",
+      "source_url": "https://mixkit.co/free-stock-video/gardener-changing-a-pot-plant-43699/",
+      "terms_url": "https://mixkit.co/terms/"
+    }
+  ]
+}

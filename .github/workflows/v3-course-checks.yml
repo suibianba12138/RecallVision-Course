@@ -1,0 +1,54 @@
+name: V3 Course RC1 Source Checks
+on:
+  push:
+    branches: ["main", "release/v3-*"]
+    paths: ["v3/**", ".github/workflows/v3-course-checks.yml"]
+  pull_request:
+    paths: ["v3/**", ".github/workflows/v3-course-checks.yml"]
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: v3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install non-inference source and test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[app,test]"
+      - name: Check source syntax
+        run: python -m compileall -q recallvision scripts tests
+      - name: Packaging and recorded-pack integrity
+        run: |
+          python - <<'PY'
+          import json
+          import tomllib
+          from pathlib import Path
+          config = tomllib.loads(Path("pyproject.toml").read_text())
+          assert config["project"]["version"] == "3.0.0rc1"
+          pack = json.loads(Path("demo/course_memory_pack_v1.json").read_text())
+          assert pack["format"] == "recallvision-course-memory-pack"
+          assert len(pack["videos"]) == 3
+          assert all(len(v.get("sha256", "")) == 64 for v in pack["videos"])
+          assert all(len(v.get("saved_answers", [])) >= 1 for v in pack["videos"])
+          assert Path("scripts/import_course_demo.py").is_file()
+          assert Path("docs/RELEASE_BOUNDARIES.md").is_file()
+          print("V3 packaging and demo metadata: OK")
+          PY
+      - name: Dependency-light regression checks
+        run: python -m pytest -q tests/test_video_memory_product_logic.py tests/test_visual_evidence.py tests/test_persistent_visual_memory.py tests/test_course_demo_pack.py
+      - name: Publication boundary
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          forbidden_ext = {".pt",".pth",".ckpt",".safetensors",".mp4",".mov",".avi",".mkv",".sqlite",".db"}
+          unexpected = [str(f) for f in Path(".").rglob("*") if f.is_file() and not any(p in {".venv","__pycache__"} for p in f.parts) and f.suffix.lower() in forbidden_ext]
+          assert not unexpected, unexpected
+          print("No private media, checkpoints, or SQLite database in the course source")
+          PY

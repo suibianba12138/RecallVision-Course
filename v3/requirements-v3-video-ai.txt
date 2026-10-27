@@ -1,0 +1,5 @@
+# Optional full local inference; install after a compatible PyTorch runtime.
+transformers @ git+https://github.com/huggingface/transformers.git@fadef7932e4aa54b0405eb5a1d2cf6f6b579ad5a
+accelerate==1.15.0
+qwen-vl-utils[decord]==0.0.14
+streamlit==1.45.1

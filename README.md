@@ -29,17 +29,33 @@
 
 RecallVision is a computer vision course project investigating how video observations can be converted into **object histories and event records** for retrospective retrieval. Instead of treating each question as an isolated video-processing task, the system stores structured observations and links its outputs to source frames and timestamps.
 
-The repository preserves two distinct development milestones:
+The repository preserves three distinct development milestones:
 
-| | **RecallVision 2.0 — Course submission** | **RecallVision 1.0 — Recorded baseline** |
-| :-- | :-- | :-- |
-| **Focus** | Reviewable object memory and evidence-gated retrieval | Offline perception, memory construction and recorded queries |
-| **Interface** | Local Streamlit application: **Analyze → Explore → Ask** | Archived C1 video and interactive result replay |
-| **Queries** | Trusted **WHERE / WHEN / BEFORE** | Four recorded C1 routes, including authorized **WHO** |
+| | **RecallVision 3.0 — Final course version** | **RecallVision 2.0 — Reviewable baseline** | **RecallVision 1.0 — Recorded baseline** |
+| :-- | :-- | :-- | :-- |
+| **Focus** | Persistent semantic memory and natural-language Ask | Reviewable object memory and evidence-gated retrieval | Offline perception and recorded queries |
+| **Interface** | **Analyze → Explore → Ask → Reopen** | Local Streamlit evidence review | Archived C1 interactive replay |
+| **Queries** | Memory-first natural-language retrieval and source-linked evidence | Trusted **WHERE / WHEN / BEFORE** | Four recorded C1 routes, including authorized **WHO** |
 | **Implementation** | [`v2/`](v2/README.md) — independent Python project | [`recallvision/`](recallvision/) and [`course_demo/`](course_demo/) |
-| **Demonstration** | [View V2](https://suibianba12138.github.io/RecallVision-Course/v2/) | [View V1](https://suibianba12138.github.io/RecallVision-Course/v1/) |
+| **Demonstration** | [View V3](https://suibianba12138.github.io/RecallVision-Course/v3/) | [View V2](https://suibianba12138.github.io/RecallVision-Course/v2/) | [View V1](https://suibianba12138.github.io/RecallVision-Course/v1/) |
 
-**V2 is the primary course submission.** The original V1 source remains at the repository root so that its code and recorded evidence are preserved without breaking existing paths. Ongoing V3 research is not included in this repository.
+**V3 is the current course release candidate.** V3 is a separately packaged short-video memory application, with real saved-result demonstrations; first-pass inference and browser visual QA are not fully independently accepted. V2 remains the prior course milestone. The original V1 source remains at the repository root so that its code and recorded evidence are preserved without breaking existing paths. Ongoing V3 research is not included in this repository.
+
+## RecallVision 3.0 — Persistent visual memory
+
+The final course release extends the project into a local, source-linked **video-memory application**, with automatic semantic observations, SQLite persistence, uncertainty-aware retrieval, and cached answers. Unlike V2's typed evidence-gated queries, V3 provides natural-language Ask and reopens prior videos after restart.
+
+**[V3 source and installation](v3/README.md)** · **[Three real-video recorded demonstrations](v3/demo/README.md)** · **[V3 project page](https://suibianba12138.github.io/RecallVision-Course/v3/)**
+
+| Recorded course case | Stored memories / evidence frames | Recorded outcome |
+| :-- | :-- | :-- |
+| Backpack / moving camera | 24 / 11 | Reference-matched candidate at **4.963 s**; later visibility **UNKNOWN** |
+| Tablet and mug | 11 / 6 | Model-reported object candidates, **UNVERIFIED** |
+| Plant interaction | 11 / 8 | Model-reported interaction, **UNVERIFIED** |
+
+The demo importer restores authentic stored records for the **exact SHA-256-matched** Mixkit clips obtained from their original source pages; it does not rerun inference, and the repository does not redistribute videos, weights, JPEGs, or databases. Recorded restore times were **0.659–2.160 s** across the three clips. First-time CPU model inference on new uploads still took **202–272 s**.
+
+RC1 verification reported **61 focused tests passed**; the broader suite reported **530 passed, 5 skipped, 2 deselected, 3 failed** (three legacy V2 UI environment-dependency failures). Browser visual acceptance remains outstanding. These are application/recorded-demo results, not claims of general video QA accuracy.
 
 ## RecallVision 2.0
 
@@ -161,7 +177,12 @@ Resources: [V1 source](recallvision/) · [Recorded fixtures](course_demo/fixture
 ```text
 RecallVision-Course/
 ├── README.md                 # Project overview and version entry points
-├── v2/                       # V2 course application (independent project)
+├── v3/                       # V3 final course application and recorded demo
+│   ├── recallvision/         # V3 video memory and evidence logic
+│   ├── demo/                 # Hash-bound, saved-result demo package
+│   ├── scripts/              # Safe offline import utility
+│   └── docs/                 # V3 setup, guide, and RC1 report
+├── v2/                       # V2 reviewable course application
 │   ├── recallvision/         # App, perception, memory, events, query, pipeline
 │   ├── configs/              # Pipeline configurations
 │   ├── tests/                # Source and integration tests
