@@ -33,7 +33,7 @@ def still(video,index,out):
         im.convert("RGB").save(out.with_suffix(".webp"),"WEBP",quality=86,method=5)
     out.unlink()
 def main():
-    pack=json.loads((ROOT/"v3"/"demo"/"course_memory_pack_v1.json").read_text())
+    pack=json.loads(urlopen("https://raw.githubusercontent.com/suibianba12138/RecallVision-Course/dee4f02e314ee845337b271fc613fc8ec80d9e17/v3/demo/course_memory_pack_v1.json",timeout=40).read().decode("utf-8"))
     expected={x["sha256"] for x in pack["videos"]}
     assert expected=={x[0] for x in MANIFEST.values()}
     OUT.mkdir(parents=True,exist_ok=True)
