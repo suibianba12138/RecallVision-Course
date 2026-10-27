@@ -2,9 +2,9 @@
 
 # RecallVision
 
-### Evidence-Aware Visual Memory for Retrospective Video Understanding
+### Persistent Visual Memory for Video Question Answering
 
-**An object-centric system for organizing video observations into persistent identities, temporal events, and evidence-linked historical queries.**
+**A local video-memory system that records what was observed, connects answers to source frames, and reuses evidence across questions.**
 
 <br>
 
@@ -41,11 +41,11 @@ The repository preserves three distinct development milestones:
 
 **V3 is the current course release candidate.** V3 is a separately packaged short-video memory application, with real saved-result demonstrations; first-pass inference and browser visual QA are not fully independently accepted. V2 remains the prior course milestone. The original V1 source remains at the repository root so that its code and recorded evidence are preserved without breaking existing paths. Ongoing V3 research is not included in this repository.
 
-## RecallVision 3.0 — Persistent visual memory
+## RecallVision 3.0 · Persistent Visual Memory
 
-The final course release extends the project into a local, source-linked **video-memory application**, with automatic semantic observations, SQLite persistence, uncertainty-aware retrieval, and cached answers. Unlike V2's typed evidence-gated queries, V3 provides natural-language Ask and reopens prior videos after restart.
+V3 turns video analysis into a reusable visual record. The local application generates timestamped scene, object, and event descriptions, stores them in SQLite, and retrieves them for later natural-language questions. The **Analyze → Explore → Ask → Reopen** workflow keeps observations connected to the original video.
 
-**[V3 source and installation](v3/README.md)** · **[Three real-video recorded demonstrations](v3/demo/README.md)** · **[V3 project page](https://suibianba12138.github.io/RecallVision-Course/v3/)**
+**[Explore V3 and video cases](https://suibianba12138.github.io/RecallVision-Course/v3/)** · **[Watch original clips](https://suibianba12138.github.io/RecallVision-Course/v3/#videos)** · **[Run locally](v3/README.md)** · **[Restore course demonstrations](v3/demo/README.md)****
 
 | Recorded course case | Stored memories / evidence frames | Recorded outcome |
 | :-- | :-- | :-- |
