@@ -87,3 +87,8 @@ nav a:hover{color:var(--accent);text-decoration:none}
   .footer-inner{padding:14px 0;align-items:flex-start;flex-direction:column;gap:6px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Personal academic identity */
+.brand{gap:9px}
+.brand-icon{font:700 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:1.15px;color:#187e7e}
+.brand-name{color:#182228}
