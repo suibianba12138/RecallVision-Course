@@ -1,0 +1,101 @@
+/* Shared editorial style for RecallVision version pages (V1, V2 and V3). */
+:root{
+  --paper:#fafafa;--white:#fff;--ink:#182228;--sub:#53616d;--faint:#697984;
+  --line:#e0e5e8;--blue:#2766a5;--accent:#187e7e;--mint:#eaf6f3;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace
+}
+body{background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.72}
+a{color:var(--blue)}
+.topbar{background:#ffffffed;border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+.topbar-inner{min-height:62px;gap:20px}
+.logo{display:flex;align-items:center;gap:9px;color:var(--ink);font-family:inherit;font-size:14px;font-weight:700;letter-spacing:0;white-space:nowrap}
+.logo-mark{display:inline-flex;align-items:center;justify-content:center;width:auto;height:auto;padding:0;border:0;border-radius:0;background:transparent;color:var(--accent);font:700 10px/1 var(--mono);letter-spacing:1.15px}
+.logo-divider{color:#b3bec1;font:400 12px/1 var(--mono)}
+.logo-name{color:var(--ink)}
+.navlinks{gap:21px}
+.navlinks a{font-size:12px;font-weight:500;color:#4c5c64}
+.navlinks a:hover,.navlinks a.active{color:var(--accent)}
+.github-link{border:1px solid var(--line);border-radius:0;background:#fff;padding:7px 12px;font-size:12px;font-weight:600;color:var(--ink)}
+.eyebrow{display:inline-flex;align-items:center;gap:0;color:var(--accent);font:700 10px/1.5 var(--mono);letter-spacing:1.25px}
+.eyebrow:before{display:none}
+h1,h2,h3{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink)}
+h1{font-size:clamp(38px,5vw,60px);font-weight:740;line-height:1.13;letter-spacing:-1.9px}
+h2{font-size:clamp(27px,3.4vw,36px);font-weight:720;line-height:1.2;letter-spacing:-.8px}
+h3{font-size:19px;font-weight:680;letter-spacing:-.25px}
+.lead{color:#475b69;font-size:16px;line-height:1.85}
+.detail-hero{padding:70px 0 58px;background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line)}
+.detail-hero.v1-hero,.detail-hero.v2-hero{background:var(--paper);color:var(--ink)}
+.detail-hero.v2-hero{background:var(--paper)}
+.detail-hero .eyebrow,.detail-hero.v2-hero .eyebrow{color:var(--accent)}
+.detail-hero .lead,.detail-hero.v2-hero .lead{color:#475b69}
+.detail-hero .small,.detail-hero.v2-hero .small{color:var(--sub)!important}
+.detail-hero h1 .accent,.detail-hero.v1-hero h1 .accent,.detail-hero.v2-hero h1 .accent{color:var(--blue)}
+.hero-tags{gap:8px;margin:20px 0}
+.hero-tags span{border:1px solid var(--line);border-radius:2px;background:#fff;color:var(--sub);padding:6px 9px;font-size:11px;font-weight:550}
+.hero-tags .hot{border-color:#b8d8d3;background:#f1f8f7;color:var(--accent)}
+.btn{border-radius:3px;padding:10px 15px;font-size:12px;font-weight:650;box-shadow:none;transition:background .15s,border-color .15s}
+.btn:hover{transform:none;box-shadow:none}
+.btn-primary,.btn-mint{background:#236f79;border:1px solid #236f79;color:#fff;box-shadow:none}
+.btn-primary:hover,.btn-mint:hover{background:#195c65;color:#fff}
+.btn-secondary,.btn-ghost{background:#fff;border:1px solid #d7e0e5;color:#2b586f}
+.btn-ghost:hover,.btn-secondary:hover{background:var(--mint);color:#205b60}
+.section{padding:70px 0}
+.detail-panel{background:#fff}
+.section-heading{max-width:820px;margin-bottom:28px}
+.section-heading p{color:var(--sub);line-height:1.8}
+.whitecard{padding:22px;border:1px solid var(--line);border-radius:3px;background:#fff;box-shadow:none}
+.whitecard h3{font-size:18px;margin:10px 0}
+.whitecard p{font-size:13px;color:var(--sub)}
+.whitecard .index,.workflow-steps .index{color:var(--accent);font:700 10px var(--mono);letter-spacing:1px}
+.workflow-steps{gap:0;border-block:1px solid var(--line)}
+.workflow-steps .whitecard{min-height:0;border:0;border-radius:0;background:transparent;padding:22px 20px;box-shadow:none}
+.workflow-steps .whitecard+ .whitecard{border-left:1px solid var(--line)}
+.media-card{border-radius:3px;padding:16px;box-shadow:none}
+.media-card video{border-radius:0}
+.fact-strip{gap:0;border-block:1px solid var(--line)}
+.fact-strip>div{border:0;border-radius:0;background:transparent;padding:17px 18px}
+.fact-strip>div+div{border-left:1px solid var(--line)}
+.fact-strip .kpi{color:var(--ink)}
+.table-scroll{border:1px solid var(--line);border-radius:0;box-shadow:none}
+.table th{background:#f4f7f7;color:#557078;font:700 10px var(--mono);letter-spacing:.7px}
+.table td:first-child{color:var(--ink)}
+.footer{padding:22px 0;border-top:1px solid var(--line);background:#fff}
+.footinner{font-size:11px;color:var(--faint)}
+.detail-hero .wrap{max-width:1120px}
+.detail-hero .btnrow{margin-top:22px}
+.detail-hero .btn{box-shadow:none}
+.demo-shell{border-radius:3px;box-shadow:none}
+.demo-head{border-radius:0}
+.rv2-demo-section{padding:68px 0 76px;background:#f4f7f7;border-bottom:1px solid var(--line)}
+.rv2-demo-title h2{font-size:clamp(28px,3.4vw,36px);letter-spacing:-.8px}
+.rv2-demo-title p{color:var(--sub)}
+.rv2-film,.rv2-app{border-radius:3px;box-shadow:none}
+.rv2-film-display{padding:10px}
+.rv2-film-display video{border-radius:0}
+.rv2-film-flag{border-radius:2px}
+.rv2-film-timeline{border-radius:0}
+.rv2-film-timeline::before{background:#4a9d9a;border-radius:0}
+.rv2-frame-links button{border-radius:2px}
+.rv2-app-tabs button.active{color:var(--accent);border-bottom-color:var(--accent)}
+.rv2-app-tag,.rv2-stage-icon,.rv2-badge,.rv2-mini-record,.rv2-review-detail,.rv2-answer,.rv2-meta-row>span,.rv2-under-grid>div{border-radius:2px}
+.rv2-metric{border-radius:2px}
+.rv2-app-body h3{font-size:20px}
+.rv2-review-options button,.rv2-question-options button{border-radius:2px}
+.rv2-review-options button.selected,.rv2-question-options button.selected{background:#236f79;border-color:#236f79}
+.rv2-answer{box-shadow:none}
+@media(max-width:740px){
+  .topbar-inner{min-height:62px;gap:10px}
+  .logo{font-size:14px}
+  .logo-mark{font-size:9px}
+  .navlinks{gap:10px}
+  .navlinks a{font-size:10px}
+  .detail-hero{padding:52px 0 42px}
+  .section{padding:54px 0}
+  .workflow-steps{border-top:1px solid var(--line)}
+  .workflow-steps .whitecard,.workflow-steps .whitecard+.whitecard{border:0;border-bottom:1px solid var(--line);padding:18px 0}
+  .fact-strip{grid-template-columns:1fr 1fr}
+  .fact-strip>div+div{border-left:0}
+  .fact-strip>div:nth-child(even){border-left:1px solid var(--line)}
+  .fact-strip>div:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
