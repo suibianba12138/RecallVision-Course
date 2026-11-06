@@ -4,8 +4,9 @@ body{background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,Bl
 .topbar{background:#ffffffed;border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
 .topbar-inner{max-width:1164px;min-height:62px}
 .logo{font-family:inherit;font-size:14px;letter-spacing:0;color:var(--ink)}
-.logo-mark{width:28px;height:28px;border:1px solid #b8cecc;border-radius:3px;background:#fff;color:var(--accent);font-size:12px;letter-spacing:-1px}
-.logo-mark b{color:var(--blue)}
+.logo-mark{display:inline-flex;align-items:center;justify-content:center;width:auto;height:auto;padding:0;border:0;border-radius:0;background:transparent;color:var(--accent);font:700 10px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:1.15px}
+.logo-divider{color:#b3bec1;font:400 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace}
+.logo-name{color:var(--ink)}
 .navlinks{gap:22px}
 .navlinks a{font-size:12px;font-weight:500;color:#4c5c64}
 .navlinks a:hover,.navlinks a.active{color:var(--accent)}
