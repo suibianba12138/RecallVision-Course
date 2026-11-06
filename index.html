@@ -1,68 +1,158 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f5f7fb">
-<meta name="description" content="RecallVision turns video observations into persistent visual memory for natural-language questions, with source-linked evidence and three documented course implementations.">
-<meta property="og:title" content="RecallVision — Persistent Visual Memory for Video Questions">
-<meta property="og:description" content="RecallVision 3.0, 2.0 and 1.0: visual memory systems, recorded experiments and course implementation.">
-<title>RecallVision — Object-Centric Visual Memory</title>
-<link rel="stylesheet" href="pages.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafafa">
+  <meta name="description" content="RecallVision turns video observations into persistent visual memory for evidence-grounded video question answering.">
+  <meta property="og:title" content="RecallVision — From Video to Visual Memory">
+  <meta property="og:description" content="A project on persistent visual memory, object and event records, and evidence-linked video retrieval.">
+  <meta property="og:image" content="v3/media/backpack-4_963.webp">
+  <title>RecallVision — From Video to Visual Memory</title>
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
-<header class="topbar"><div class="wrap topbar-inner">
-<a class="logo" href="./" aria-label="RecallVision home"><span class="logo-mark">R<b>V</b></span>RecallVision</a>
-<nav class="navlinks" aria-label="Main navigation"><a class="active" href="./">Overview</a><a href="v3/">Version 3.0</a><a href="v2/">Version 2.0</a><a href="v1/">Version 1.0</a><a class="minor" href="#versions">Compare</a></nav>
-<a class="github-link" href="https://github.com/suibianba12138/RecallVision-Course" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-</div></header>
-<main>
-<section class="home-hero" id="overview"><div class="wrap hero-grid">
-<div>
-<div class="eyebrow">Computer vision · course project</div>
-<h1>From video to<br><span class="hero-accent">visual memory.</span></h1>
-<p class="lead">RecallVision transforms video into reusable scene, object and event records. The latest version combines persistent storage, natural-language retrieval and direct access to supporting video frames. Explore the progression from the original perception pipeline to the complete V3 memory application.</p>
-<div class="btnrow"><a class="btn btn-primary" href="v3/">View Version 3.0 <span aria-hidden="true">↗</span></a><a class="btn btn-secondary" href="v2/">View Version 2.0 <span aria-hidden="true">→</span></a></div>
-<p class="hero-note">Version-specific implementations, demonstrations, and documented evaluation results</p>
-</div>
-<div class="showcase-window" aria-label="Illustrative diagram of the visual-memory workflow, not an application screenshot">
-<div class="window-top"><span class="dots"><i></i><i></i><i></i></span><span>RECALLVISION / SYSTEM OVERVIEW</span><span>↗</span></div>
-<div class="window-body"><div class="mini-kicker">CONCEPTUAL ARCHITECTURE</div><h3>Perception · Memory · Retrieval</h3>
-<div class="flow-row">
-<div class="flow-item"><em>◩</em><strong>Video</strong><small>Source frames</small></div>
-<div class="flow-item"><em>◎</em><strong>Memory</strong><small>Object and event records</small></div>
-<div class="flow-item"><em>↗</em><strong>Answers</strong><small>Evidence-linked</small></div>
-</div>
-<div class="window-foot">Conceptual workflow diagram; not a screenshot or live inference result</div>
-</div></div>
-</div></section>
-<section class="section versions" id="versions"><div class="wrap">
-<div class="section-heading"><div class="eyebrow">PROJECT VERSIONS</div><h2>Version overview</h2><p>Three versions trace the project from object perception to an integrated visual-memory application. Each version includes its own recorded demonstrations and source code.</p></div>
-<div class="version-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
-<article class="version-card v2"><div class="version-icon" aria-hidden="true">◈</div><div class="version-label">VERSION 3.0 / CURRENT COURSE RELEASE</div><h3>RecallVision 3.0</h3><p>A local persistent visual-memory application with scene, entity and event hypotheses, frame-local evidence checks, cached natural-language answers and video recovery.</p><div class="version-features"><span>Analyze → Explore → Ask → Reopen</span><span>SQLite memory</span><span>Three real-video recorded cases</span><span>Source-linked uncertainty</span></div><a class="btn btn-mint" href="v3/">View V3 system and recorded cases ↗</a><div class="capability">Explore source videos, saved answers and evidence frames. The full V3 application runs locally in Streamlit.</div></article>
-<article class="version-card v2">
-<div class="version-icon" aria-hidden="true">◎</div><div class="version-label">VERSION 2.0 / APPLICATION</div>
-<h3>RecallVision 2.0</h3>
-<p>A local application that integrates video import, object-memory generation, identity and event review, and evidence-gated historical queries using the Analyze–Explore–Ask workflow.</p>
-<div class="version-features"><span>Analyze → Explore → Ask</span><span>Identity review</span><span>Trusted queries</span><span>D2 evaluation records</span></div>
-<a class="btn btn-mint" href="v2/">View V2 implementation and results ↗</a>
-<div class="capability">Recorded D2 application results and implementation are available. Independent evaluations identify unresolved perception and event-detection limitations. View the V2 course source on GitHub.</div>
-</article>
-<article class="version-card v1">
-<div class="version-icon" aria-hidden="true">▶</div><div class="version-label">VERSION 1.0 / BASELINE</div>
-<h3>RecallVision 1.0</h3>
-<p>The original object-centric perception and memory pipeline, documented using a 7.91-second C1 bottle sequence and four replayable historical query records.</p>
-<div class="version-features"><span>C1 source sequence</span><span>Recorded timeline</span><span>Four recorded queries</span><span>Evidence replay</span></div>
-<a class="btn btn-secondary" href="v1/">View V1 demonstration and results ↗</a>
-<div class="capability">The interactive presentation replays archived C1 outputs; the V1 implementation is available in the public repository.</div>
-</article>
-</div></div></section>
-<section class="section difference"><div class="wrap"><div class="section-heading"><div class="eyebrow">VERSION COMPARISON</div><h2>Evolution of the system architecture</h2></div>
-<div class="compare">
-<div><strong>01 · Recorded V1 pipeline</strong><p>V1 records object observations, identity hypotheses, motion evidence, and historical query outputs. Its public demonstration presents the archived C1 sequence and associated records.</p></div>
-<div><strong>02 · Integrated V2 application</strong><p>V2 extends the pipeline with local video import, persistent analysis sessions, reversible identity and observation review, and query responses conditioned on reviewed evidence.</p></div>
-<div><strong>03 · Persistent V3 semantic memory</strong><p>V3 stores model-generated object and event records in SQLite and retrieves them for later questions. Targeted evidence checks keep uncertain observations explicit.</p></div><div><strong>04 · Evaluation scope</strong><p>V1 and V2 have separate frozen evaluations. V3 uses three short real-video cases, an offline demo-memory pack, and local cached answers. None of these web pages runs model inference.</p></div>
-</div></div></section>
-<section class="cta"><div class="wrap cta-grid"><div><div class="eyebrow" style="color:#6de8d6">PROJECT DOCUMENTATION</div><h2>Architecture, demonstrations, and results</h2><p>Review the implemented capabilities, evidence sources, and evaluation boundaries of each project version.</p></div><div class="btnrow"><a class="btn btn-mint" href="v3/">Version 3.0 documentation ↗</a><a class="btn btn-ghost" href="v2/">Version 2.0 documentation →</a></div></div></section>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="top-inner">
+    <a class="brand" href="./"><span class="brand-icon" aria-hidden="true">◈</span> RecallVision</a>
+    <nav aria-label="Primary navigation">
+      <a href="#overview">Overview</a>
+      <a href="#method">Method</a>
+      <a href="#cases">Cases</a>
+      <a href="#versions">Versions</a>
+      <a href="#scope">Scope</a>
+    </nav>
+    <a class="github-link" href="https://github.com/suibianba12138/RecallVision-Course" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap" id="overview">
+    <div class="eyebrow">COMPUTER VISION · VIDEO UNDERSTANDING · PROJECT SHOWCASE</div>
+    <h1>From video to visual memory.</h1>
+    <p class="subtitle">Persistent object- and event-centric memory for evidence-grounded video question answering.</p>
+    <p class="subtitle-zh" lang="zh-CN">将视频观察转化为可持续检索的视觉记忆，并让回答回到原始画面证据。</p>
+    <div class="hero-links">
+      <a class="pill primary" href="v3/">Explore RecallVision 3.0</a>
+      <a class="pill" href="https://github.com/suibianba12138/RecallVision-Course" target="_blank" rel="noopener noreferrer">Source repository ↗</a>
+    </div>
+    <figure class="cover">
+      <img src="v3/media/backpack-4_963.webp" alt="Source video frame used in the RecallVision V3 backpack case study">
+      <figcaption>Fig. 1. A source frame from the V3 backpack case study (4.963 s). The displayed frame is original case evidence, not a generated interface mock-up.</figcaption>
+    </figure>
+  </section>
+
+  <section class="wrap prose" id="abstract">
+    <div class="kicker">01 / ABSTRACT</div>
+    <h2>Abstract</h2>
+    <p>RecallVision explores how observations from ordinary videos can be converted into reusable visual memory. Rather than answering every question by processing a video from the beginning, the system records scene, object and event information, associates observations with source frames, and retrieves the stored evidence for later questions.</p>
+    <p>The project has evolved through three implementations: an object-centric perception and replay baseline, an integrated local application with reviewable memory, and a persistent visual-memory application with evidence checks and cached natural-language answers. Each version has its own implementation and evaluation boundary.</p>
+  </section>
+
+  <section class="wrap section" id="method">
+    <div class="section-head">
+      <div>
+        <div class="kicker">02 / SYSTEM OVERVIEW</div>
+        <h2>Perception, memory, retrieval.</h2>
+      </div>
+      <p>The workflow separates video analysis from later question answering. Stored observations can be inspected and reused, while answers remain connected to the frames that support them.</p>
+    </div>
+    <div class="workflow" role="list" aria-label="RecallVision system workflow">
+      <div class="workflow-step" role="listitem">
+        <span class="step-no">01</span>
+        <h3>Video input</h3>
+        <p>Sampled frames provide visual observations of scenes, objects and interactions.</p>
+      </div>
+      <div class="workflow-step" role="listitem">
+        <span class="step-no">02</span>
+        <h3>Visual memory</h3>
+        <p>Object, scene and event records are organized with timestamps and source references.</p>
+      </div>
+      <div class="workflow-step" role="listitem">
+        <span class="step-no">03</span>
+        <h3>Evidence retrieval</h3>
+        <p>Natural-language questions retrieve stored records and link answers to supporting frames.</p>
+      </div>
+    </div>
+    <p class="note">The diagram describes the project direction across versions. Individual implementations differ in their memory schema, review process and retrieval capabilities.</p>
+  </section>
+
+  <section class="wrap section" id="cases">
+    <div class="section-head">
+      <div>
+        <div class="kicker">03 / RECORDED CASES</div>
+        <h2>Questions grounded in video evidence.</h2>
+      </div>
+      <p>The V3 showcase includes three short source-video cases. Open the case explorer to inspect recorded observations, answers and supporting frames.</p>
+    </div>
+    <div class="case-grid">
+      <figure class="case-figure">
+        <img src="v3/media/backpack-4_963.webp" alt="Backpack in the source video at 4.963 seconds" loading="lazy">
+        <figcaption><strong>01 · Backpack</strong><span>Last supported observation and candidate-frame comparison</span></figcaption>
+      </figure>
+      <figure class="case-figure">
+        <img src="v3/media/tablet-5_297.webp" alt="Tablet and mug in a sampled tabletop video frame" loading="lazy">
+        <figcaption><strong>02 · Tabletop objects</strong><span>Object observations in a recorded tabletop sequence</span></figcaption>
+      </figure>
+      <figure class="case-figure">
+        <img src="v3/media/plant-5_005.webp" alt="Plant interaction in a sampled source video frame" loading="lazy">
+        <figcaption><strong>03 · Plant interaction</strong><span>Recorded interaction evidence and event-oriented retrieval</span></figcaption>
+      </figure>
+    </div>
+    <p class="section-link"><a href="v3/">Open the V3 evidence explorer ↗</a></p>
+  </section>
+
+  <section class="wrap section" id="versions">
+    <div class="section-head">
+      <div>
+        <div class="kicker">04 / PROJECT EVOLUTION</div>
+        <h2>Three versions, distinct scopes.</h2>
+      </div>
+      <p>The versions document the project's progression. They should be read as separate implementations with different capabilities and evaluation protocols.</p>
+    </div>
+    <div class="version-list">
+      <article class="version-row">
+        <div class="version-id">V1</div>
+        <div class="version-body">
+          <h3>Object-centric perception and replay</h3>
+          <p>The original pipeline, documented with a short bottle sequence and four replayable historical query records.</p>
+        </div>
+        <a href="v1/">V1 demonstration ↗</a>
+      </article>
+      <article class="version-row">
+        <div class="version-id">V2</div>
+        <div class="version-body">
+          <h3>Integrated local application</h3>
+          <p>Video import, object-memory generation, identity and event review, and evidence-gated historical queries.</p>
+        </div>
+        <a href="v2/">V2 implementation ↗</a>
+      </article>
+      <article class="version-row">
+        <div class="version-id">V3</div>
+        <div class="version-body">
+          <h3>Persistent visual memory</h3>
+          <p>A local application with scene, entity and event hypotheses, frame-local evidence checks, SQLite memory and cached answers.</p>
+        </div>
+        <a href="v3/">V3 system and cases ↗</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap prose scope" id="scope">
+    <div class="kicker">05 / SCOPE AND LIMITATIONS</div>
+    <h2>What this showcase does — and does not — demonstrate.</h2>
+    <p>The website presents project documentation and recorded demonstrations; it does not run model inference. V1 and V2 have separate frozen evaluations. V3 is presented through three short real-video cases and a local demo-memory pack. Results across versions are not directly comparable.</p>
+    <p>Perception errors, uncertain object identities and incomplete event evidence remain important limitations. The project keeps these boundaries visible rather than treating every stored hypothesis as ground truth.</p>
+    <p class="section-link"><a href="https://github.com/suibianba12138/RecallVision-Course" target="_blank" rel="noopener noreferrer">Source code and documentation on GitHub ↗</a></p>
+  </section>
 </main>
-<footer class="footer"><div class="wrap footinner"><span>© 2026 RecallVision · Object-centric visual memory</span><span><a href="v3/">V3 overview</a> &nbsp;·&nbsp; <a href="v2/">V2 overview</a> &nbsp;·&nbsp; <a href="v1/">V1 overview</a> &nbsp;·&nbsp; <a href="https://github.com/suibianba12138/RecallVision-Course">Source repository</a></span></div></footer>
-</body></html>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>RecallVision · Persistent Visual Memory for Video Question Answering</span>
+    <a href="#overview">Back to top ↑</a>
+  </div>
+</footer>
+</body>
+</html>
